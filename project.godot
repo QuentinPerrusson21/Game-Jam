@@ -72,10 +72,14 @@ Settings/Use_Shift_instead_of_Alt=false
 Settings/Surface_Placement_Collision_Mask=4294967295
 Settings/Show_Tooltips=true
 
+[animation]
+
+compatibility/default_parent_skeleton_in_mesh_instance_3d=true
+
 [application]
 
 config/name="Your First 2D Game With Godot 4: START (GDQuest)"
-config/features=PackedStringArray("4.5", "Forward Plus")
+config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.png"
 
 [display]
@@ -119,6 +123,12 @@ move_down={
 
 3d_physics/layer_2="player"
 
+[physics]
+
+3d/physics_engine="Jolt Physics"
+
 [rendering]
 
+rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
