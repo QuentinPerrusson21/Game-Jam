@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dh65gqncrg3a0"]
+
+[ext_resource type="Script" uid="uid://bvph5dxso7al2" path="res://slime_feu.gd" id="1_3yphf"]
+[ext_resource type="Texture2D" uid="uid://d6fabl5jct43" path="res://characters/MonstresOffi/slime-rouge-front-view.png" id="1_jghwl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jghwl"]
+radius = 31.016125
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=325562055]
+script = ExtResource("1_3yphf")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1650937300]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_jghwl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=348330509]
+position = Vector2(-1, 2)
+shape = SubResource("CircleShape2D_jghwl")
