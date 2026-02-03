@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://skljc3hv1vxj"]
+
+[ext_resource type="Texture2D" uid="uid://brkq8y66k4s24" path="res://Background/main-title.png" id="1_ggsak"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cq70r"]
+texture = ExtResource("1_ggsak")
+
+[node name="Control" type="Control" unique_id=1293322961]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel2" type="Panel" parent="." unique_id=479288742]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -9.0
+offset_right = 14.496338
+offset_bottom = 87.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_cq70r")
