@@ -79,7 +79,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="Your First 2D Game With Godot 4: START (GDQuest)"
-run/main_scene="uid://b7k4rlnkiqq3m"
+run/main_scene="uid://cnrhqyg15regf"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.png"
 
@@ -95,7 +95,7 @@ project/assembly_name="Getting started with Godot 4"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/colorpicker_presets/plugin.cfg")
+enabled=PackedStringArray()
 
 [input]
 
