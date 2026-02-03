@@ -3,7 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://c1sx7bic4uhdj" path="res://player.tscn" id="1_3yvkd"]
 [ext_resource type="PackedScene" uid="uid://y38gte5o0xf8" path="res://mob.tscn" id="3_3yvkd"]
 [ext_resource type="PackedScene" uid="uid://dq3r015sr1uql" path="res://pine_tree.tscn" id="3_8a785"]
-[ext_resource type="PackedScene" uid="uid://dh65gqncrg3a0" path="res://SlimeFeu.tscn" id="4_e8hy1"]
 
 [node name="Game" type="Node2D" unique_id=1988959735]
 y_sort_enabled = true
@@ -32,9 +31,3 @@ position = Vector2(405, 919)
 
 [node name="Mob3" parent="." unique_id=878809260 instance=ExtResource("3_3yvkd")]
 position = Vector2(1529, 686)
-
-[node name="CharacterBody2D" parent="." unique_id=325562055 instance=ExtResource("4_e8hy1")]
-position = Vector2(1111, 913)
-
-[node name="CharacterBody2D2" parent="." unique_id=1500059654 instance=ExtResource("4_e8hy1")]
-position = Vector2(625, 736)

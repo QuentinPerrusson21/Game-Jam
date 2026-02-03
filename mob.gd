@@ -1,16 +1,20 @@
 extends CharacterBody2D
 
-
 @onready var player = get_node("/root/Game/Player")
-@onready var animated_sprite = $AnimatedSprite2D
 
 func _physics_process(delta):
 	var direction = global_position.direction_to(player.global_position)
+	
 	velocity = direction * 250.0
 	move_and_slide()
+	
+	update_animation(direction)
 
-func update_animations(direction):
-	if direction == 0:
-		animated_sprite.play("idle")
+func update_animation(move_input):
+	if move_input.length() > 0:
+		if move_input.x > 0:
+			$AnimatedSprite2D.flip_h = false 
+		elif move_input.x < 0:
+			$AnimatedSprite2D.flip_h = true  
 	else:
-		animated_sprite.play("run")
+		$AnimatedSprite2D.frame = 0
