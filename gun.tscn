@@ -1,11 +1,16 @@
 [gd_scene format=3 uid="uid://du5i8r7jdycua"]
 
+[ext_resource type="Script" uid="uid://bpyfw0mh6bsnv" path="res://gun.gd" id="1_dk5gl"]
 [ext_resource type="Texture2D" uid="uid://cswb5do8rrj7q" path="res://pistol/pistol.png" id="1_vk1bi"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dk5gl"]
-radius = 527.1859
+radius = 411.12164
 
 [node name="Gun" type="Area2D" unique_id=857317819]
+position = Vector2(461, 417)
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_dk5gl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1740472943]
 position = Vector2(-1, -1)
@@ -17,5 +22,12 @@ shape = SubResource("CircleShape2D_dk5gl")
 position = Vector2(78, 0)
 texture = ExtResource("1_vk1bi")
 
-[node name="Shooting point" type="Marker2D" parent="WeaponPivot/Pistol" unique_id=463114730]
+[node name="Tir" type="Marker2D" parent="WeaponPivot/Pistol" unique_id=463114730]
+unique_name_in_owner = true
 position = Vector2(25, -12)
+
+[node name="Timer" type="Timer" parent="." unique_id=365153755]
+wait_time = 0.3
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

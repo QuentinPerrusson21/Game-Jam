@@ -12,7 +12,7 @@ offset_right = 1927.0
 offset_bottom = 1074.0
 
 [node name="Player" parent="." unique_id=1916796525 instance=ExtResource("1_3yvkd")]
-position = Vector2(964, 537)
+position = Vector2(968, 540)
 
 [node name="PineTree5" parent="." unique_id=482898201 instance=ExtResource("3_8a785")]
 position = Vector2(795, 336)

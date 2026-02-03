@@ -58,6 +58,7 @@ animations = [{
 size = Vector2(32, 87)
 
 [node name="Player" type="CharacterBody2D" unique_id=1916796525]
+platform_floor_layers = 4294967292
 script = ExtResource("1_onrkg")
 
 [node name="Chevalier" type="AnimatedSprite2D" parent="." unique_id=2099475554]
