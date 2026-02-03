@@ -1,23 +1,27 @@
 [gd_scene format=3 uid="uid://cnrhqyg15regf"]
 
 [ext_resource type="Script" uid="uid://887u4pfa43ih" path="res://main_menu.gd" id="1_m82ya"]
-[ext_resource type="Texture2D" uid="uid://bjg8n6uk1b88u" path="res://Background/Capture_decran_2026-02-03_120247.png" id="2_m82ya"]
-[ext_resource type="FontFile" uid="uid://b53iapi5wykx8" path="res://Font/PixelifySans-VariableFont_wght.ttf" id="3_dg1fb"]
+[ext_resource type="Texture2D" uid="uid://brkq8y66k4s24" path="res://Background/main-title.png" id="2_juxkc"]
 [ext_resource type="Texture2D" uid="uid://byx8qd4k8o7i4" path="res://Logo/images__1_-removebg-preview.png" id="4_m82ya"]
+[ext_resource type="Texture2D" uid="uid://d0xb1nhm2wr0x" path="res://Logo/Sans titre - 2.png" id="5_dg1fb"]
+[ext_resource type="AudioStream" uid="uid://blfg4j5xn01qk" path="res://Music/Musique-spawn.ogg" id="5_juxkc"]
+[ext_resource type="Texture2D" uid="uid://c8lwxej06ic0w" path="res://Logo/Sans titre - 3.png" id="6_kki6w"]
+[ext_resource type="Texture2D" uid="uid://bsrcbwtkd6875" path="res://Logo/Sans titre - 4.png" id="7_pbygh"]
+[ext_resource type="Texture2D" uid="uid://camwe1r8f6b6v" path="res://Logo/Sans titre - 5.png" id="8_wdf14"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kki6w"]
-texture = ExtResource("2_m82ya")
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pbygh"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-shadow_color = Color(0, 0, 0, 0.40392157)
-shadow_size = 1
-shadow_offset = Vector2(0.355, 0.115)
+texture = ExtResource("2_juxkc")
 
 [sub_resource type="Theme" id="Theme_wdf14"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i3f74"]
 texture = ExtResource("4_m82ya")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kki6w"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pbygh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wdf14"]
 
 [node name="MainMenu" type="Control" unique_id=1891413396]
 layout_mode = 3
@@ -28,87 +32,82 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_m82ya")
 
-[node name="Panel" type="Panel" parent="." unique_id=623985038]
+[node name="Panel3" type="Panel" parent="." unique_id=717324775]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -65.0
-offset_top = -40.0
-offset_right = 60.0
-offset_bottom = 101.0
+offset_top = -9.0
+offset_right = 14.496338
+offset_bottom = 87.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_kki6w")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=854619890]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -960.0
-offset_top = -597.0
-offset_right = 961.0
-offset_bottom = -126.0
-grow_horizontal = 2
-grow_vertical = 0
-
-[node name="start button" type="Button" parent="VBoxContainer" unique_id=1557078729]
-layout_mode = 2
-size_flags_vertical = 10
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_color = Color(0.71628165, 0.64109224, 0.19045639, 1)
-theme_override_fonts/font = ExtResource("3_dg1fb")
-theme_override_font_sizes/font_size = 75
-theme_override_styles/normal = SubResource("StyleBoxFlat_pbygh")
-text = "START GAME"
-
-[node name="Achievement button" type="Button" parent="VBoxContainer" unique_id=861982332]
-layout_mode = 2
-size_flags_vertical = 10
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_color = Color(0.71628165, 0.64109224, 0.19045639, 1)
-theme_override_fonts/font = ExtResource("3_dg1fb")
-theme_override_font_sizes/font_size = 75
-theme_override_styles/normal = SubResource("StyleBoxFlat_pbygh")
-text = "ACHIEVEMENTS"
-
-[node name="option button" type="Button" parent="VBoxContainer" unique_id=6322150]
-layout_mode = 2
-size_flags_vertical = 10
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_color = Color(0.71628165, 0.64109224, 0.19045639, 1)
-theme_override_fonts/font = ExtResource("3_dg1fb")
-theme_override_font_sizes/font_size = 75
-theme_override_styles/normal = SubResource("StyleBoxFlat_pbygh")
-text = "OPTIONS"
-
-[node name="quit game option" type="Button" parent="VBoxContainer" unique_id=1092247127]
-layout_mode = 2
-size_flags_vertical = 10
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_color = Color(0.71628165, 0.64109224, 0.19045639, 1)
-theme_override_fonts/font = ExtResource("3_dg1fb")
-theme_override_font_sizes/font_size = 75
-theme_override_styles/normal = SubResource("StyleBoxFlat_pbygh")
-text = "QUIT GAME"
 
 [node name="Panel2" type="Panel" parent="." unique_id=153870845]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -278.25
-offset_top = 106.0
-offset_right = 278.25
-offset_bottom = 393.0
+offset_left = -275.0
+offset_top = 2.0
+offset_right = 281.5
+offset_bottom = 289.0
 grow_horizontal = 2
 theme = SubResource("Theme_wdf14")
 theme_override_styles/panel = SubResource("StyleBoxTexture_i3f74")
 
-[connection signal="pressed" from="VBoxContainer/start button" to="." method="_on_Caractere_selection_pressed"]
-[connection signal="pressed" from="VBoxContainer/Achievement button" to="." method="_on_achievement_pressed"]
-[connection signal="pressed" from="VBoxContainer/option button" to="." method="_on_options_pressed"]
-[connection signal="pressed" from="VBoxContainer/quit game option" to="." method="_on_exit_pressed"]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=405036976]
+stream = ExtResource("5_juxkc")
+autoplay = true
+
+[node name="Button" type="Button" parent="." unique_id=1750237672]
+layout_mode = 0
+offset_left = 686.0
+offset_top = 459.00003
+offset_right = 1050.0
+offset_bottom = 557.0
+scale = Vector2(1.5, 1.5)
+theme_override_constants/align_to_largest_stylebox = 0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_kki6w")
+icon = ExtResource("5_dg1fb")
+icon_alignment = 1
+
+[node name="Button2" type="Button" parent="." unique_id=771369009]
+layout_mode = 0
+offset_left = 693.0
+offset_top = 726.0
+offset_right = 1057.0
+offset_bottom = 824.0
+scale = Vector2(1.5, 1.5)
+theme_override_constants/align_to_largest_stylebox = 0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_kki6w")
+icon = ExtResource("6_kki6w")
+icon_alignment = 1
+
+[node name="Button3" type="Button" parent="." unique_id=41443077]
+layout_mode = 0
+offset_left = 698.0
+offset_top = 581.0
+offset_right = 1062.0
+offset_bottom = 679.0
+scale = Vector2(1.5, 1.5)
+theme_override_constants/align_to_largest_stylebox = 0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_pbygh")
+icon = ExtResource("7_pbygh")
+icon_alignment = 1
+
+[node name="Button4" type="Button" parent="." unique_id=1152074430]
+layout_mode = 0
+offset_left = 691.0
+offset_top = 862.00006
+offset_right = 1055.0
+offset_bottom = 960.00006
+scale = Vector2(1.5, 1.5)
+theme_override_constants/align_to_largest_stylebox = 0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_wdf14")
+icon = ExtResource("8_wdf14")
+icon_alignment = 1
+
+[connection signal="pressed" from="Button" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_option_pressed"]

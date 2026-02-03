@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://opn1ribhbg7w"
-path="res://.godot/imported/OQG logo quadri blanc.png-3fc00aedcd157162f608e46cc46f8d6f.ctex"
+uid="uid://brkq8y66k4s24"
+path="res://.godot/imported/main-title.png-053e0662b0905049e11daefb37399090.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Logo/OQG logo quadri blanc.png"
-dest_files=["res://.godot/imported/OQG logo quadri blanc.png-3fc00aedcd157162f608e46cc46f8d6f.ctex"]
+source_file="res://Background/main-title.png"
+dest_files=["res://.godot/imported/main-title.png-053e0662b0905049e11daefb37399090.ctex"]
 
 [params]
 

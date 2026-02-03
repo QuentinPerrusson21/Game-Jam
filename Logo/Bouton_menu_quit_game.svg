@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Calque_1" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 85.11 21.35">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        font-family: PixelifySans-Medium, 'Pixelify Sans';
+        font-size: 7px;
+        font-variation-settings: 'wght' 500;
+        font-weight: 500;
+      }
+
+      .cls-2 {
+        fill: #dd0931;
+      }
+    </style>
+  </defs>
+  <path class="cls-2" d="M43.74,0C29.64,0,17.34,2.03,10.44,5.17c-.3.08-.4.34-.4.59v6.95c0,.42.5.68.9.51,7-2.96,19.1-4.91,32.8-4.91s25.8,1.95,32.8,4.91c.4.17,1-.08,1-.51v-6.86c0-.25-.2-.51-.4-.59C70.14,2.03,57.84,0,43.74,0Z"/>
+  <path d="M17.34,11.82c0-.2-.2-.3-.3-.2-.7.2-1.3.4-1.9.7-1.4.5-2.7,1.1-3.9,1.7h0c-1.8.7-1.8-1.1-1.8-1.1v-3.4q0-.1-.1-.1c-.1-.1-.2-.1-.3-.1-.8.5-1.7,1.1-2.5,1.6-1.5,1-3,2.1-4.1,3.2-.1.1-.1.3.1.4l3.2,1.5c.1.1.2.2.1.3l-1.2,4.7c-.1.2.2.4.4.3,1.2-.9,4.4-3.2,7.7-4.9.8-.4,1.6-.8,2.4-1.1.7-.3,1.4-.6,2-.8.1,0,.2-.1.2-.2v-2.5h0Z"/>
+  <path d="M70.14,11.82c0-.2.2-.3.3-.2.7.2,1.3.4,1.9.7,1.4.5,2.7,1.1,3.9,1.7h0c1.8.7,1.8-1.1,1.8-1.1v-3.4q0-.1.1-.1c.1-.1.2-.1.3-.1.8.5,1.7,1.1,2.5,1.6,1.5,1,3,2.1,4.1,3.2.1.1.1.3-.1.4l-3.2,1.5c-.1.1-.2.2-.1.3l1.2,4.7c.1.2-.2.4-.4.3-1.2-.9-4.4-3.2-7.7-4.9-.8-.4-1.6-.8-2.4-1.1-.7-.3-1.4-.6-2-.8-.1,0-.2-.1-.2-.2v-2.5h0Z"/>
+  <text class="cls-1" transform="translate(27.18 7.81) rotate(-7.77)"><tspan x="0" y="0">Q</tspan></text>
+  <text class="cls-1" transform="translate(31.23 7.26) rotate(-5.77)"><tspan x="0" y="0">U</tspan></text>
+  <text class="cls-1" transform="translate(35.31 6.86) rotate(-3.96)"><tspan x="0" y="0">I</tspan></text>
+  <text class="cls-1" transform="translate(38.15 6.65) rotate(-2.06)"><tspan x="0" y="0">T</tspan></text>
+  <text class="cls-1" transform="translate(42.25 6.52) rotate(-.55)"><tspan x="0" y="0"> </tspan></text>
+  <text class="cls-1" transform="translate(43.62 6.49) rotate(.98)"><tspan x="0" y="0">G</tspan></text>
+  <text class="cls-1" transform="translate(47.72 6.56) rotate(3.22)"><tspan x="0" y="0">A</tspan></text>
+  <text class="cls-1" transform="translate(51.81 6.77) rotate(5.69)"><tspan x="0" y="0">M</tspan></text>
+  <text class="cls-1" transform="translate(57.13 7.31) rotate(7.96)"><tspan x="0" y="0">E</tspan></text>
+</svg>
