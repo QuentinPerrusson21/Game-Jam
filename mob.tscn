@@ -3,7 +3,16 @@
 [ext_resource type="Script" uid="uid://d07l5xwryn2cx" path="res://mob.gd" id="1_nokgg"]
 [ext_resource type="Texture2D" uid="uid://dp4lx31agfs5u" path="res://characters/MonstresOffi/slime-bleu-front-view.png" id="2_nokgg"]
 [ext_resource type="Texture2D" uid="uid://cqss61cll3gdr" path="res://characters/MonstresOffi/slime-bleu-death.png" id="2_p11y5"]
+[ext_resource type="Texture2D" uid="uid://d207gu3j02xft" path="res://characters/MonstresOffi/slime-bleu-side-view-right.png" id="3_s5nov"]
 [ext_resource type="Texture2D" uid="uid://d1ka3ktv8kfcg" path="res://characters/MonstresOffi/slime-bleu-attack-view-left.png" id="3_ubaqv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gfurk"]
+atlas = ExtResource("3_ubaqv")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ieysi"]
+atlas = ExtResource("3_s5nov")
+region = Rect2(0, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1qmh0"]
 atlas = ExtResource("2_p11y5")
@@ -23,6 +32,17 @@ region = Rect2(0, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1qmh0"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gfurk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ieysi")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_1qmh0")
@@ -52,7 +72,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nokgg"]
-radius = 32.01562
+radius = 22.022715
 
 [node name="SlimeGlace" type="CharacterBody2D" unique_id=769496978]
 collision_layer = 2
@@ -60,12 +80,11 @@ collision_mask = 3
 script = ExtResource("1_nokgg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=121734713]
-position = Vector2(10, -40)
-scale = Vector2(1.5, 1.5)
+texture_filter = 1
+position = Vector2(1, -2)
 sprite_frames = SubResource("SpriteFrames_1qmh0")
-animation = &"hurt"
+animation = &"run"
 autoplay = "run"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=89649084]
-position = Vector2(9, -38)
 shape = SubResource("CircleShape2D_nokgg")

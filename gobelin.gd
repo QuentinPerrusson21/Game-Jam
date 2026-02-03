@@ -2,10 +2,10 @@ extends CharacterBody2D
 
 @onready var player = get_node("/root/Game/Player")
 
-var health = 2
+var health = 4
 var is_dying = false 
 var is_attacking = false  
-var attack_range = 20.0 
+var attack_range = 40.0 
 
 func _physics_process(delta):
 	if is_dying or is_attacking:

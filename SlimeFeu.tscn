@@ -1,18 +1,90 @@
 [gd_scene format=3 uid="uid://dh65gqncrg3a0"]
 
 [ext_resource type="Script" uid="uid://bvph5dxso7al2" path="res://slime_feu.gd" id="1_3yphf"]
-[ext_resource type="Texture2D" uid="uid://d6fabl5jct43" path="res://characters/MonstresOffi/slime-rouge-front-view.png" id="1_jghwl"]
+[ext_resource type="Texture2D" uid="uid://md5wpbl53i02" path="res://characters/MonstresOffi/SlimeFeu/slime-rouge-front-view.png" id="2_x4w76"]
+[ext_resource type="Texture2D" uid="uid://dwsg8ejdwcq50" path="res://characters/MonstresOffi/SlimeFeu/slime-rouge-side-view-right.png" id="3_ebete"]
+[ext_resource type="Texture2D" uid="uid://i7c4mcws8hnm" path="res://characters/MonstresOffi/SlimeFeu/slime-rouge-attack-view-left.png" id="3_g6sr8"]
+[ext_resource type="Texture2D" uid="uid://b2jw71arnu4sm" path="res://characters/MonstresOffi/SlimeFeu/slime-rouge-death.png" id="4_iecau"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2wpny"]
+atlas = ExtResource("3_g6sr8")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lye6u"]
+atlas = ExtResource("3_ebete")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ti1k3"]
+atlas = ExtResource("4_iecau")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ebete"]
+atlas = ExtResource("2_x4w76")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iecau"]
+atlas = ExtResource("2_x4w76")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oddw4"]
+atlas = ExtResource("3_g6sr8")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2wpny"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2wpny")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lye6u")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ti1k3")
+}],
+"loop": false,
+"name": &"hurt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ebete")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iecau")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oddw4")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jghwl"]
-radius = 31.016125
+radius = 22.0
 
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=325562055]
+[node name="SlimeFeu" type="CharacterBody2D" unique_id=325562055]
+texture_filter = 1
+collision_layer = 2
+collision_mask = 3
 script = ExtResource("1_3yphf")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1650937300]
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("1_jghwl")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1187084430]
+position = Vector2(1, -2)
+sprite_frames = SubResource("SpriteFrames_2wpny")
+animation = &"idle"
+autoplay = "run"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=348330509]
-position = Vector2(-1, 2)
 shape = SubResource("CircleShape2D_jghwl")

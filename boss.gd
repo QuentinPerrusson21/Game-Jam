@@ -2,10 +2,10 @@ extends CharacterBody2D
 
 @onready var player = get_node("/root/Game/Player")
 
-var health = 2
+var health = 20
 var is_dying = false 
 var is_attacking = false  
-var attack_range = 20.0 
+var attack_range = 100.0 
 
 func _physics_process(delta):
 	if is_dying or is_attacking:
@@ -17,7 +17,7 @@ func _physics_process(delta):
 		start_attack()
 	else:
 		var direction = global_position.direction_to(player.global_position)
-		velocity = direction * 200.0
+		velocity = direction * 250.0
 		move_and_slide()
 		update_animation(direction)
 

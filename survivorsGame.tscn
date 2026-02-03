@@ -2,32 +2,21 @@
 
 [ext_resource type="PackedScene" uid="uid://c1sx7bic4uhdj" path="res://player.tscn" id="1_3yvkd"]
 [ext_resource type="PackedScene" uid="uid://y38gte5o0xf8" path="res://mob.tscn" id="3_3yvkd"]
-[ext_resource type="PackedScene" uid="uid://dq3r015sr1uql" path="res://pine_tree.tscn" id="3_8a785"]
+[ext_resource type="PackedScene" uid="uid://36huydoqnou4" path="res://MapTest.tscn" id="3_e8hy1"]
+[ext_resource type="PackedScene" uid="uid://dh65gqncrg3a0" path="res://SlimeFeu.tscn" id="4_e8hy1"]
 
 [node name="Game" type="Node2D" unique_id=1988959735]
 y_sort_enabled = true
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1825315560]
-offset_right = 1927.0
-offset_bottom = 1074.0
-
 [node name="Player" parent="." unique_id=1916796525 instance=ExtResource("1_3yvkd")]
 position = Vector2(968, 540)
 
-[node name="PineTree5" parent="." unique_id=482898201 instance=ExtResource("3_8a785")]
-position = Vector2(795, 336)
+[node name="Node2D" parent="." unique_id=92346584 instance=ExtResource("3_e8hy1")]
+z_index = -10
+position = Vector2(957, 552)
 
-[node name="PineTree6" parent="." unique_id=698549271 instance=ExtResource("3_8a785")]
-position = Vector2(729, 880)
+[node name="SlimeFeu" parent="." unique_id=325562055 instance=ExtResource("4_e8hy1")]
+position = Vector2(603, 481)
 
-[node name="PineTree7" parent="." unique_id=1758262560 instance=ExtResource("3_8a785")]
-position = Vector2(1222, 373)
-
-[node name="Mob" parent="." unique_id=769496978 instance=ExtResource("3_3yvkd")]
-position = Vector2(429, 513)
-
-[node name="Mob2" parent="." unique_id=270890475 instance=ExtResource("3_3yvkd")]
-position = Vector2(405, 919)
-
-[node name="Mob3" parent="." unique_id=878809260 instance=ExtResource("3_3yvkd")]
-position = Vector2(1529, 686)
+[node name="SlimeGlace" parent="." unique_id=769496978 instance=ExtResource("3_3yvkd")]
+position = Vector2(655, 603)

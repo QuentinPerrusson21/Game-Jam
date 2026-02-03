@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://bav0ai3ehbby2"]
+
+[ext_resource type="Script" uid="uid://p0xv6nfbfisy" path="res://goblin.gd" id="1_eyhpr"]
+[ext_resource type="Texture2D" uid="uid://dvbjvg7rksdl6" path="res://characters/MonstresOffi/ChauveSouris/bat-side-view-right.png" id="1_macxp"]
+[ext_resource type="Texture2D" uid="uid://vwh1dusrk5ah" path="res://characters/MonstresOffi/ChauveSouris/bat-attack-right.png" id="2_eyhpr"]
+[ext_resource type="Texture2D" uid="uid://dkorf3uvumg3i" path="res://characters/MonstresOffi/ChauveSouris/bat-death.png" id="3_utad2"]
+[ext_resource type="Texture2D" uid="uid://cl40j5l18bk7" path="res://characters/MonstresOffi/ChauveSouris/bat-front-view.png" id="4_3s2j4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6nebt"]
+atlas = ExtResource("1_macxp")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ixvp6"]
+atlas = ExtResource("2_eyhpr")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mq4fs"]
+atlas = ExtResource("3_utad2")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g7r1m"]
+atlas = ExtResource("4_3s2j4")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3x2od"]
+atlas = ExtResource("1_macxp")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gut4f"]
+atlas = ExtResource("2_eyhpr")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p8f7c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6nebt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ixvp6")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mq4fs")
+}],
+"loop": false,
+"name": &"hurt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g7r1m")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3x2od")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gut4f")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_macxp"]
+size = Vector2(41, 22)
+
+[node name="chauveSouris" type="CharacterBody2D" unique_id=666401213]
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("1_eyhpr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=274740850]
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_p8f7c")
+animation = &"run"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1850888654]
+position = Vector2(0.5, 1)
+shape = SubResource("RectangleShape2D_macxp")
