@@ -7,7 +7,6 @@
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kki6w"]
 texture = ExtResource("2_m82ya")
-modulate_color = Color(0.49803922, 0.96862745, 1, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pbygh"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -56,10 +55,15 @@ offset_bottom = -126.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="start button" type="TextureButton" parent="VBoxContainer" unique_id=1639499819]
+[node name="start button" type="Button" parent="VBoxContainer" unique_id=1557078729]
 layout_mode = 2
 size_flags_vertical = 10
-texture_normal = ExtResource("4_m82ya")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.71628165, 0.64109224, 0.19045639, 1)
+theme_override_fonts/font = ExtResource("3_dg1fb")
+theme_override_font_sizes/font_size = 75
+theme_override_styles/normal = SubResource("StyleBoxFlat_pbygh")
+text = "START GAME"
 
 [node name="Achievement button" type="Button" parent="VBoxContainer" unique_id=861982332]
 layout_mode = 2
