@@ -1,30 +1,27 @@
 [gd_scene format=3 uid="uid://c1sx7bic4uhdj"]
 
 [ext_resource type="Script" uid="uid://yh2ao5or56lq" path="res://player.gd" id="1_onrkg"]
-[ext_resource type="Texture2D" uid="uid://so1v2tosnocu" path="res://characters/Classe/barbare-droite-1.png" id="2_sweqy"]
-[ext_resource type="Texture2D" uid="uid://w3cq81i3ufoa" path="res://characters/Classe/barbare-droite-3.png" id="3_2hs0m"]
+[ext_resource type="Texture2D" uid="uid://oceph76lcjcc" path="res://characters/Classe/Barbare/Barbare-droite.png" id="2_2hs0m"]
+[ext_resource type="Texture2D" uid="uid://c2uoktd1oakbq" path="res://characters/Classe/Barbare/droite_1.png" id="2_sweqy"]
+[ext_resource type="Texture2D" uid="uid://bwrg341ybsw8a" path="res://characters/Classe/Barbare/Barbare-droite-1.png" id="3_1jxqw"]
 [ext_resource type="PackedScene" uid="uid://du5i8r7jdycua" path="res://gun.tscn" id="3_i3pqv"]
-[ext_resource type="Texture2D" uid="uid://j4tdahf2oec1" path="res://characters/Classe/barbare-droite-2.png" id="4_1jxqw"]
+[ext_resource type="Texture2D" uid="uid://dknqlk3whhnof" path="res://characters/Classe/Barbare/droite_2.png" id="4_1jxqw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dw050"]
-atlas = ExtResource("2_sweqy")
-region = Rect2(0, 0, 192, 192)
+atlas = ExtResource("2_2hs0m")
+region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b26j0"]
-atlas = ExtResource("3_2hs0m")
-region = Rect2(0, 0, 192, 192)
+atlas = ExtResource("3_1jxqw")
+region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n7ghd"]
 atlas = ExtResource("2_sweqy")
-region = Rect2(0, 0, 192, 192)
+region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nvl01"]
 atlas = ExtResource("4_1jxqw")
-region = Rect2(0, 0, 192, 192)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_sweqy"]
-atlas = ExtResource("3_2hs0m")
-region = Rect2(0, 0, 192, 192)
+region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ivps1"]
 animations = [{
@@ -45,9 +42,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_nvl01")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_sweqy")
 }],
 "loop": true,
 "name": &"run",
@@ -55,7 +49,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sweqy"]
-size = Vector2(32, 87)
+size = Vector2(36, 87)
 
 [node name="Player" type="CharacterBody2D" unique_id=1916796525]
 platform_floor_layers = 4294967292
@@ -63,19 +57,20 @@ script = ExtResource("1_onrkg")
 
 [node name="Chevalier" type="AnimatedSprite2D" parent="." unique_id=2099475554]
 unique_name_in_owner = true
+texture_filter = 1
 position = Vector2(0, -31)
-scale = Vector2(1.5, 1.5)
+scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_ivps1")
-animation = &"run"
-autoplay = "idle"
+animation = &"idle"
+frame_progress = 0.090435416
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1772799208]
-position = Vector2(5, -27.5)
+position = Vector2(-3, -27.5)
 shape = SubResource("RectangleShape2D_sweqy")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1722338469]
 
 [node name="Gun" parent="." unique_id=857317819 instance=ExtResource("3_i3pqv")]
-position = Vector2(1, -25)
+position = Vector2(0, -27)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1402681455]
