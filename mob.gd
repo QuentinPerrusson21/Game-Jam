@@ -35,26 +35,16 @@ func die():
 	velocity = Vector2.ZERO 
 	$CollisionShape2D.set_deferred("disabled", true)
 	
-	# Attention: tu avais mis "hurt" ici, j'ai remis "death" qui semble plus logique
-	# Si ton animation s'appelle vraiment "hurt", remets "hurt"
 	$AnimatedSprite2D.play("hurt")
 	
-	# On attend la fin de l'animation
 	await $AnimatedSprite2D.animation_finished
 	
-	# On attend un peu que le corps reste au sol (ex: 1 seconde)
 	await get_tree().create_timer(1.0).timeout
 	
-	# --- EFFET DE DISPARITION (FADE OUT) ---
-	# 1. On crée un "Tween" (un animateur de code)
 	var tween = get_tree().create_tween()
 	
-	# 2. On dit : "Change la propriété 'modulate:a' (transparence) vers 0.0 (invisible)
-	#    en prenant 1.5 seconde"
 	tween.tween_property(self, "modulate:a", 0.0, 1.5)
 	
-	# 3. On attend que le tween ait fini son travail
 	await tween.finished
 	
-	# 4. Maintenant qu'il est 100% transparent, on le supprime
 	queue_free()
