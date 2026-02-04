@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://t5qj14xq1clf" path="res://maps/CobbleCross.png" id="1_kxgwm"]
 
-[node name="Node2D" type="Node2D" unique_id=92346584]
+[node name="MapTest" type="Node2D" unique_id=92346584]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1844269528]
 texture = ExtResource("1_kxgwm")
@@ -10,13 +10,13 @@ texture = ExtResource("1_kxgwm")
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1208068520]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=169239987]
-polygon = PackedVector2Array(-509, 130, -383, 128, -385, 252, -131, 255, -127, 511, -511, 512)
+polygon = PackedVector2Array(-511, 253, -450, 253, -444, 450, -127, 448, -127, 511, -511, 512)
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=17407303]
-polygon = PackedVector2Array(-385, -134, -383, -255, -128, -256, -124, -507, -513, -507, -513, -137)
+polygon = PackedVector2Array(-447, -128, -447, -322, -131, -323, -124, -507, -513, -507, -513, -128)
 
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=932941231]
-polygon = PackedVector2Array(132, -511, 127, -255, 384, -252, 387, -128, 509, -129, 510, -509)
+polygon = PackedVector2Array(132, -511, 129, -316, 445, -321, 450, -127, 509, -129, 510, -509)
 
 [node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1758718341]
-polygon = PackedVector2Array(133, 261, 385, 256, 385, 127, 514, 129, 514, 508, 132, 512)
+polygon = PackedVector2Array(131, 448, 445, 445, 446, 257, 513, 255, 514, 508, 132, 512)

@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bpyfw0mh6bsnv" path="res://gun.gd" id="1_dk5gl"]
 [ext_resource type="Texture2D" uid="uid://dwtuujhmwmol5" path="res://pistol/weapon/crossbow1.png" id="2_dk5gl"]
+[ext_resource type="Texture2D" uid="uid://dqnlv3w3oqm1r" path="res://characters/Classe/Barbare/Bras-gauche.png" id="2_pr6yj"]
 [ext_resource type="Texture2D" uid="uid://5fmj4rbssukc" path="res://pistol/weapon/crosbow2.png" id="3_7vd5q"]
 [ext_resource type="Texture2D" uid="uid://c3kg07llwmx3r" path="res://pistol/weapon/crossbow3.png" id="4_pr6yj"]
 [ext_resource type="Texture2D" uid="uid://bnocq2ybuc078" path="res://pistol/weapon/crossbow4.png" id="5_k8v55"]
@@ -57,8 +58,14 @@ shape = SubResource("CircleShape2D_dk5gl")
 
 [node name="WeaponPivot" type="Marker2D" parent="." unique_id=705985608]
 
+[node name="Bras" type="Sprite2D" parent="WeaponPivot" unique_id=405139144]
+position = Vector2(-11.076965, 4.9230347)
+rotation = -0.90656686
+scale = Vector2(2, 2)
+texture = ExtResource("2_pr6yj")
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="WeaponPivot" unique_id=609336571]
-position = Vector2(44, -7)
+position = Vector2(34.923035, -2.0769653)
 sprite_frames = SubResource("SpriteFrames_uerdb")
 animation = &"shoot"
 frame = 1
@@ -68,12 +75,6 @@ frame_progress = 0.90080816
 unique_name_in_owner = true
 position = Vector2(18, -2)
 scale = Vector2(1.5, 1.5)
-
-[node name="Pistol" type="Sprite2D" parent="WeaponPivot" unique_id=1757140181]
-visible = false
-position = Vector2(69, -10)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("2_dk5gl")
 
 [node name="Timer" type="Timer" parent="." unique_id=365153755]
 wait_time = 0.3

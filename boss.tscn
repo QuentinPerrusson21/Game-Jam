@@ -89,7 +89,8 @@ collision_mask = 3
 script = ExtResource("1_kvofc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1306273358]
-scale = Vector2(3, 3)
+texture_filter = 1
+scale = Vector2(10, 10)
 sprite_frames = SubResource("SpriteFrames_rrd6h")
 animation = &"idle"
 

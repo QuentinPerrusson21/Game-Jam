@@ -74,7 +74,7 @@ texture_filter = 1
 position = Vector2(0, -31)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_ivps1")
-animation = &"hurt"
+animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1772799208]
 position = Vector2(-3, -27.5)
