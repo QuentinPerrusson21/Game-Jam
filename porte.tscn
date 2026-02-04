@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://bvhgqd8e5a7mx"]
+
+[ext_resource type="Script" uid="uid://ct8terumcnrca" path="res://porte.gd" id="1_h0nra"]
+[ext_resource type="Texture2D" uid="uid://b0mgq53tjkomb" path="res://decor/doorpng.png" id="2_h0nra"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h0nra"]
+size = Vector2(135, 192)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vg72e"]
+size = Vector2(135, 192)
+
+[node name="Porte" type="Area2D" unique_id=1779097725]
+script = ExtResource("1_h0nra")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=372820425]
+scale = Vector2(4, 4)
+texture = ExtResource("2_h0nra")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=91651317]
+position = Vector2(-0.5, 4)
+shape = SubResource("RectangleShape2D_h0nra")
+
+[node name="PhysicWall" type="StaticBody2D" parent="." unique_id=1899541732]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PhysicWall" unique_id=1016442448]
+position = Vector2(-0.5, 4)
+shape = SubResource("RectangleShape2D_vg72e")

@@ -1,8 +1,19 @@
 extends CharacterBody2D
 
-@onready var player = get_node("/root/Game/Player")
+# --- MODIFICATION ICI (DÉBUT) ---
+# On supprime la ligne qui cherchait "/root/Game/Player"
+var player = null
 
-var health = 5
+func _ready():
+	# On cherche le joueur dans le groupe "joueur"
+	# Cela marche peu importe où tu es (Test de scène ou Jeu complet)
+	var liste_joueurs = get_tree().get_nodes_in_group("joueur")
+	if liste_joueurs.size() > 0:
+		player = liste_joueurs[0]
+# --- MODIFICATION ICI (FIN) ---
+
+
+var health = 2
 var is_dying = false 
 var is_attacking = false  
 var attack_range = 100.0 
@@ -11,6 +22,10 @@ var attack_range = 100.0
 var damage_amount = 2 
 
 func _physics_process(delta):
+	# SÉCURITÉ : Si le joueur n'est pas trouvé (ou mort), on arrête tout pour ne pas crasher
+	if player == null:
+		return
+
 	if is_dying or is_attacking:
 		return
 
@@ -45,18 +60,12 @@ func start_attack():
 	
 	$AnimatedSprite2D.play("attack")
 	
-	# --- OPTIONNEL : DÉLAI DE FRAPPE ---
-	# Pour que le joueur ne prenne pas les dégâts instantanément au début de l'anim,
-	# on attend un tout petit peu (ex: 0.3 seconde) pour synchroniser avec le coup d'épée.
+	# Optionnel : Petit délai pour le réalisme
 	await get_tree().create_timer(0.2).timeout
 	
-	# --- C'EST ICI QUE CA SE JOUE ---
+	# On vérifie encore que le joueur est là avant de taper
 	if player and player.has_method("take_damage"):
-		# On envoie : 
-		# 1. Combien on fait mal (damage_amount)
-		# 2. D'où on frappe (global_position) pour que le joueur recule dans l'autre sens
 		player.take_damage(damage_amount, global_position) 
-	# --------------------------------
 	
 	await $AnimatedSprite2D.animation_finished
 	

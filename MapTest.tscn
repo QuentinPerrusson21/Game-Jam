@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://36huydoqnou4"]
 
+[ext_resource type="Script" uid="uid://bvb6ciqfgpdyi" path="res://map_test.gd" id="1_cvggb"]
 [ext_resource type="Texture2D" uid="uid://t5qj14xq1clf" path="res://maps/CobbleCross.png" id="1_kxgwm"]
 
 [node name="MapTest" type="Node2D" unique_id=92346584]
+script = ExtResource("1_cvggb")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1844269528]
 texture = ExtResource("1_kxgwm")

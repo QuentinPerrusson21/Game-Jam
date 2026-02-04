@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dh65gqncrg3a0" path="res://SlimeFeu.tscn" id="4_e8hy1"]
 [ext_resource type="AudioStream" uid="uid://bmsmepyk4ppdq" path="res://Music/Gameplay.ogg" id="6_mr032"]
 [ext_resource type="PackedScene" uid="uid://nsaon7wlrejg" path="res://boss.tscn" id="6_t2vfu"]
+[ext_resource type="PackedScene" uid="uid://bvhgqd8e5a7mx" path="res://porte.tscn" id="7_t2vfu"]
 
 [node name="Game" type="Node2D" unique_id=1988959735]
 y_sort_enabled = true
@@ -34,3 +35,9 @@ offset_bottom = 1079.0
 
 [node name="boss" parent="." unique_id=2024698191 instance=ExtResource("6_t2vfu")]
 position = Vector2(692, 511)
+
+[node name="Porte" parent="." unique_id=1779097725 instance=ExtResource("7_t2vfu")]
+position = Vector2(886, 111)
+
+[node name="Porte2" parent="." unique_id=1631280675 instance=ExtResource("7_t2vfu")]
+position = Vector2(1017, 113)

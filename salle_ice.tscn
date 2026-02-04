@@ -1,0 +1,97 @@
+[gd_scene format=3 uid="uid://bc4xqd665byod"]
+
+[ext_resource type="Texture2D" uid="uid://d0akogkghi4xu" path="res://maps/Ice/GrassSnowy.png" id="1_0m8by"]
+[ext_resource type="Script" uid="uid://cjltq68wulcco" path="res://salle_ice.gd" id="1_4fsy0"]
+[ext_resource type="Texture2D" uid="uid://b0mgq53tjkomb" path="res://decor/doorpng.png" id="2_cnktq"]
+[ext_resource type="PackedScene" uid="uid://dh65gqncrg3a0" path="res://SlimeFeu.tscn" id="3_ewlgg"]
+[ext_resource type="PackedScene" uid="uid://c1sx7bic4uhdj" path="res://player.tscn" id="4_ca3gy"]
+[ext_resource type="PackedScene" uid="uid://bav0ai3ehbby2" path="res://goblin.tscn" id="4_voie1"]
+[ext_resource type="PackedScene" uid="uid://y38gte5o0xf8" path="res://mob.tscn" id="5_dtjg6"]
+[ext_resource type="AudioStream" uid="uid://bmsmepyk4ppdq" path="res://Music/Gameplay.ogg" id="8_ewlgg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cnktq"]
+size = Vector2(225, 103)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ca3gy"]
+size = Vector2(797, 113)
+
+[node name="SalleBase" type="Node2D" unique_id=1488743136]
+z_index = -2
+script = ExtResource("1_4fsy0")
+mobs_a_faire_spawn = Array[PackedScene]([ExtResource("5_dtjg6"), ExtResource("3_ewlgg"), ExtResource("4_voie1")])
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1355427971]
+position = Vector2(988, 526)
+texture = ExtResource("1_0m8by")
+
+[node name="Murs" type="StaticBody2D" parent="." unique_id=2007332024]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Murs" unique_id=925575787]
+polygon = PackedVector2Array(882, 40, 884, 183, 583, 186, 586, 904, 870, 905, 874, 1036, 475, 1038, 474, 13, 880, 13)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Murs" unique_id=1531792810]
+polygon = PackedVector2Array(1106, 17, 1106, 180, 1389, 176, 1385, 898, 1085, 902, 1088, 1035, 1501, 1036, 1502, 13)
+
+[node name="Portes" type="Node2D" parent="." unique_id=1165630212]
+
+[node name="PorteHaut" type="StaticBody2D" parent="Portes" unique_id=665497190]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portes/PorteHaut" unique_id=2060832014]
+position = Vector2(993.5, 65.5)
+shape = SubResource("RectangleShape2D_cnktq")
+disabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Portes/PorteHaut" unique_id=2092677736]
+texture_filter = 1
+position = Vector2(995, 43)
+scale = Vector2(3, 3)
+texture = ExtResource("2_cnktq")
+
+[node name="PorteBas" type="StaticBody2D" parent="Portes" unique_id=907309658]
+position = Vector2(-14, 920)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portes/PorteBas" unique_id=1624474746]
+position = Vector2(993.5, 65.5)
+shape = SubResource("RectangleShape2D_cnktq")
+disabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Portes/PorteBas" unique_id=1970215279]
+texture_filter = 1
+position = Vector2(995, 43)
+scale = Vector2(3, 3)
+texture = ExtResource("2_cnktq")
+
+[node name="Player" parent="." unique_id=1916796525 groups=["joueur"] instance=ExtResource("4_ca3gy")]
+position = Vector2(985, 1165)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=984410180]
+position = Vector2(910, 365)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1372427249]
+position = Vector2(74.5, 160.5)
+shape = SubResource("RectangleShape2D_ca3gy")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=638933825]
+stream = ExtResource("8_ewlgg")
+autoplay = true
+
+[node name="SpawnPoints" type="Node2D" parent="." unique_id=449846653]
+
+[node name="Marker2D" type="Marker2D" parent="SpawnPoints" unique_id=1356460783]
+position = Vector2(1183, 338)
+
+[node name="Marker2D2" type="Marker2D" parent="SpawnPoints" unique_id=1890058624]
+position = Vector2(751, 672)
+
+[node name="Marker2D3" type="Marker2D" parent="SpawnPoints" unique_id=178115379]
+position = Vector2(713, 371)
+
+[node name="Marker2D4" type="Marker2D" parent="SpawnPoints" unique_id=805918758]
+position = Vector2(1228, 692)
+
+[node name="Marker2D5" type="Marker2D" parent="SpawnPoints" unique_id=1013359516]
+position = Vector2(992, 679)
+
+[node name="MobsContainer" type="Node2D" parent="." unique_id=1916241597]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
