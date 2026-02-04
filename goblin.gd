@@ -5,7 +5,10 @@ extends CharacterBody2D
 var health = 2
 var is_dying = false 
 var is_attacking = false  
-var attack_range = 20.0 
+var attack_range = 100.0 
+
+# La force de frappe du boss
+var damage_amount = 2 
 
 func _physics_process(delta):
 	if is_dying or is_attacking:
@@ -41,6 +44,19 @@ func start_attack():
 	velocity = Vector2.ZERO 
 	
 	$AnimatedSprite2D.play("attack")
+	
+	# --- OPTIONNEL : DÉLAI DE FRAPPE ---
+	# Pour que le joueur ne prenne pas les dégâts instantanément au début de l'anim,
+	# on attend un tout petit peu (ex: 0.3 seconde) pour synchroniser avec le coup d'épée.
+	await get_tree().create_timer(0.2).timeout
+	
+	# --- C'EST ICI QUE CA SE JOUE ---
+	if player and player.has_method("take_damage"):
+		# On envoie : 
+		# 1. Combien on fait mal (damage_amount)
+		# 2. D'où on frappe (global_position) pour que le joueur recule dans l'autre sens
+		player.take_damage(damage_amount, global_position) 
+	# --------------------------------
 	
 	await $AnimatedSprite2D.animation_finished
 	

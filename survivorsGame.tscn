@@ -4,7 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://y38gte5o0xf8" path="res://mob.tscn" id="3_3yvkd"]
 [ext_resource type="PackedScene" uid="uid://36huydoqnou4" path="res://MapTest.tscn" id="3_e8hy1"]
 [ext_resource type="PackedScene" uid="uid://dh65gqncrg3a0" path="res://SlimeFeu.tscn" id="4_e8hy1"]
-[ext_resource type="PackedScene" uid="uid://nsaon7wlrejg" path="res://boss.tscn" id="6_t2vfu"]
+[ext_resource type="PackedScene" uid="uid://dxq7211f4rfs7" path="res://gobelin.tscn" id="5_8a785"]
+[ext_resource type="AudioStream" uid="uid://bmsmepyk4ppdq" path="res://Music/Gameplay.ogg" id="6_mr032"]
 
 [node name="Game" type="Node2D" unique_id=1988959735]
 y_sort_enabled = true
@@ -22,5 +23,13 @@ position = Vector2(603, 481)
 [node name="SlimeGlace" parent="." unique_id=769496978 instance=ExtResource("3_3yvkd")]
 position = Vector2(655, 603)
 
-[node name="boss" parent="." unique_id=2024698191 instance=ExtResource("6_t2vfu")]
-position = Vector2(714, 514)
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=414321410]
+position = Vector2(968, 546)
+stream = ExtResource("6_mr032")
+autoplay = true
+
+[node name="Gobelin" parent="." unique_id=1315586102 instance=ExtResource("5_8a785")]
+position = Vector2(821, 465)
+
+[node name="Gobelin2" parent="." unique_id=684732863 instance=ExtResource("5_8a785")]
+position = Vector2(939, 400)

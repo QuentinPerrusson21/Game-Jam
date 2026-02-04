@@ -7,7 +7,7 @@ var is_dying = false
 var is_attacking = false  
 var attack_range = 100.0 
 
-# NOUVEAU : La force de frappe du boss
+# La force de frappe du boss
 var damage_amount = 2 
 
 func _physics_process(delta):
@@ -45,9 +45,18 @@ func start_attack():
 	
 	$AnimatedSprite2D.play("attack")
 	
-	# MODIFICATION ICI : On envoie le montant des dégâts
+	# --- OPTIONNEL : DÉLAI DE FRAPPE ---
+	# Pour que le joueur ne prenne pas les dégâts instantanément au début de l'anim,
+	# on attend un tout petit peu (ex: 0.3 seconde) pour synchroniser avec le coup d'épée.
+	await get_tree().create_timer(0.2).timeout
+	
+	# --- C'EST ICI QUE CA SE JOUE ---
 	if player and player.has_method("take_damage"):
-		player.take_damage(damage_amount) # Le boss inflige 3 dégâts
+		# On envoie : 
+		# 1. Combien on fait mal (damage_amount)
+		# 2. D'où on frappe (global_position) pour que le joueur recule dans l'autre sens
+		player.take_damage(damage_amount, global_position) 
+	# --------------------------------
 	
 	await $AnimatedSprite2D.animation_finished
 	
