@@ -42,12 +42,15 @@ func start_attack():
 	
 	$AnimatedSprite2D.play("attack")
 	
+	if player and player.has_method("take_damage"):
+		player.take_damage()
+	# -----------------
+	
 	await $AnimatedSprite2D.animation_finished
 	
 	await get_tree().create_timer(0.5).timeout
 	
 	is_attacking = false
-
 func take_damage():
 	health -= 1
 	if health <= 0 and not is_dying: 
