@@ -28,3 +28,7 @@ func _on_exit_pressed() -> void:
 func _on_fermer_option_pressed() -> void:
 	main_button.visible = true
 	options.visible = false
+
+
+func _on_achievements_pressed() -> void:
+	get_tree().change_scene_to_file("res://hud.tscn")
