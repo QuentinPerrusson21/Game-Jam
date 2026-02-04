@@ -83,7 +83,11 @@ shape = SubResource("RectangleShape2D_sweqy")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1722338469]
 
-[node name="Gun" parent="." unique_id=857317819 instance=ExtResource("3_i3pqv")]
-position = Vector2(0, -27)
-
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1402681455]
+
+[node name="PorteArmes" type="Node2D" parent="." unique_id=1373361418]
+z_index = 5
+position = Vector2(-4, -28)
+
+[node name="Gun" parent="PorteArmes" unique_id=857317819 instance=ExtResource("3_i3pqv")]
+position = Vector2(3, 2)
