@@ -7,6 +7,9 @@ var is_dying = false
 var is_attacking = false  
 var attack_range = 100.0 
 
+# NOUVEAU : La force de frappe du boss
+var damage_amount = 2 
+
 func _physics_process(delta):
 	if is_dying or is_attacking:
 		return
@@ -41,6 +44,10 @@ func start_attack():
 	velocity = Vector2.ZERO 
 	
 	$AnimatedSprite2D.play("attack")
+	
+	# MODIFICATION ICI : On envoie le montant des dégâts
+	if player and player.has_method("take_damage"):
+		player.take_damage(damage_amount) # Le boss inflige 3 dégâts
 	
 	await $AnimatedSprite2D.animation_finished
 	

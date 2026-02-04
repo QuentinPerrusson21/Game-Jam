@@ -26,13 +26,14 @@ func _physics_process(delta):
 		%Chevalier.play("idle")
 
 # 3. Cette fonction sera appelée par les ennemis (ex: body.take_damage())
-func take_damage():
-	# Si on est déjà mort, on ne peut pas mourir deux fois
+# Dans le script du PLAYER
+# Dans le script du PLAYER
+func take_damage(amount = 1): # Le "= 1" est la valeur par défaut
 	if is_dead:
 		return
 		
-	health -= 1
-	print("Vie restante : ", health) # Utile pour tester
+	health -= amount # On enlève le montant reçu
+	print("Aie ! Vie restante : ", health)
 	
 	if health <= 0:
 		die()
@@ -40,18 +41,19 @@ func take_damage():
 # 4. La logique de mort
 func die():
 	is_dead = true
-	velocity = Vector2.ZERO # On arrête le personnage net
-	
-	# On lance l'animation "hurt" comme tu l'as demandé
-	%Chevalier.play("hurt")
-	
-	# On désactive la collision pour ne plus être touché
+	velocity = Vector2.ZERO
 	$CollisionShape2D.set_deferred("disabled", true)
 	
-	# On attend la fin de l'animation
-	await %Chevalier.animation_finished
+	# --- MODIFICATION ICI ---
+	# On cherche l'arme (Vérifie bien que le nom est "Pistolet" ou utilise %Pistolet)
+	var arme = get_node_or_null("Gun") 
 	
-	# --- FIN DE PARTIE ---
-	# Ici, tu peux recharger la scène pour recommencer
-	print("Game Over")
+	if arme != null:
+		arme.queue_free() # Cette commande supprime l'objet instantanément
+	# ------------------------
+	
+	%Chevalier.play("hurt")
+	
+	await %Chevalier.animation_finished
+	await get_tree().create_timer(2.0).timeout
 	get_tree().reload_current_scene()

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://qmqpm6asge1i"
-path="res://.godot/imported/square_upper_leg.png-e1f848aab7dd8805f40f881c2160a53d.ctex"
+uid="uid://o8jeqfloeelx"
+path="res://.godot/imported/Mort-chevalier.png-08f3ff9ae79c6bfac0920547ce6d35e7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://characters/happy_boo/square_upper_leg.png"
-dest_files=["res://.godot/imported/square_upper_leg.png-e1f848aab7dd8805f40f881c2160a53d.ctex"]
+source_file="res://characters/Classe/Barbare/Mort-chevalier.png"
+dest_files=["res://.godot/imported/Mort-chevalier.png-08f3ff9ae79c6bfac0920547ce6d35e7.ctex"]
 
 [params]
 
