@@ -4,7 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://y38gte5o0xf8" path="res://mob.tscn" id="3_3yvkd"]
 [ext_resource type="PackedScene" uid="uid://36huydoqnou4" path="res://MapTest.tscn" id="3_e8hy1"]
 [ext_resource type="PackedScene" uid="uid://dh65gqncrg3a0" path="res://SlimeFeu.tscn" id="4_e8hy1"]
-[ext_resource type="PackedScene" uid="uid://dxq7211f4rfs7" path="res://gobelin.tscn" id="5_8a785"]
 [ext_resource type="AudioStream" uid="uid://bmsmepyk4ppdq" path="res://Music/Gameplay.ogg" id="6_mr032"]
 
 [node name="Game" type="Node2D" unique_id=1988959735]
@@ -28,8 +27,6 @@ position = Vector2(968, 546)
 stream = ExtResource("6_mr032")
 autoplay = true
 
-[node name="Gobelin" parent="." unique_id=1315586102 instance=ExtResource("5_8a785")]
-position = Vector2(821, 465)
-
-[node name="Gobelin2" parent="." unique_id=684732863 instance=ExtResource("5_8a785")]
-position = Vector2(939, 400)
+[node name="Panel" type="Panel" parent="." unique_id=804458289]
+offset_right = 1928.0
+offset_bottom = 1079.0
