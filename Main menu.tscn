@@ -149,6 +149,18 @@ theme_override_fonts/font = ExtResource("9_pbygh")
 theme_override_font_sizes/font_size = 100
 text = "OPTIONS"
 
+[node name="Label2" type="Label" parent="Options" unique_id=1884677135]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 228.0
+offset_bottom = 316.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("9_pbygh")
+theme_override_font_sizes/font_size = 72
+text = "VOLUME"
+horizontal_alignment = 1
+
 [node name="Fermer" type="Button" parent="Options" unique_id=1409438555]
 layout_mode = 0
 offset_left = 590.0
@@ -164,9 +176,9 @@ icon_alignment = 1
 [node name="audio control" type="HSlider" parent="Options" unique_id=946499345]
 layout_mode = 0
 offset_left = 594.0
-offset_top = 244.0
+offset_top = 327.0
 offset_right = 1141.0
-offset_bottom = 321.0
+offset_bottom = 404.0
 theme_override_styles/slider = SubResource("StyleBoxLine_wdf14")
 theme_override_styles/grabber_area = SubResource("StyleBoxLine_f7ddt")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_i3f74")
