@@ -25,6 +25,11 @@ region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ivps1"]
 animations = [{
+"frames": [],
+"loop": true,
+"name": &"hurt",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_dw050")
@@ -61,8 +66,7 @@ texture_filter = 1
 position = Vector2(0, -31)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_ivps1")
-animation = &"idle"
-frame_progress = 0.090435416
+animation = &"hurt"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1772799208]
 position = Vector2(-3, -27.5)

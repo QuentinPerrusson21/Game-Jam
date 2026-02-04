@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://y38gte5o0xf8" path="res://mob.tscn" id="3_3yvkd"]
 [ext_resource type="PackedScene" uid="uid://36huydoqnou4" path="res://MapTest.tscn" id="3_e8hy1"]
 [ext_resource type="PackedScene" uid="uid://dh65gqncrg3a0" path="res://SlimeFeu.tscn" id="4_e8hy1"]
+[ext_resource type="PackedScene" uid="uid://nsaon7wlrejg" path="res://boss.tscn" id="6_t2vfu"]
 
 [node name="Game" type="Node2D" unique_id=1988959735]
 y_sort_enabled = true
@@ -20,3 +21,6 @@ position = Vector2(603, 481)
 
 [node name="SlimeGlace" parent="." unique_id=769496978 instance=ExtResource("3_3yvkd")]
 position = Vector2(655, 603)
+
+[node name="boss" parent="." unique_id=2024698191 instance=ExtResource("6_t2vfu")]
+position = Vector2(714, 514)
