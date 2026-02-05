@@ -14,6 +14,23 @@ var salle_terminee = false
 var mobs_tues = 0
 
 func _ready():
+	# 1. On charge la scène que le joueur a choisie dans le menu
+	var scene_a_charger = load(GameData.personnage_choisi_path)
+	
+	# 2. On crée une instance (une copie réelle) du perso
+	var nouveau_joueur = scene_a_charger.instantiate()
+	
+	# 3. On le place au bon endroit (sur le Marker2D)
+	# (Assure-toi d'avoir créé le noeud "SpawnPlayer")
+	nouveau_joueur.position = $SpawnPlayer.position
+	
+	# 4. On l'ajoute à la scène
+	add_child(nouveau_joueur)
+	
+	# --- IMPORTANT : Mise à jour pour les mobs ---
+	# Comme le joueur vient d'arriver, il faut s'assurer 
+	# que les mobs savent qui chasser s'ils sont déjà là.
+	# (Normalement ton groupe "joueur" gère ça, mais c'est bon à savoir)
 	# Sécurité : On s'assure que les murs sont désactivés (Portes Ouvertes) au début
 	ouvrir_portes()
 

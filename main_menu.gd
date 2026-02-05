@@ -14,7 +14,7 @@ func _ready():
 	options.visible = false
 
 func _on_start_pressed() -> void:
-	get_tree().change_scene_to_file("res://salle_ice.tscn")
+	get_tree().change_scene_to_file("res://Selection personnages.tscn")
 
 func _on_option_pressed() -> void:
 	main_button.visible = false

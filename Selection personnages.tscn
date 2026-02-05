@@ -71,7 +71,11 @@ bg_color = Color(0, 0, 0, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kombe"]
 bg_color = Color(0.9254902, 0.92941177, 0.7647059, 1)
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_airmy"]
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p0vfm"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hf8dh"]
 
 [node name="Control" type="Control" unique_id=63394500]
 layout_mode = 3
@@ -279,6 +283,14 @@ texture = ExtResource("12_v7dqa")
 position = Vector2(306, 378)
 scale = Vector2(1.49, 1.49)
 texture = ExtResource("13_0jo8m")
+
+[node name="BoutonBarbare" type="Button" parent="Carte4/Carte Knight" unique_id=837632521]
+layout_mode = 0
+offset_left = 11.666626
+offset_top = 19.166664
+offset_right = 391.66663
+offset_bottom = 723.3333
+theme_override_styles/normal = SubResource("StyleBoxTexture_airmy")
 
 [node name="Carte Mage" type="Panel" parent="Carte4" unique_id=797345786]
 layout_mode = 1
@@ -686,7 +698,12 @@ position = Vector2(305, 388)
 scale = Vector2(1.545, 1.545)
 texture = ExtResource("29_i756s")
 
-[node name="Button" type="Button" parent="." unique_id=2131586321]
+[node name="BoutonChevalier" type="Button" parent="Carte4/Carte Archer" unique_id=1468339959]
 layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
+offset_right = 395.0
+offset_bottom = 706.6666
+theme_override_styles/normal = SubResource("StyleBoxTexture_hf8dh")
+
+[connection signal="pressed" from="Carte4/Carte Knight/BoutonBarbare" to="." method="_on_bouton_barbare_pressed"]
+[connection signal="pressed" from="Carte4/Carte Mage/BoutonMage" to="." method="_on_bouton_mage_pressed"]
+[connection signal="pressed" from="Carte4/Carte Archer/BoutonChevalier" to="." method="_on_bouton_chevalier_pressed"]
