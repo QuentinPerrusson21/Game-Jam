@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://rhs82f57c5u3"]
 
+[ext_resource type="Script" uid="uid://br85fptctepol" path="res://selection_personnages.gd" id="1_airmy"]
 [ext_resource type="Texture2D" uid="uid://tpsopy736g02" path="res://Background/Main_title_bg_blur.png" id="1_y1g42"]
 [ext_resource type="Texture2D" uid="uid://bgsthnjlntdpi" path="res://Baniere/bg baniere perso.png" id="2_2e4a8"]
 [ext_resource type="Texture2D" uid="uid://covclslyowlc2" path="res://characters/Classe/Barbare.png" id="2_wutap"]
@@ -70,6 +71,8 @@ bg_color = Color(0, 0, 0, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kombe"]
 bg_color = Color(0.9254902, 0.92941177, 0.7647059, 1)
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p0vfm"]
+
 [node name="Control" type="Control" unique_id=63394500]
 layout_mode = 3
 anchors_preset = 15
@@ -77,6 +80,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_airmy")
 
 [node name="Bg blur" type="Panel" parent="." unique_id=1191010503]
 layout_mode = 1
@@ -477,6 +481,14 @@ texture = ExtResource("20_aq48t")
 position = Vector2(-818, 294)
 texture = ExtResource("3_2e4a8")
 
+[node name="BoutonMage" type="Button" parent="Carte4/Carte Mage" unique_id=426568819]
+layout_mode = 0
+offset_left = 10.833336
+offset_top = 17.5
+offset_right = 392.5
+offset_bottom = 721.6666
+theme_override_styles/normal = SubResource("StyleBoxTexture_p0vfm")
+
 [node name="Carte Archer" type="Panel" parent="Carte4" unique_id=1705886922]
 layout_mode = 1
 anchors_preset = -1
@@ -673,3 +685,8 @@ texture = ExtResource("28_1bb84")
 position = Vector2(305, 388)
 scale = Vector2(1.545, 1.545)
 texture = ExtResource("29_i756s")
+
+[node name="Button" type="Button" parent="." unique_id=2131586321]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
