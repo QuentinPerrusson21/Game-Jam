@@ -4,9 +4,19 @@
 [ext_resource type="Texture2D" uid="uid://dwtuujhmwmol5" path="res://pistol/weapon/crossbow1.png" id="2_dk5gl"]
 [ext_resource type="PackedScene" uid="uid://b5ixw66oaedki" path="res://bullet.tscn" id="2_k8v55"]
 [ext_resource type="Texture2D" uid="uid://5fmj4rbssukc" path="res://pistol/weapon/crosbow2.png" id="3_7vd5q"]
+[ext_resource type="AudioStream" uid="uid://hyebcct4r7cn" path="res://Music/Arbalete_tir_1.ogg" id="3_ffpt7"]
+[ext_resource type="AudioStream" uid="uid://c0e064a564wuo" path="res://Music/Arbalete_tir_4.ogg" id="4_pact7"]
 [ext_resource type="Texture2D" uid="uid://c3kg07llwmx3r" path="res://pistol/weapon/crossbow3.png" id="4_pr6yj"]
 [ext_resource type="Texture2D" uid="uid://bnocq2ybuc078" path="res://pistol/weapon/crossbow4.png" id="5_k8v55"]
+[ext_resource type="AudioStream" uid="uid://bd3rm6gno245b" path="res://Music/Arbalete_tir_7.ogg" id="5_uerdb"]
 [ext_resource type="Texture2D" uid="uid://dy8uxkal12ymm" path="res://characters/Classe/Archer/bras.png" id="7_k8v55"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_nsm00"]
+random_pitch = 1.0656005
+streams_count = 3
+stream_0/stream = ExtResource("3_ffpt7")
+stream_1/stream = ExtResource("4_pact7")
+stream_2/stream = ExtResource("5_uerdb")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dk5gl"]
 radius = 411.12164
@@ -54,6 +64,7 @@ collision_mask = 2
 script = ExtResource("1_pr6yj")
 projectile_scene = ExtResource("2_k8v55")
 cooldown = 0.2
+son_de_tir = SubResource("AudioStreamRandomizer_nsm00")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1740472943]
 position = Vector2(-1, -1)
@@ -83,5 +94,7 @@ scale = Vector2(1.5, 1.5)
 [node name="Timer" type="Timer" parent="." unique_id=365153755]
 wait_time = 0.3
 autostart = true
+
+[node name="SfxTir" type="AudioStreamPlayer2D" parent="." unique_id=133615108]
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

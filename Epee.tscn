@@ -1,8 +1,19 @@
 [gd_scene format=3 uid="uid://b7gpctxuiu3wq"]
 
 [ext_resource type="Script" uid="uid://daolyw3wuh2jv" path="res://arme_melee.gd" id="1_mxfsv"]
+[ext_resource type="AudioStream" uid="uid://dbddnve6acnod" path="res://Music/sword_knight_1.ogg" id="2_gskwx"]
 [ext_resource type="Texture2D" uid="uid://cdffhb1ha8yj5" path="res://pistol/weapon/epee.png" id="2_mxfsv"]
 [ext_resource type="Texture2D" uid="uid://dqnlv3w3oqm1r" path="res://characters/Classe/Barbare/Bras-gauche.png" id="2_viis3"]
+[ext_resource type="AudioStream" uid="uid://c1tmdf4hcpgsh" path="res://Music/sword_knight_2.ogg" id="3_no80k"]
+[ext_resource type="AudioStream" uid="uid://bycl6qartpj40" path="res://Music/sword_knight_4.ogg" id="4_wh34v"]
+[ext_resource type="AudioStream" uid="uid://d1kls5yxtpswu" path="res://Music/sword_knight_5.ogg" id="5_u3ae6"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_toaoc"]
+streams_count = 4
+stream_0/stream = ExtResource("2_gskwx")
+stream_1/stream = ExtResource("3_no80k")
+stream_2/stream = ExtResource("4_wh34v")
+stream_3/stream = ExtResource("5_u3ae6")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mxfsv"]
 radius = 271.00183
@@ -25,6 +36,7 @@ animations = [{
 [node name="Epee" type="Area2D" unique_id=932524154]
 collision_mask = 3855
 script = ExtResource("1_mxfsv")
+son_impact = SubResource("AudioStreamRandomizer_toaoc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1396277615]
 shape = SubResource("CircleShape2D_mxfsv")
@@ -47,5 +59,7 @@ texture = ExtResource("2_viis3")
 [node name="Timer" type="Timer" parent="." unique_id=1984544931]
 wait_time = 0.5
 autostart = true
+
+[node name="SfxImpact" type="AudioStreamPlayer2D" parent="." unique_id=914544595]
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

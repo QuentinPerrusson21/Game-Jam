@@ -1,4 +1,18 @@
 [gd_resource type="AudioStreamRandomizer" format=3 uid="uid://2ln00fyun116"]
 
+[ext_resource type="AudioStream" uid="uid://hyebcct4r7cn" path="res://Music/Arbalete_tir_1.ogg" id="1_n7v0b"]
+[ext_resource type="AudioStream" uid="uid://d11g7bhoigevu" path="res://Music/Arbalete_tir_2.ogg" id="2_ds6q4"]
+[ext_resource type="AudioStream" uid="uid://bp0c7r08l0fs1" path="res://Music/Arbalete_tir_3.ogg" id="3_w85w2"]
+[ext_resource type="AudioStream" uid="uid://c0e064a564wuo" path="res://Music/Arbalete_tir_4.ogg" id="4_lcbxc"]
+[ext_resource type="AudioStream" uid="uid://bhtpxs063lpve" path="res://Music/Arbalete_tir_5.ogg" id="5_snk0f"]
+[ext_resource type="AudioStream" uid="uid://bd3rm6gno245b" path="res://Music/Arbalete_tir_7.ogg" id="6_euaef"]
+
 [resource]
-streams_count = 1
+random_pitch = 1.0656005
+streams_count = 6
+stream_0/stream = ExtResource("1_n7v0b")
+stream_1/stream = ExtResource("2_ds6q4")
+stream_2/stream = ExtResource("3_w85w2")
+stream_3/stream = ExtResource("4_lcbxc")
+stream_4/stream = ExtResource("5_snk0f")
+stream_5/stream = ExtResource("6_euaef")

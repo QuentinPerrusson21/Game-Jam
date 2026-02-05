@@ -1,28 +1,33 @@
 extends CharacterBody2D
 
-# --- 1. RÉGLAGES (Ajuste ici pour ton Goblin) ---
-var health = 3            # Vie plus faible pour un Goblin
-var move_speed = 180.0    # Un peu moins rapide que le Boss (250)
-var attack_range = 60.0   # Le Goblin doit être très près pour taper (300 c'est trop loin pour lui)
-var damage_amount = 1     # Dégâts du Goblin
+# --- AJOUTS POUR LE SON (Glisse tes fichiers .tres ici dans l'inspecteur) ---
+@export var son_pas : AudioStream
+@export var son_attaque : AudioStream
 
-# --- 2. VARIABLES TECHNIQUES (Ne pas toucher) ---
+# On supprime la ligne qui cherchait "/root/Game/Player"
 var player = null
-var is_dying = false 
-var is_attacking = false  
-
-# --- 3. NOUVEAU : Variables pour le Recul ---
-var recul_vector = Vector2.ZERO
-var recul_friction = 15.0 
 
 func _ready():
-	# On garde TA méthode qui marche pour trouver le joueur
+	# 1. On cherche le joueur
 	var liste_joueurs = get_tree().get_nodes_in_group("joueur")
 	if liste_joueurs.size() > 0:
 		player = liste_joueurs[0]
+	
+	# 2. CONNEXION AUTOMATIQUE POUR LES PAS (Code pur)
+	# On dit au code : "Quand l'image change, appelle la fonction _on_frame_changed"
+	if not $AnimatedSprite2D.frame_changed.is_connected(_on_frame_changed):
+		$AnimatedSprite2D.frame_changed.connect(_on_frame_changed)
+
+var health = 6
+var is_dying = false 
+var is_attacking = false  
+var attack_range = 30.0 
+
+# La force de frappe du boss
+var damage_amount = 2 
 
 func _physics_process(delta):
-	# 1. TA SÉCURITÉ (Si le joueur est introuvable)
+	# Si le joueur est introuvable, on réessaie de le trouver
 	if player == null:
 		var liste_joueurs = get_tree().get_nodes_in_group("joueur")
 		if liste_joueurs.size() > 0:
@@ -31,29 +36,17 @@ func _physics_process(delta):
 			$AnimatedSprite2D.play("idle")
 			return
 
-	if is_dying: 
+	# Si le boss est mort ou attaque, on ne bouge pas
+	if is_dying or is_attacking:
 		return
 
-	# --- 2. NOUVEAU : LE RECUL (S'insère ici) ---
-	# Si le Goblin est poussé, il recule au lieu d'avancer
-	if recul_vector.length() > 0:
-		recul_vector = recul_vector.lerp(Vector2.ZERO, recul_friction * delta)
-		velocity = recul_vector
-		move_and_slide()
-		return # On arrête ici pour qu'il ne puisse pas attaquer en reculant
-
-	# Si on attaque, on ne bouge pas
-	if is_attacking:
-		return
-
-	# --- 3. TON MOUVEMENT (Inchangé, sauf variables vitesse/range) ---
 	var dist_to_player = global_position.distance_to(player.global_position)
 
 	if dist_to_player < attack_range:
 		start_attack()
 	else:
 		var direction = global_position.direction_to(player.global_position)
-		velocity = direction * move_speed # Utilise la variable move_speed
+		velocity = direction * 250.0
 		move_and_slide()
 		update_animation(direction)
 
@@ -78,35 +71,47 @@ func start_attack():
 	
 	$AnimatedSprite2D.play("attack")
 	
+	# --- SON D'ATTAQUE (Code pur) ---
+	if son_attaque and has_node("SfxAttaque"):
+		$SfxAttaque.stream = son_attaque
+		$SfxAttaque.play()
+	# --------------------------------
+	
 	await get_tree().create_timer(0.2).timeout
 	
-	# J'ai gardé TA ligne exacte (avec les 2 arguments) car elle marche chez toi
+	# On vérifie encore que le joueur est là avant de taper
 	if player and player.has_method("take_damage"):
-		# Vérification de distance de sécurité pour ne pas taper de trop loin
-		if global_position.distance_to(player.global_position) <= attack_range + 20:
-			player.take_damage(damage_amount, global_position) 
+		player.take_damage(damage_amount, global_position) 
 	
 	await $AnimatedSprite2D.animation_finished
+	
 	await get_tree().create_timer(0.5).timeout
+	
 	is_attacking = false
 
-# --- 4. MODIFIÉ : Fonction pour prendre des dégâts + Flash ---
+# --- NOUVELLE FONCTION POUR LES PAS (Gérée automatiquement par le _ready) ---
+func _on_frame_changed():
+	# Si on court
+	if $AnimatedSprite2D.animation == "run":
+		# REMPLACE 1 et 4 par les images où le pied touche le sol dans TON animation !
+		if $AnimatedSprite2D.frame == 1 or $AnimatedSprite2D.frame == 4:
+			if son_pas and has_node("SfxPas"):
+				$SfxPas.stream = son_pas
+				$SfxPas.play()
+
+# --- RESTE DU CODE (Dégâts et Mort) ---
 func take_damage(amount = 1):
 	health -= amount
 	
-	# Effet Flash Blanc
-	modulate = Color(10, 10, 10) 
+	modulate = Color(10, 10, 10)
 	var tween = create_tween()
 	tween.tween_property(self, "modulate", Color(1, 1, 1), 0.1)
-	
+
 	if health <= 0 and not is_dying: 
 		die()
 
-# --- 5. NOUVEAU : Fonction Recul (Appelée par l'épée) ---
-func prendre_recul(source_position, force):
-	var direction = (global_position - source_position).normalized()
-	recul_vector = direction * force
-	is_attacking = false # Le coup interrompt l'attaque !
+func prendre_recul(source, force):
+	pass
 
 func die():
 	is_dying = true 
@@ -116,8 +121,8 @@ func die():
 	$AnimatedSprite2D.play("hurt") 
 	
 	await $AnimatedSprite2D.animation_finished
+	await get_tree().create_timer(1.0).timeout
 	
-	# Ton effet de disparition
 	var tween = get_tree().create_tween()
 	tween.tween_property(self, "modulate:a", 0.0, 1.5)
 	await tween.finished

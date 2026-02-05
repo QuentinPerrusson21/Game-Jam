@@ -1,5 +1,9 @@
 extends CharacterBody2D
 
+# --- VARIABLES SONS (Glisse tes .tres ici dans l'inspecteur) ---
+@export var son_pas : AudioStream
+@export var son_douleur : AudioStream
+
 # --- VARIABLES DU JOUEUR ---
 var health = 5
 var is_dead = false 
@@ -8,15 +12,18 @@ var is_dead = false
 var knockback_vector = Vector2.ZERO
 var knockback_friction = 2000.0
 
-# --- VARIABLES POUR LES ARMES (NOUVEAU) ---
-@onready var porte_armes = $PorteArmes # Assure-toi d'avoir créé le noeud "PorteArmes" sur ton Player
+# --- VARIABLES POUR LES ARMES ---
+@onready var porte_armes = $PorteArmes 
 var index_arme_actuelle = 0
 
 func _ready():
 	add_to_group("joueur")
-	
-	# Au démarrage, on initialise les armes (cache celles en trop)
 	initialiser_armes()
+	
+	# --- CONNEXION AUTOMATIQUE DES PAS ---
+	# On dit : "Quand l'image du Chevalier change, lance la fonction _on_frame_changed"
+	if %Chevalier:
+		%Chevalier.frame_changed.connect(_on_frame_changed)
 
 # C'EST ICI QU'ON ECOUTE LA TOUCHE TAB
 func _input(event):
@@ -42,48 +49,49 @@ func _physics_process(delta):
 		%Chevalier.flip_h = true
 
 	if velocity.length() > 0.0:
-		%Chevalier.play("run")
+		# IMPORTANT : Si l'anim n'est pas déjà "run", on la lance
+		if %Chevalier.animation != "run":
+			%Chevalier.play("run")
 	else: 
 		%Chevalier.play("idle")
 
-# --- GESTION DES ARMES (NOUVEAU) ---
+# --- GESTION DES SONS DE PAS ---
+func _on_frame_changed():
+	# Si le joueur court
+	if %Chevalier.animation == "run":
+		# --- REGLE ICI LES NUMEROS D'IMAGES ---
+		# Regarde dans tes SpriteFrames à quel moment le pied touche le sol.
+		# Remplace 1 et 4 par TES chiffres (0, 1, 2, 3...)
+		if %Chevalier.frame == 1 or %Chevalier.frame == 4:
+			if son_pas and has_node("SfxPas"):
+				$SfxPas.stream = son_pas
+				$SfxPas.play()
+
+# --- GESTION DES ARMES ---
 
 func initialiser_armes():
-	# Si pas d'armes, on ne fait rien
 	if not porte_armes or porte_armes.get_child_count() == 0:
 		return
-		
 	var armes = porte_armes.get_children()
 	for i in range(armes.size()):
-		# On active seulement la première arme (index 0)
-		if i == 0:
-			activer_arme(armes[i])
-		else:
-			desactiver_arme(armes[i])
+		if i == 0: activer_arme(armes[i])
+		else: desactiver_arme(armes[i])
 
 func changer_arme_suivante():
 	var armes = porte_armes.get_children()
 	if armes.size() == 0: return
-	
-	# 1. On éteint l'arme actuelle
 	desactiver_arme(armes[index_arme_actuelle])
-	
-	# 2. On passe à la suivante
 	index_arme_actuelle += 1
 	if index_arme_actuelle >= armes.size():
-		index_arme_actuelle = 0 # Retour au début si on dépasse
-	
-	# 3. On allume la nouvelle
+		index_arme_actuelle = 0 
 	activer_arme(armes[index_arme_actuelle])
 
 func activer_arme(arme):
 	arme.visible = true
-	# IMPORTANT : On réveille le script de l'arme
 	arme.process_mode = Node.PROCESS_MODE_INHERIT
 
 func desactiver_arme(arme):
 	arme.visible = false
-	# IMPORTANT : On "congèle" l'arme pour qu'elle ne tire pas en cachette
 	arme.process_mode = Node.PROCESS_MODE_DISABLED
 
 # --- GESTION DES DEGATS ---
@@ -92,6 +100,12 @@ func take_damage(amount = 1, source_position = Vector2.ZERO):
 	if is_dead: return
 		
 	health -= amount 
+	
+	# --- SON DE DOULEUR ---
+	if son_douleur and has_node("SfxDouleur"):
+		$SfxDouleur.stream = son_douleur
+		$SfxDouleur.play()
+	# ----------------------
 	
 	if source_position != Vector2.ZERO:
 		var direction_recul = (global_position - source_position).normalized()
@@ -108,12 +122,8 @@ func die():
 	is_dead = true
 	velocity = Vector2.ZERO
 	$CollisionShape2D.set_deferred("disabled", true)
-	
-	# On supprime le porte-armes à la mort
 	if porte_armes: porte_armes.queue_free() 
-	
 	%Chevalier.play("hurt")
-	
 	await %Chevalier.animation_finished
 	await get_tree().create_timer(2.0).timeout
 	get_tree().reload_current_scene()

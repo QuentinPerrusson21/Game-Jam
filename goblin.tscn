@@ -87,3 +87,5 @@ animation = &"attack"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1850888654]
 position = Vector2(1.5, 0.5)
 shape = SubResource("RectangleShape2D_macxp")
+
+[node name="SfxMort" type="AudioStreamPlayer2D" parent="." unique_id=413995560]

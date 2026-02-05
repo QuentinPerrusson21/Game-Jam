@@ -2,12 +2,30 @@
 
 [ext_resource type="Script" uid="uid://yh2ao5or56lq" path="res://player.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://vkepsdmd680l" path="res://characters/Classe/Barbare/chevalier-mort.png" id="2_2hs0m"]
+[ext_resource type="AudioStream" uid="uid://bwdjjo2jrb4up" path="res://Music/Pas_chevalier_1.ogg" id="2_i6aeb"]
 [ext_resource type="Texture2D" uid="uid://c2uoktd1oakbq" path="res://characters/Classe/Barbare/droite_1.png" id="2_sweqy"]
 [ext_resource type="Texture2D" uid="uid://bwrg341ybsw8a" path="res://characters/Classe/Barbare/Barbare-droite-1.png" id="3_1jxqw"]
+[ext_resource type="AudioStream" uid="uid://dcwbx4su865mo" path="res://Music/Pas_chevalier_2.ogg" id="3_cemhq"]
 [ext_resource type="Texture2D" uid="uid://dknqlk3whhnof" path="res://characters/Classe/Barbare/droite_2.png" id="4_1jxqw"]
+[ext_resource type="AudioStream" uid="uid://f7cbeeds86mh" path="res://Music/Hit_chevalier_4.ogg" id="4_ol0x4"]
+[ext_resource type="AudioStream" uid="uid://b5ggd3klougjl" path="res://Music/Hit_chevalier_3.ogg" id="5_wnren"]
+[ext_resource type="AudioStream" uid="uid://dj0edmu36hi42" path="res://Music/Hit_chevalier_2.ogg" id="6_egpcx"]
 [ext_resource type="PackedScene" uid="uid://b7gpctxuiu3wq" path="res://Epee.tscn" id="6_hc5i0"]
 [ext_resource type="PackedScene" uid="uid://bkcceqitmfdkp" path="res://Hache.tscn" id="7_11vhg"]
 [ext_resource type="PackedScene" uid="uid://c0tb2t6snelri" path="res://Marteau.tscn" id="8_hc5i0"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_nhm1o"]
+random_pitch = 1.0656005
+streams_count = 2
+stream_0/stream = ExtResource("2_i6aeb")
+stream_1/stream = ExtResource("3_cemhq")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_f74if"]
+random_pitch = 1.0656005
+streams_count = 3
+stream_0/stream = ExtResource("4_ol0x4")
+stream_1/stream = ExtResource("5_wnren")
+stream_2/stream = ExtResource("6_egpcx")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1jxqw"]
 atlas = ExtResource("2_2hs0m")
@@ -68,6 +86,8 @@ size = Vector2(36, 87)
 [node name="Player" type="CharacterBody2D" unique_id=1916796525]
 platform_floor_layers = 4294967292
 script = ExtResource("1_onrkg")
+son_pas = SubResource("AudioStreamRandomizer_nhm1o")
+son_douleur = SubResource("AudioStreamRandomizer_f74if")
 
 [node name="Chevalier" type="AnimatedSprite2D" parent="." unique_id=2099475554]
 unique_name_in_owner = true
@@ -99,3 +119,7 @@ position = Vector2(-4, 9)
 
 [node name="Epee3" parent="PorteArmes" unique_id=1817212049 instance=ExtResource("8_hc5i0")]
 position = Vector2(-3, 8)
+
+[node name="SfxDouleur" type="AudioStreamPlayer2D" parent="." unique_id=674177426]
+
+[node name="SfxPas" type="AudioStreamPlayer2D" parent="." unique_id=568822054]

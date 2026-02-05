@@ -7,11 +7,28 @@
 [ext_resource type="Texture2D" uid="uid://bk2a67p2ri8mc" path="res://characters/MonstresOffi/Boss/boss-black-knight-attack-axe-0.png" id="4_h3lj5"]
 [ext_resource type="Texture2D" uid="uid://daqgnbyfja1pa" path="res://characters/MonstresOffi/Boss/boss-black-knight-death.png" id="4_ry61v"]
 [ext_resource type="Texture2D" uid="uid://btj433d4laa77" path="res://characters/MonstresOffi/Boss/boss-black-knight-attack-axe-4.png" id="5_1s1j2"]
+[ext_resource type="AudioStream" uid="uid://cxjma1205ntwd" path="res://Music/Sword_boss_3.ogg" id="5_3d2wm"]
 [ext_resource type="Texture2D" uid="uid://8qlkhxjuq0pk" path="res://characters/MonstresOffi/Boss/boss-black-knight-front-view.png" id="5_kles1"]
 [ext_resource type="Texture2D" uid="uid://bg4557rg2yt6u" path="res://characters/MonstresOffi/Boss/boss-anim1.png" id="7_kles1"]
 [ext_resource type="Texture2D" uid="uid://bnppmn10sv2ol" path="res://characters/MonstresOffi/Boss/boss-anim2.png" id="8_etj48"]
 [ext_resource type="Texture2D" uid="uid://c6plqtomc7gs" path="res://characters/MonstresOffi/Boss/boss-anim3.png" id="9_h3lj5"]
 [ext_resource type="Texture2D" uid="uid://2l1kpcfbb4rq" path="res://characters/MonstresOffi/Boss/boss-anim4.png" id="10_1s1j2"]
+[ext_resource type="AudioStream" uid="uid://cekpsyn4kf7e" path="res://Music/Pas_boss_7.ogg" id="13_8arul"]
+[ext_resource type="AudioStream" uid="uid://igw4bj0yaahp" path="res://Music/Pas_boss_8.ogg" id="14_3d2wm"]
+[ext_resource type="AudioStream" uid="uid://bkchfrq5b2mvj" path="res://Music/Sword_boss_2.ogg" id="15_rrd6h"]
+[ext_resource type="AudioStream" uid="uid://c1pnsvfiter80" path="res://Music/Sword_boss_4.ogg" id="16_7g8a4"]
+[ext_resource type="AudioStream" uid="uid://b0t0lax24vxo0" path="res://Music/Sword_boss_5.ogg" id="17_r8fku"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_rrd6h"]
+streams_count = 2
+stream_0/stream = ExtResource("13_8arul")
+stream_1/stream = ExtResource("14_3d2wm")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_7g8a4"]
+streams_count = 3
+stream_0/stream = ExtResource("15_rrd6h")
+stream_1/stream = ExtResource("5_3d2wm")
+stream_2/stream = ExtResource("17_r8fku")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h3lj5"]
 atlas = ExtResource("4_h3lj5")
@@ -116,10 +133,24 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kvofc"]
 size = Vector2(285, 407)
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_jruke"]
+streams_count = 2
+stream_0/stream = ExtResource("13_8arul")
+stream_1/stream = ExtResource("14_3d2wm")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ysc7m"]
+random_pitch = 1.0717734
+streams_count = 3
+stream_0/stream = ExtResource("15_rrd6h")
+stream_1/stream = ExtResource("16_7g8a4")
+stream_2/stream = ExtResource("17_r8fku")
+
 [node name="boss" type="CharacterBody2D" unique_id=2024698191]
 collision_layer = 2
 collision_mask = 3
 script = ExtResource("1_kvofc")
+son_pas = SubResource("AudioStreamRandomizer_rrd6h")
+son_attaque = SubResource("AudioStreamRandomizer_7g8a4")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1306273358]
 texture_filter = 1
@@ -133,3 +164,9 @@ frame_progress = 1.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1286435546]
 position = Vector2(-53.5, 54.5)
 shape = SubResource("RectangleShape2D_kvofc")
+
+[node name="SfxPas" type="AudioStreamPlayer2D" parent="." unique_id=490605063]
+stream = SubResource("AudioStreamRandomizer_jruke")
+
+[node name="SfxAttaque" type="AudioStreamPlayer2D" parent="." unique_id=577289624]
+stream = SubResource("AudioStreamRandomizer_ysc7m")

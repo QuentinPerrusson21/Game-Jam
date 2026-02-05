@@ -2,6 +2,7 @@ extends Area2D
 
 @export var degats : int = 2
 @export var force_recul : float = 400.0
+@export var son_impact : AudioStream # Glisse SonsEpeeImpact.tres ici !
 
 func _physics_process(delta):
 	var enemies_in_range = get_overlapping_bodies()
@@ -41,10 +42,18 @@ func attaquer():
 
 		if body.is_in_group("ennemi") or body.has_method("take_damage"):
 			
-			# Animation
+			# --- AJOUT SON IMPACT ---
+			# On joue le son seulement si on touche vraiment quelqu'un
+			if son_impact and has_node("SfxImpact"):
+				$SfxImpact.stream = son_impact
+				$SfxImpact.play()
+			# ------------------------
+
+			# Animation Visuelle
 			if $Pivot/AnimatedSprite2D.sprite_frames.has_animation("attack"):
 				$Pivot/AnimatedSprite2D.play("attack")
 			
+			# Dégâts
 			if body.has_method("take_damage"):
 				if body.name == "Boss" or body.is_in_group("boss"):
 					body.take_damage() 
@@ -55,4 +64,6 @@ func attaquer():
 			if body.has_method("prendre_recul"):
 				body.prendre_recul(global_position, force_recul)
 			
+			# On arrête la boucle pour ne taper qu'un seul ennemi à la fois
+			# (et donc ne jouer le son qu'une seule fois)
 			break

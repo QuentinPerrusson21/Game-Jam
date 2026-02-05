@@ -5,7 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://dh65gqncrg3a0" path="res://SlimeFeu.tscn" id="3_ewlgg"]
 [ext_resource type="PackedScene" uid="uid://bav0ai3ehbby2" path="res://goblin.tscn" id="4_voie1"]
 [ext_resource type="PackedScene" uid="uid://y38gte5o0xf8" path="res://mob.tscn" id="5_dtjg6"]
-[ext_resource type="PackedScene" uid="uid://nsaon7wlrejg" path="res://boss.tscn" id="5_mmtu5"]
 [ext_resource type="AudioStream" uid="uid://bmsmepyk4ppdq" path="res://Music/Gameplay.ogg" id="8_ewlgg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cnktq"]
@@ -94,8 +93,5 @@ position = Vector2(1390, 1286)
 
 [node name="SpawnPlayer" type="Marker2D" parent="." unique_id=653767320]
 position = Vector2(987, 1267)
-
-[node name="boss" parent="." unique_id=2024698191 instance=ExtResource("5_mmtu5")]
-position = Vector2(247, 1438)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -1,13 +1,22 @@
 extends CharacterBody2D
 
+# --- AJOUTS POUR LE SON (Glisse tes fichiers .tres ici dans l'inspecteur) ---
+@export var son_pas : AudioStream
+@export var son_attaque : AudioStream
+
 # On supprime la ligne qui cherchait "/root/Game/Player"
 var player = null
 
 func _ready():
-	# On cherche le joueur dans le groupe "joueur"
+	# 1. On cherche le joueur
 	var liste_joueurs = get_tree().get_nodes_in_group("joueur")
 	if liste_joueurs.size() > 0:
 		player = liste_joueurs[0]
+	
+	# 2. CONNEXION AUTOMATIQUE POUR LES PAS (Code pur)
+	# On dit au code : "Quand l'image change, appelle la fonction _on_frame_changed"
+	if not $AnimatedSprite2D.frame_changed.is_connected(_on_frame_changed):
+		$AnimatedSprite2D.frame_changed.connect(_on_frame_changed)
 
 var health = 50
 var is_dying = false 
@@ -62,12 +71,16 @@ func start_attack():
 	
 	$AnimatedSprite2D.play("attack")
 	
+	# --- SON D'ATTAQUE (Code pur) ---
+	if son_attaque and has_node("SfxAttaque"):
+		$SfxAttaque.stream = son_attaque
+		$SfxAttaque.play()
+	# --------------------------------
+	
 	await get_tree().create_timer(0.2).timeout
 	
 	# On vérifie encore que le joueur est là avant de taper
 	if player and player.has_method("take_damage"):
-		# Note : Assure-toi que ton Joueur accepte bien 2 arguments aussi !
-		# Sinon, change pour : player.take_damage(damage_amount)
 		player.take_damage(damage_amount, global_position) 
 	
 	await $AnimatedSprite2D.animation_finished
@@ -76,14 +89,21 @@ func start_attack():
 	
 	is_attacking = false
 
-# --- C'EST ICI QUE J'AI FAIT LA MODIFICATION POUR L'ÉPÉE ---
+# --- NOUVELLE FONCTION POUR LES PAS (Gérée automatiquement par le _ready) ---
+func _on_frame_changed():
+	# Si on court
+	if $AnimatedSprite2D.animation == "run":
+		# REMPLACE 1 et 4 par les images où le pied touche le sol dans TON animation !
+		if $AnimatedSprite2D.frame == 1 or $AnimatedSprite2D.frame == 4:
+			if son_pas and has_node("SfxPas"):
+				$SfxPas.stream = son_pas
+				$SfxPas.play()
+
+# --- RESTE DU CODE (Dégâts et Mort) ---
 func take_damage(amount = 1):
-	# On utilise le montant envoyé par l'épée (ex: 2)
 	health -= amount
-	
 	print("Boss touché ! Vie restante : ", health)
 	
-	# Petit effet visuel (Flash Blanc) pour confirmer l'impact
 	modulate = Color(10, 10, 10)
 	var tween = create_tween()
 	tween.tween_property(self, "modulate", Color(1, 1, 1), 0.1)
@@ -91,8 +111,6 @@ func take_damage(amount = 1):
 	if health <= 0 and not is_dying: 
 		die()
 
-# J'ajoute aussi cette fonction vide au cas où l'épée essaie de le pousser
-# (Le boss est trop lourd pour reculer, donc on ne fait rien dedans)
 func prendre_recul(source, force):
 	pass
 
