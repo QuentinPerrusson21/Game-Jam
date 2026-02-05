@@ -1,13 +1,12 @@
 [gd_scene format=3 uid="uid://bc4xqd665byod"]
 
-[ext_resource type="Texture2D" uid="uid://d0akogkghi4xu" path="res://maps/Ice/GrassSnowy.png" id="1_0m8by"]
+[ext_resource type="Texture2D" path="res://maps/Ice/GrassSnowy.png" id="1_0m8by"]
 [ext_resource type="Script" uid="uid://cjltq68wulcco" path="res://salle_ice.gd" id="1_4fsy0"]
 [ext_resource type="Texture2D" uid="uid://b0mgq53tjkomb" path="res://decor/doorpng.png" id="2_cnktq"]
 [ext_resource type="PackedScene" uid="uid://dh65gqncrg3a0" path="res://SlimeFeu.tscn" id="3_ewlgg"]
 [ext_resource type="PackedScene" uid="uid://bav0ai3ehbby2" path="res://goblin.tscn" id="4_voie1"]
 [ext_resource type="PackedScene" uid="uid://y38gte5o0xf8" path="res://mob.tscn" id="5_dtjg6"]
 [ext_resource type="AudioStream" uid="uid://bmsmepyk4ppdq" path="res://Music/Gameplay.ogg" id="8_ewlgg"]
-[ext_resource type="PackedScene" uid="uid://c0qsw6jem37ap" path="res://Barbare.tscn" id="8_voie1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cnktq"]
 size = Vector2(225, 103)
@@ -91,10 +90,10 @@ position = Vector2(992, 679)
 
 [node name="MobsContainer" type="Node2D" parent="." unique_id=1916241597]
 
-[node name="Player" parent="." unique_id=1916796525 instance=ExtResource("8_voie1")]
-position = Vector2(990, 1289)
-
 [node name="chauveSouris" parent="." unique_id=666401213 instance=ExtResource("4_voie1")]
 position = Vector2(1390, 1286)
+
+[node name="SpawnPlayer" type="Marker2D" parent="." unique_id=653767320]
+position = Vector2(987, 1267)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
