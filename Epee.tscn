@@ -1,37 +1,42 @@
 [gd_scene format=3 uid="uid://b7gpctxuiu3wq"]
 
-[ext_resource type="Texture2D" uid="uid://dpxwxrepsv70" path="res://pistol/weapon/sword.png" id="1_0nfpx"]
 [ext_resource type="Script" uid="uid://daolyw3wuh2jv" path="res://arme_melee.gd" id="1_mxfsv"]
+[ext_resource type="Texture2D" uid="uid://cdffhb1ha8yj5" path="res://pistol/weapon/epee.png" id="2_mxfsv"]
 [ext_resource type="Texture2D" uid="uid://dqnlv3w3oqm1r" path="res://characters/Classe/Barbare/Bras-gauche.png" id="2_viis3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mxfsv"]
 radius = 139.807
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_b0qhw"]
-size = Vector2(8, 35)
+[sub_resource type="AtlasTexture" id="AtlasTexture_gcinl"]
+atlas = ExtResource("2_mxfsv")
+region = Rect2(0, 0, 64, 64)
 
-[node name="Epee" type="Node2D" unique_id=1824039246]
+[sub_resource type="SpriteFrames" id="SpriteFrames_6xu3q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gcinl")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}]
+
+[node name="Epee" type="Area2D" unique_id=932524154]
+collision_mask = 3
 script = ExtResource("1_mxfsv")
 
-[node name="DetectionZone" type="Area2D" parent="." unique_id=1415866142]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionZone" unique_id=1396277615]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1396277615]
 shape = SubResource("CircleShape2D_mxfsv")
 
 [node name="Pivot" type="Node2D" parent="." unique_id=1153100296]
 rotation = -0.5235988
 
-[node name="Hitbox" type="Area2D" parent="Pivot" unique_id=1338395834]
-collision_mask = 7
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Pivot/Hitbox" unique_id=240485013]
-position = Vector2(19, -77)
-shape = SubResource("RectangleShape2D_b0qhw")
-
-[node name="Sprite2D" type="Sprite2D" parent="Pivot" unique_id=2066138143]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Pivot" unique_id=251646806]
 position = Vector2(19, -40)
 scale = Vector2(2, 2)
-texture = ExtResource("1_0nfpx")
+sprite_frames = SubResource("SpriteFrames_6xu3q")
+animation = &"attack"
 
 [node name="Bras" type="Sprite2D" parent="Pivot" unique_id=857532954]
 position = Vector2(-3.0000038, -2.9999971)
@@ -39,6 +44,8 @@ rotation = -0.83600914
 scale = Vector2(2.5, 2.5)
 texture = ExtResource("2_viis3")
 
-[connection signal="body_entered" from="DetectionZone" to="." method="_on_detection_zone_body_entered"]
-[connection signal="body_exited" from="DetectionZone" to="." method="_on_detection_zone_body_exited"]
-[connection signal="body_entered" from="Pivot/Hitbox" to="." method="_on_hitbox_body_entered"]
+[node name="Timer" type="Timer" parent="." unique_id=1984544931]
+wait_time = 0.5
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
