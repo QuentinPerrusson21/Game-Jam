@@ -153,8 +153,10 @@ text = "OPTIONS"
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_top = 228.0
-offset_bottom = 316.0
+offset_left = -548.0
+offset_top = 277.0
+offset_right = -548.0
+offset_bottom = 365.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("9_pbygh")
 theme_override_font_sizes/font_size = 72
@@ -175,10 +177,25 @@ icon_alignment = 1
 
 [node name="audio control" type="HSlider" parent="Options" unique_id=946499345]
 layout_mode = 0
-offset_left = 594.0
-offset_top = 327.0
-offset_right = 1141.0
-offset_bottom = 404.0
+offset_left = 46.0
+offset_top = 376.0
+offset_right = 593.0
+offset_bottom = 453.0
+theme_override_styles/slider = SubResource("StyleBoxLine_wdf14")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_f7ddt")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_i3f74")
+max_value = 1.0
+step = 0.05
+value = 0.8
+script = ExtResource("11_i3f74")
+audio_bus_name = "MUSIC"
+
+[node name="audio control2" type="HSlider" parent="Options" unique_id=625715434]
+layout_mode = 0
+offset_left = 49.0
+offset_top = 508.0
+offset_right = 593.0
+offset_bottom = 636.0
 theme_override_styles/slider = SubResource("StyleBoxLine_wdf14")
 theme_override_styles/grabber_area = SubResource("StyleBoxLine_f7ddt")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_i3f74")
@@ -193,3 +210,4 @@ audio_bus_name = "MUSIC"
 [connection signal="pressed" from="Main button/Option" to="." method="_on_option_pressed"]
 [connection signal="pressed" from="Options/Fermer" to="." method="_on_fermer_option_pressed"]
 [connection signal="value_changed" from="Options/audio control" to="Options/audio control" method="_on_value_changed"]
+[connection signal="value_changed" from="Options/audio control2" to="Options/audio control2" method="_on_value_changed"]

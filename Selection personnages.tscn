@@ -5,21 +5,70 @@
 [ext_resource type="Texture2D" uid="uid://covclslyowlc2" path="res://characters/Classe/Barbare.png" id="2_wutap"]
 [ext_resource type="Texture2D" uid="uid://cujk1l6ht61lc" path="res://Baniere/baniere mage.png" id="3_2e4a8"]
 [ext_resource type="Texture2D" uid="uid://p3txuk4ffjfv" path="res://Baniere/drapeau-rouge-vierge-pour-espace-texte-dans-style-pixel-art_475147-2758-removebg-preview.png" id="4_hywlx"]
+[ext_resource type="Texture2D" uid="uid://fbat6sqawhdd" path="res://HUD/Layer_1_sprite_05.png" id="4_yuh1k"]
+[ext_resource type="Texture2D" uid="uid://bipwjddb61vft" path="res://HUD/Layer_1_sprite_06.png" id="5_oj6nv"]
 [ext_resource type="FontFile" uid="uid://b53iapi5wykx8" path="res://Font/PixelifySans-VariableFont_wght.ttf" id="5_sebfl"]
+[ext_resource type="Texture2D" uid="uid://ua3x6kgyrgjb" path="res://HUD/Layer_1_sprite_07.png" id="6_kmeit"]
+[ext_resource type="Texture2D" uid="uid://cutojfh1doub5" path="res://HUD/Layer_1_sprite_08.png" id="7_0oint"]
+[ext_resource type="Texture2D" uid="uid://cdffhb1ha8yj5" path="res://pistol/weapon/epee.png" id="11_0oint"]
+[ext_resource type="Texture2D" uid="uid://e3rqyv3is0f4" path="res://pistol/weapon/axe.png" id="12_v7dqa"]
+[ext_resource type="Texture2D" uid="uid://c8a5h2b53to67" path="res://pistol/weapon/marteau.png" id="13_0jo8m"]
+[ext_resource type="Texture2D" uid="uid://dyn1qbcmrxub8" path="res://characters/Classe/Mage/Mage1.png" id="13_p0vfm"]
+[ext_resource type="Texture2D" uid="uid://by5m8nm6ae76s" path="res://HUD/Spell bdf.png" id="14_airmy"]
+[ext_resource type="Texture2D" uid="uid://bo64rbhym55kg" path="res://HUD/spell canon.png" id="15_hf8dh"]
+[ext_resource type="Texture2D" uid="uid://c2qtdvpefqfrt" path="res://HUD/spell feu.png" id="16_0lrvm"]
+[ext_resource type="Texture2D" uid="uid://bp2d68k1op023" path="res://pistol/weapon/baton-blanc-1.png" id="17_x47yy"]
+[ext_resource type="Texture2D" uid="uid://jougdvetsx5h" path="res://pistol/weapon/Baton-bleu.png" id="18_bve30"]
+[ext_resource type="Texture2D" uid="uid://b018xko4f2rf4" path="res://pistol/weapon/Baton-rouge.png" id="19_4ckeo"]
+[ext_resource type="Texture2D" uid="uid://b8crl0ij6we2u" path="res://HUD/spell fleche.png" id="20_aq48t"]
+[ext_resource type="Texture2D" uid="uid://boaja73rniyhh" path="res://characters/Classe/sprite_06.png" id="22_nffgf"]
+[ext_resource type="Texture2D" uid="uid://dd7sepkubosny" path="res://HUD/Spell ours.png" id="23_eadl0"]
+[ext_resource type="Texture2D" uid="uid://coyrvp4w6ndws" path="res://HUD/spell fleche2.png" id="24_ktbeg"]
+[ext_resource type="Texture2D" uid="uid://3nw7lplp7ovw" path="res://HUD/spell potion.png" id="25_qsj16"]
+[ext_resource type="Texture2D" uid="uid://bhnulxv2fhf4v" path="res://HUD/spell rafale fleche.png" id="26_v0pmv"]
+[ext_resource type="Texture2D" uid="uid://u1ficuwvgtmn" path="res://pistol/weapon/arbalete.png" id="27_obu2l"]
+[ext_resource type="Texture2D" uid="uid://b40t8eetxswv3" path="res://pistol/weapon/arc_bande.png" id="28_1bb84"]
+[ext_resource type="Texture2D" uid="uid://dcn2cn6gl1lm7" path="res://pistol/weapon/shuriken.png" id="29_i756s"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uay18"]
 texture = ExtResource("1_y1g42")
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tuy8u"]
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hywlx"]
 texture = ExtResource("2_2e4a8")
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_yuh1k"]
-animations = [{
-"frames": [],
-"loop": true,
-"name": &"idle",
-"speed": 5.0
-}]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0jo8m"]
+texture = ExtResource("5_oj6nv")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v7dqa"]
+texture = ExtResource("4_yuh1k")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cjui7"]
+texture = ExtResource("6_kmeit")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_iciua"]
+texture = ExtResource("7_0oint")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cjui7"]
+bg_color = Color(0.13333334, 0.003921569, 0.12941177, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.99215686, 0.91764706, 0.6392157, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lvr3h"]
+bg_color = Color(1, 1, 1, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iciua"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oiyca"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kombe"]
+bg_color = Color(0.9254902, 0.92941177, 0.7647059, 1)
 
 [node name="Control" type="Control" unique_id=63394500]
 layout_mode = 3
@@ -28,8 +77,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-metadata/_edit_horizontal_guides_ = [220.0, 958.0]
-metadata/_edit_vertical_guides_ = [739.0]
 
 [node name="Bg blur" type="Panel" parent="." unique_id=1191010503]
 layout_mode = 1
@@ -48,74 +95,581 @@ anchor_left = 0.087000005
 anchor_top = 0.19100001
 anchor_right = 0.31800002
 anchor_bottom = 0.8880001
-offset_left = -65.04001
-offset_top = -108.280014
-offset_right = 1206.44
-offset_bottom = 77.9599
+offset_left = -71.04001
+offset_top = -107.280014
+offset_right = 1200.44
+offset_bottom = 78.9599
+theme_override_styles/panel = SubResource("StyleBoxEmpty_tuy8u")
 
-[node name="Carte" type="Panel" parent="Carte4" unique_id=1785237696]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.040000003
-anchor_top = 0.109000005
-anchor_right = 0.27600002
-anchor_bottom = 0.89400005
-offset_left = 23.399994
-offset_top = 22.648994
-offset_right = 22.304993
-offset_bottom = 23.256958
-grow_horizontal = 2
-
-[node name="Carte2" type="Panel" parent="Carte4" unique_id=1700121105]
+[node name="Carte Knight" type="Panel" parent="Carte4" unique_id=1700121105]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.342
 anchor_top = 0.113000005
 anchor_right = 0.577
 anchor_bottom = 0.8880001
-offset_left = 50.46997
-offset_top = 15.892998
-offset_right = 51.089966
-offset_bottom = 26.167908
+offset_left = 25.46997
+offset_top = -104.107
+offset_right = 26.089966
+offset_bottom = -93.83209
 grow_horizontal = 2
+scale = Vector2(1.2, 1.2)
 theme_override_styles/panel = SubResource("StyleBoxTexture_hywlx")
 
-[node name="Barbare" type="Sprite2D" parent="Carte4/Carte2" unique_id=1861060295]
-position = Vector2(198.00006, 110)
-scale = Vector2(0.054, 0.05)
+[node name="Barbare" type="Sprite2D" parent="Carte4/Carte Knight" unique_id=1861060295]
+position = Vector2(199.99998, 118.999985)
+scale = Vector2(0.05564582, 0.053808596)
 texture = ExtResource("2_wutap")
 
-[node name="Carte3" type="Panel" parent="Carte4" unique_id=415285064]
+[node name="Spell 1" type="Panel" parent="Carte4/Carte Knight" unique_id=1672624619]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.69271135
-anchor_top = 0.12992546
-anchor_right = 0.92807305
-anchor_bottom = 0.915573
-grow_horizontal = 2
-grow_vertical = 2
+anchor_left = 0.055000003
+anchor_top = 0.64500004
+anchor_right = 0.21900001
+anchor_bottom = 0.74600005
+offset_left = -34.200478
+offset_top = -36.01004
+offset_right = 49.601738
+offset_bottom = 39.451965
+theme_override_styles/panel = SubResource("StyleBoxTexture_0jo8m")
 
-[node name="BaniereMage" type="Sprite2D" parent="Carte4" unique_id=1896109737]
-position = Vector2(-505, 527)
-texture = ExtResource("3_2e4a8")
+[node name="Spell 2" type="Panel" parent="Carte4/Carte Knight" unique_id=1645134846]
+layout_mode = 0
+offset_left = 82.0
+offset_top = 440.0
+offset_right = 232.0
+offset_bottom = 590.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_v7dqa")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=548383970]
-sprite_frames = SubResource("SpriteFrames_yuh1k")
-animation = &"idle"
-frame_progress = 0.5881727
+[node name="Spell 3" type="Panel" parent="Carte4/Carte Knight" unique_id=299017962]
+layout_mode = 0
+offset_left = 179.0
+offset_top = 440.0
+offset_right = 329.0
+offset_bottom = 590.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_cjui7")
 
-[node name="DrapeauRougeViergePourEspaceTexteDansStylePixelArt4751472758RemovebgPreview" type="Sprite2D" parent="." unique_id=820951919]
-position = Vector2(913.00006, 877)
+[node name="Spell 4" type="Panel" parent="Carte4/Carte Knight" unique_id=1926489914]
+layout_mode = 0
+offset_left = 271.0
+offset_top = 440.0
+offset_right = 421.0
+offset_bottom = 590.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_iciua")
+
+[node name="Arme 1" type="Panel" parent="Carte4/Carte Knight" unique_id=2126031155]
+layout_mode = 0
+offset_left = 61.0
+offset_top = 350.0
+offset_right = 136.0
+offset_bottom = 424.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_cjui7")
+
+[node name="Arme 2" type="Panel" parent="Carte4/Carte Knight" unique_id=1916634767]
+layout_mode = 0
+offset_left = 167.0
+offset_top = 351.0
+offset_right = 242.0
+offset_bottom = 425.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_cjui7")
+
+[node name="Arme 3" type="Panel" parent="Carte4/Carte Knight" unique_id=1123399820]
+layout_mode = 0
+offset_left = 269.0
+offset_top = 351.0
+offset_right = 344.0
+offset_bottom = 425.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_cjui7")
+
+[node name="Label2" type="Label" parent="Carte4/Carte Knight" unique_id=1522844178]
+layout_mode = 0
+offset_left = 82.0
+offset_top = 215.0
+offset_right = 322.0
+offset_bottom = 264.0
+theme_override_colors/font_color = Color(0.1148968, 0.11489681, 0.1148968, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.2)
+theme_override_fonts/font = ExtResource("5_sebfl")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_lvr3h")
+text = "Type : melee"
+
+[node name="Label3" type="Label" parent="Carte4/Carte Knight" unique_id=2055222123]
+layout_mode = 0
+offset_left = 122.0
+offset_top = 291.0
+offset_right = 295.0
+offset_bottom = 340.0
+theme_override_colors/font_color = Color(0.1148968, 0.11489681, 0.1148968, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.2)
+theme_override_fonts/font = ExtResource("5_sebfl")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_lvr3h")
+text = "Weapons"
+
+[node name="Label4" type="Label" parent="Carte4/Carte Knight" unique_id=753473503]
+layout_mode = 0
+offset_left = 138.0
+offset_top = 427.0
+offset_right = 261.0
+offset_bottom = 476.0
+theme_override_colors/font_color = Color(0.1148968, 0.11489681, 0.1148968, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.2)
+theme_override_fonts/font = ExtResource("5_sebfl")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_lvr3h")
+text = "Spells"
+
+[node name="Panel2" type="Panel" parent="Carte4/Carte Knight" unique_id=1867973060]
+layout_mode = 0
+offset_left = 55.0
+offset_top = 720.0
+offset_right = 344.0
+offset_bottom = 730.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_iciua")
+
+[node name="Panel3" type="Panel" parent="Carte4/Carte Knight" unique_id=1193304947]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 710.0
+offset_right = 55.0
+offset_bottom = 720.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_oiyca")
+
+[node name="DrapeauRougeViergePourEspaceTexteDansStylePixelArt4751472758RemovebgPreview" type="Sprite2D" parent="Carte4/Carte Knight" unique_id=820951919]
+position = Vector2(174.00006, 657)
 rotation = -1.5707964
 scale = Vector2(1, 1.4837197)
 texture = ExtResource("4_hywlx")
 
-[node name="Label" type="Label" parent="DrapeauRougeViergePourEspaceTexteDansStylePixelArt4751472758RemovebgPreview" unique_id=138746828]
-offset_left = 41.0
-offset_top = -107.76025
-offset_right = 218.0
-offset_bottom = -64.76025
-rotation = 1.5707964
+[node name="Label" type="Label" parent="Carte4/Carte Knight" unique_id=138746828]
+layout_mode = 0
+offset_left = 69.0
+offset_top = 609.0
+offset_right = 322.0
+offset_bottom = 669.0
 theme_override_fonts/font = ExtResource("5_sebfl")
-theme_override_font_sizes/font_size = 35
-text = "CHEVALIER"
+theme_override_font_sizes/font_size = 50
+text = "KNIGHT"
+
+[node name="Panel" type="Panel" parent="Carte4/Carte Knight" unique_id=1541214400]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.054
+offset_left = 53.0
+offset_top = 710.0
+offset_right = 337.0
+offset_bottom = 680.148
+theme_override_styles/panel = SubResource("StyleBoxFlat_kombe")
+
+[node name="Epee" type="Sprite2D" parent="Carte4/Carte Knight" unique_id=779940512]
+position = Vector2(99, 387)
+texture = ExtResource("11_0oint")
+
+[node name="Axe" type="Sprite2D" parent="Carte4/Carte Knight" unique_id=1497932898]
+position = Vector2(205, 388)
+texture = ExtResource("12_v7dqa")
+
+[node name="Marteau" type="Sprite2D" parent="Carte4/Carte Knight" unique_id=1548599650]
+position = Vector2(306, 378)
+scale = Vector2(1.49, 1.49)
+texture = ExtResource("13_0jo8m")
+
+[node name="Carte Mage" type="Panel" parent="Carte4" unique_id=797345786]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.342
+anchor_top = 0.113000005
+anchor_right = 0.577
+anchor_bottom = 0.8880001
+offset_left = -573.53
+offset_top = -95.107
+offset_right = -572.91003
+offset_bottom = -84.83209
+grow_horizontal = 2
+scale = Vector2(1.2, 1.2)
+theme_override_styles/panel = SubResource("StyleBoxTexture_hywlx")
+
+[node name="Barbare" type="Sprite2D" parent="Carte4/Carte Mage" unique_id=411688348]
+position = Vector2(199, 105.00001)
+scale = Vector2(4.622, 4.51)
+texture = ExtResource("13_p0vfm")
+
+[node name="Spell 1" type="Panel" parent="Carte4/Carte Mage" unique_id=1054055681]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.055000003
+anchor_top = 0.64500004
+anchor_right = 0.21900001
+anchor_bottom = 0.74600005
+offset_left = -34.200478
+offset_top = -36.01004
+offset_right = 49.601738
+offset_bottom = 39.451965
+theme_override_styles/panel = SubResource("StyleBoxTexture_0jo8m")
+
+[node name="Spell 2" type="Panel" parent="Carte4/Carte Mage" unique_id=284986993]
+layout_mode = 0
+offset_left = 82.0
+offset_top = 440.0
+offset_right = 232.0
+offset_bottom = 590.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_v7dqa")
+
+[node name="Spell 3" type="Panel" parent="Carte4/Carte Mage" unique_id=1004175604]
+layout_mode = 0
+offset_left = 179.0
+offset_top = 440.0
+offset_right = 329.0
+offset_bottom = 590.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_cjui7")
+
+[node name="Spell 4" type="Panel" parent="Carte4/Carte Mage" unique_id=1533428711]
+layout_mode = 0
+offset_left = 271.0
+offset_top = 440.0
+offset_right = 421.0
+offset_bottom = 590.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_iciua")
+
+[node name="Arme 1" type="Panel" parent="Carte4/Carte Mage" unique_id=197931500]
+layout_mode = 0
+offset_left = 61.0
+offset_top = 350.0
+offset_right = 136.0
+offset_bottom = 424.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_cjui7")
+
+[node name="Arme 2" type="Panel" parent="Carte4/Carte Mage" unique_id=1672308815]
+layout_mode = 0
+offset_left = 167.0
+offset_top = 351.0
+offset_right = 242.0
+offset_bottom = 425.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_cjui7")
+
+[node name="Arme 3" type="Panel" parent="Carte4/Carte Mage" unique_id=1172125348]
+layout_mode = 0
+offset_left = 269.0
+offset_top = 351.0
+offset_right = 344.0
+offset_bottom = 425.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_cjui7")
+
+[node name="Label2" type="Label" parent="Carte4/Carte Mage" unique_id=356811778]
+layout_mode = 0
+offset_left = 82.0
+offset_top = 215.0
+offset_right = 322.0
+offset_bottom = 264.0
+theme_override_colors/font_color = Color(0.1148968, 0.11489681, 0.1148968, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.2)
+theme_override_fonts/font = ExtResource("5_sebfl")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_lvr3h")
+text = "Type : Range"
+
+[node name="Label3" type="Label" parent="Carte4/Carte Mage" unique_id=233051164]
+layout_mode = 0
+offset_left = 122.0
+offset_top = 291.0
+offset_right = 295.0
+offset_bottom = 340.0
+theme_override_colors/font_color = Color(0.1148968, 0.11489681, 0.1148968, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.2)
+theme_override_fonts/font = ExtResource("5_sebfl")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_lvr3h")
+text = "Weapons"
+
+[node name="Label4" type="Label" parent="Carte4/Carte Mage" unique_id=1160482690]
+layout_mode = 0
+offset_left = 138.0
+offset_top = 427.0
+offset_right = 261.0
+offset_bottom = 476.0
+theme_override_colors/font_color = Color(0.1148968, 0.11489681, 0.1148968, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.2)
+theme_override_fonts/font = ExtResource("5_sebfl")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_lvr3h")
+text = "Spells"
+
+[node name="Panel2" type="Panel" parent="Carte4/Carte Mage" unique_id=1287670608]
+layout_mode = 0
+offset_left = 55.0
+offset_top = 720.0
+offset_right = 344.0
+offset_bottom = 730.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_iciua")
+
+[node name="Panel3" type="Panel" parent="Carte4/Carte Mage" unique_id=1370716585]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 710.0
+offset_right = 55.0
+offset_bottom = 720.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_oiyca")
+
+[node name="DrapeauRougeViergePourEspaceTexteDansStylePixelArt4751472758RemovebgPreview" type="Sprite2D" parent="Carte4/Carte Mage" unique_id=557929347]
+position = Vector2(174.00006, 657)
+rotation = -1.5707964
+scale = Vector2(1, 1.4837197)
+texture = ExtResource("4_hywlx")
+
+[node name="Label" type="Label" parent="Carte4/Carte Mage" unique_id=1024197526]
+layout_mode = 0
+offset_left = 69.0
+offset_top = 609.0
+offset_right = 322.0
+offset_bottom = 669.0
+theme_override_fonts/font = ExtResource("5_sebfl")
+theme_override_font_sizes/font_size = 50
+text = "MAGE"
+
+[node name="Panel" type="Panel" parent="Carte4/Carte Mage" unique_id=868994976]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.054
+offset_left = 53.0
+offset_top = 710.0
+offset_right = 337.0
+offset_bottom = 680.148
+theme_override_styles/panel = SubResource("StyleBoxFlat_kombe")
+
+[node name="SpellBdf" type="Sprite2D" parent="Carte4/Carte Mage" unique_id=720220747]
+position = Vector2(63.5, 514.25)
+scale = Vector2(2.2656252, 2.2890623)
+texture = ExtResource("14_airmy")
+
+[node name="SpellBdf2" type="Sprite2D" parent="Carte4/Carte Mage" unique_id=1758698416]
+position = Vector2(157, 515)
+scale = Vector2(2.375, 2.375)
+texture = ExtResource("15_hf8dh")
+
+[node name="SpellBdf3" type="Sprite2D" parent="Carte4/Carte Mage" unique_id=694012365]
+position = Vector2(255, 516)
+scale = Vector2(2.375, 2.375)
+texture = ExtResource("16_0lrvm")
+
+[node name="BatonBlanc1" type="Sprite2D" parent="Carte4/Carte Mage" unique_id=1652681532]
+position = Vector2(305, 389)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("17_x47yy")
+
+[node name="BatonBleu" type="Sprite2D" parent="Carte4/Carte Mage" unique_id=662856662]
+position = Vector2(203, 387)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("18_bve30")
+
+[node name="BatonRouge" type="Sprite2D" parent="Carte4/Carte Mage" unique_id=526555661]
+position = Vector2(97, 388)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("19_4ckeo")
+
+[node name="SpellBdf4" type="Sprite2D" parent="Carte4/Carte Mage" unique_id=659925405]
+position = Vector2(346, 516)
+scale = Vector2(2.375, 2.375)
+texture = ExtResource("20_aq48t")
+
+[node name="BaniereMage" type="Sprite2D" parent="Carte4/Carte Mage" unique_id=1896109737]
+position = Vector2(-818, 294)
+texture = ExtResource("3_2e4a8")
+
+[node name="Carte Archer" type="Panel" parent="Carte4" unique_id=1705886922]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.342
+anchor_top = 0.113000005
+anchor_right = 0.577
+anchor_bottom = 0.8880001
+offset_left = 640.47
+offset_top = -110.107
+offset_right = 641.08997
+offset_bottom = -99.83209
+grow_horizontal = 2
+scale = Vector2(1.2, 1.2)
+theme_override_styles/panel = SubResource("StyleBoxTexture_hywlx")
+
+[node name="Barbare" type="Sprite2D" parent="Carte4/Carte Archer" unique_id=455218745]
+position = Vector2(210, 137.99998)
+scale = Vector2(4.888, 4.848)
+texture = ExtResource("22_nffgf")
+
+[node name="Spell 1" type="Panel" parent="Carte4/Carte Archer" unique_id=111132859]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.055000003
+anchor_top = 0.64500004
+anchor_right = 0.21900001
+anchor_bottom = 0.74600005
+offset_left = -34.200478
+offset_top = -36.01004
+offset_right = 49.601738
+offset_bottom = 39.451965
+theme_override_styles/panel = SubResource("StyleBoxTexture_0jo8m")
+
+[node name="SpellBdf4" type="Sprite2D" parent="Carte4/Carte Archer/Spell 1" unique_id=925170253]
+position = Vector2(74, 75)
+scale = Vector2(2.375, 2.375)
+texture = ExtResource("23_eadl0")
+
+[node name="Spell 2" type="Panel" parent="Carte4/Carte Archer" unique_id=1911359948]
+layout_mode = 0
+offset_left = 82.0
+offset_top = 440.0
+offset_right = 232.0
+offset_bottom = 590.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_v7dqa")
+
+[node name="Spell 3" type="Panel" parent="Carte4/Carte Archer" unique_id=586884545]
+layout_mode = 0
+offset_left = 179.0
+offset_top = 440.0
+offset_right = 329.0
+offset_bottom = 590.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_cjui7")
+
+[node name="Spell 4" type="Panel" parent="Carte4/Carte Archer" unique_id=1549134866]
+layout_mode = 0
+offset_left = 271.0
+offset_top = 440.0
+offset_right = 421.0
+offset_bottom = 590.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_iciua")
+
+[node name="Arme 1" type="Panel" parent="Carte4/Carte Archer" unique_id=309817278]
+layout_mode = 0
+offset_left = 61.0
+offset_top = 350.0
+offset_right = 136.0
+offset_bottom = 424.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_cjui7")
+
+[node name="SpellBdf5" type="Sprite2D" parent="Carte4/Carte Archer/Arme 1" unique_id=115939640]
+position = Vector2(97, 165)
+scale = Vector2(2.375, 2.375)
+texture = ExtResource("24_ktbeg")
+
+[node name="SpellBdf6" type="Sprite2D" parent="Carte4/Carte Archer/Arme 1" unique_id=302365456]
+position = Vector2(193, 165)
+scale = Vector2(2.375, 2.375)
+texture = ExtResource("25_qsj16")
+
+[node name="SpellBdf7" type="Sprite2D" parent="Carte4/Carte Archer/Arme 1" unique_id=927316776]
+position = Vector2(281, 164)
+scale = Vector2(2.375, 2.375)
+texture = ExtResource("26_v0pmv")
+
+[node name="Arme 2" type="Panel" parent="Carte4/Carte Archer" unique_id=13327424]
+layout_mode = 0
+offset_left = 167.0
+offset_top = 351.0
+offset_right = 242.0
+offset_bottom = 425.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_cjui7")
+
+[node name="Arme 3" type="Panel" parent="Carte4/Carte Archer" unique_id=1269954427]
+layout_mode = 0
+offset_left = 269.0
+offset_top = 351.0
+offset_right = 344.0
+offset_bottom = 425.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_cjui7")
+
+[node name="Label2" type="Label" parent="Carte4/Carte Archer" unique_id=243022312]
+layout_mode = 0
+offset_left = 82.0
+offset_top = 215.0
+offset_right = 322.0
+offset_bottom = 264.0
+theme_override_colors/font_color = Color(0.1148968, 0.11489681, 0.1148968, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.2)
+theme_override_fonts/font = ExtResource("5_sebfl")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_lvr3h")
+text = "Type : Range"
+
+[node name="Label3" type="Label" parent="Carte4/Carte Archer" unique_id=1591423669]
+layout_mode = 0
+offset_left = 122.0
+offset_top = 291.0
+offset_right = 295.0
+offset_bottom = 340.0
+theme_override_colors/font_color = Color(0.1148968, 0.11489681, 0.1148968, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.2)
+theme_override_fonts/font = ExtResource("5_sebfl")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_lvr3h")
+text = "Weapons"
+
+[node name="Label4" type="Label" parent="Carte4/Carte Archer" unique_id=1711873107]
+layout_mode = 0
+offset_left = 138.0
+offset_top = 427.0
+offset_right = 261.0
+offset_bottom = 476.0
+theme_override_colors/font_color = Color(0.1148968, 0.11489681, 0.1148968, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.2)
+theme_override_fonts/font = ExtResource("5_sebfl")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_lvr3h")
+text = "Spells"
+
+[node name="Panel2" type="Panel" parent="Carte4/Carte Archer" unique_id=887583001]
+layout_mode = 0
+offset_left = 55.0
+offset_top = 720.0
+offset_right = 344.0
+offset_bottom = 730.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_iciua")
+
+[node name="Panel3" type="Panel" parent="Carte4/Carte Archer" unique_id=1486156846]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 710.0
+offset_right = 55.0
+offset_bottom = 720.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_oiyca")
+
+[node name="DrapeauRougeViergePourEspaceTexteDansStylePixelArt4751472758RemovebgPreview" type="Sprite2D" parent="Carte4/Carte Archer" unique_id=1990351749]
+position = Vector2(174.00006, 657)
+rotation = -1.5707964
+scale = Vector2(1, 1.4837197)
+texture = ExtResource("4_hywlx")
+
+[node name="Label" type="Label" parent="Carte4/Carte Archer" unique_id=1093073144]
+layout_mode = 0
+offset_left = 69.0
+offset_top = 609.0
+offset_right = 322.0
+offset_bottom = 669.0
+theme_override_fonts/font = ExtResource("5_sebfl")
+theme_override_font_sizes/font_size = 50
+text = "ARCHER"
+
+[node name="Panel" type="Panel" parent="Carte4/Carte Archer" unique_id=1099546675]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.054
+offset_left = 53.0
+offset_top = 710.0
+offset_right = 337.0
+offset_bottom = 680.148
+theme_override_styles/panel = SubResource("StyleBoxFlat_kombe")
+
+[node name="Arbalete" type="Sprite2D" parent="Carte4/Carte Archer" unique_id=2138558945]
+position = Vector2(99.00012, 387)
+scale = Vector2(0.91, 0.91)
+texture = ExtResource("27_obu2l")
+
+[node name="ArcBande" type="Sprite2D" parent="Carte4/Carte Archer" unique_id=1914188866]
+position = Vector2(205, 382)
+scale = Vector2(1.39, 1.39)
+texture = ExtResource("28_1bb84")
+
+[node name="Shuriken" type="Sprite2D" parent="Carte4/Carte Archer" unique_id=1991343748]
+position = Vector2(305, 388)
+scale = Vector2(1.545, 1.545)
+texture = ExtResource("29_i756s")
