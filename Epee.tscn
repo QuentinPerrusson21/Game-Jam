@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dqnlv3w3oqm1r" path="res://characters/Classe/Barbare/Bras-gauche.png" id="2_viis3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mxfsv"]
-radius = 139.807
+radius = 271.00183
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gcinl"]
 atlas = ExtResource("2_mxfsv")
@@ -23,23 +23,23 @@ animations = [{
 }]
 
 [node name="Epee" type="Area2D" unique_id=932524154]
-collision_mask = 3
+collision_mask = 3855
 script = ExtResource("1_mxfsv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1396277615]
 shape = SubResource("CircleShape2D_mxfsv")
 
 [node name="Pivot" type="Node2D" parent="." unique_id=1153100296]
-rotation = -0.5235988
+rotation = 0.0018164515
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Pivot" unique_id=251646806]
-position = Vector2(19, -40)
+position = Vector2(17.923742, -34.193573)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_6xu3q")
 animation = &"attack"
 
 [node name="Bras" type="Sprite2D" parent="Pivot" unique_id=857532954]
-position = Vector2(-3.0000038, -2.9999971)
+position = Vector2(-4.0762634, 2.8064299)
 rotation = -0.83600914
 scale = Vector2(2.5, 2.5)
 texture = ExtResource("2_viis3")
