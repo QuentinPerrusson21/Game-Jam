@@ -32,6 +32,9 @@ texture = ExtResource("3_i3f74")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wdf14"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4emyp"]
+bg_color = Color(0.07450981, 0.07450981, 0.07450981, 0.85882354)
+
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_wdf14"]
 color = Color(0.66264987, 0.7075475, 0.74017596, 1)
 grow_begin = 0.0
@@ -140,6 +143,7 @@ offset_right = 853.0
 offset_bottom = 434.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_4emyp")
 
 [node name="Label" type="Label" parent="Options" unique_id=278909264]
 layout_mode = 1
@@ -265,6 +269,36 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_kki6w")
 icon = ExtResource("10_wdf14")
 icon_alignment = 1
 
+[node name="HDwuPm1aRemovebgPreview" type="Sprite2D" parent="Options" unique_id=307374631]
+position = Vector2(1534, 580)
+scale = Vector2(0.291, 0.321)
+texture = ExtResource("12_3t817")
+
+[node name="Iey3PoCdRemovebgPreview" type="Sprite2D" parent="Options" unique_id=68991248]
+position = Vector2(1321, 581.99994)
+scale = Vector2(0.2735002, 0.2825001)
+texture = ExtResource("13_4emyp")
+
+[node name="KbzihKgLRemovebgPreview" type="Sprite2D" parent="Options" unique_id=816242294]
+position = Vector2(1436, 741)
+scale = Vector2(0.291, 0.321)
+texture = ExtResource("14_tohpp")
+
+[node name="OyVhVvsTRemovebgPreview" type="Sprite2D" parent="Options" unique_id=764525108]
+position = Vector2(1423, 475)
+scale = Vector2(0.2515002, 0.27849996)
+texture = ExtResource("15_44obn")
+
+[node name="PTdEna3zRemovebgPreview" type="Sprite2D" parent="Options" unique_id=212237914]
+position = Vector2(1426, 578.125)
+scale = Vector2(0.291, 0.36049992)
+texture = ExtResource("16_y26m3")
+
+[node name="IconCible" type="Sprite2D" parent="Options" unique_id=392165014]
+position = Vector2(1422.0001, 309)
+scale = Vector2(3.40625, 3.140625)
+texture = ExtResource("17_4emyp")
+
 [node name="audio control" type="HSlider" parent="Options" unique_id=946499345]
 layout_mode = 0
 offset_left = 46.0
@@ -294,36 +328,6 @@ step = 0.05
 value = 0.8
 script = ExtResource("11_i3f74")
 audio_bus_name = "SFX"
-
-[node name="HDwuPm1aRemovebgPreview" type="Sprite2D" parent="." unique_id=307374631]
-position = Vector2(1627, 727)
-scale = Vector2(0.291, 0.321)
-texture = ExtResource("12_3t817")
-
-[node name="Iey3PoCdRemovebgPreview" type="Sprite2D" parent="." unique_id=68991248]
-position = Vector2(1414, 728.99994)
-scale = Vector2(0.2735002, 0.2825001)
-texture = ExtResource("13_4emyp")
-
-[node name="KbzihKgLRemovebgPreview" type="Sprite2D" parent="." unique_id=816242294]
-position = Vector2(1529, 888)
-scale = Vector2(0.291, 0.321)
-texture = ExtResource("14_tohpp")
-
-[node name="OyVhVvsTRemovebgPreview" type="Sprite2D" parent="." unique_id=764525108]
-position = Vector2(1516, 622)
-scale = Vector2(0.2515002, 0.27849996)
-texture = ExtResource("15_44obn")
-
-[node name="PTdEna3zRemovebgPreview" type="Sprite2D" parent="." unique_id=212237914]
-position = Vector2(1519, 725.125)
-scale = Vector2(0.291, 0.36049992)
-texture = ExtResource("16_y26m3")
-
-[node name="IconCible" type="Sprite2D" parent="." unique_id=392165014]
-position = Vector2(1515.0001, 456)
-scale = Vector2(3.40625, 3.140625)
-texture = ExtResource("17_4emyp")
 
 [connection signal="pressed" from="Main button/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Main button/Achievements" to="." method="_on_achievements_pressed"]
