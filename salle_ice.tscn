@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://c1sx7bic4uhdj" path="res://player.tscn" id="4_ca3gy"]
 [ext_resource type="PackedScene" uid="uid://bav0ai3ehbby2" path="res://goblin.tscn" id="4_voie1"]
 [ext_resource type="PackedScene" uid="uid://y38gte5o0xf8" path="res://mob.tscn" id="5_dtjg6"]
+[ext_resource type="PackedScene" uid="uid://nsaon7wlrejg" path="res://boss.tscn" id="5_mmtu5"]
 [ext_resource type="AudioStream" uid="uid://bmsmepyk4ppdq" path="res://Music/Gameplay.ogg" id="8_ewlgg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cnktq"]
@@ -93,5 +94,8 @@ position = Vector2(1228, 692)
 position = Vector2(992, 679)
 
 [node name="MobsContainer" type="Node2D" parent="." unique_id=1916241597]
+
+[node name="boss" parent="." unique_id=2024698191 instance=ExtResource("5_mmtu5")]
+position = Vector2(281, 1276)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
