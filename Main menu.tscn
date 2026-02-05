@@ -35,6 +35,11 @@ texture = ExtResource("3_i3f74")
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4emyp"]
 bg_color = Color(0.07450981, 0.07450981, 0.07450981, 0.85882354)
 
+[sub_resource type="DPITexture" id="DPITexture_4emyp"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><circle cx=\"8\" cy=\"8\" r=\"7\" fill=\"#fefefe\"/></svg>
+"
+base_scale = 2.68
+
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_wdf14"]
 color = Color(0.66264987, 0.7075475, 0.74017596, 1)
 grow_begin = 0.0
@@ -305,6 +310,7 @@ offset_left = 46.0
 offset_top = 320.0
 offset_right = 529.0
 offset_bottom = 397.0
+theme_override_icons/grabber_highlight = SubResource("DPITexture_4emyp")
 theme_override_styles/slider = SubResource("StyleBoxLine_wdf14")
 theme_override_styles/grabber_area = SubResource("StyleBoxLine_f7ddt")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_i3f74")

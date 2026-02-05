@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://cyocat3lb24fl"]
+
+[ext_resource type="Texture2D" uid="uid://cfvjbcix4oa1v" path="res://Death screen/Mort chevalier.jpg" id="1_1h54d"]
+[ext_resource type="FontFile" uid="uid://b53iapi5wykx8" path="res://Font/PixelifySans-VariableFont_wght.ttf" id="2_c1grw"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3o3q4"]
+texture = ExtResource("1_1h54d")
+
+[node name="Control" type="Control" unique_id=465911234]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="." unique_id=880641404]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_3o3q4")
+
+[node name="Label" type="Label" parent="Panel" unique_id=285450676]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -428.0
+offset_top = 80.0
+offset_right = 434.0
+offset_bottom = 334.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.7137255)
+theme_override_constants/shadow_offset_x = 6
+theme_override_constants/shadow_offset_y = 6
+theme_override_fonts/font = ExtResource("2_c1grw")
+theme_override_font_sizes/font_size = 170
+text = "GAME OVER"
