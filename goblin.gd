@@ -36,7 +36,6 @@ func _physics_process(delta):
 			$AnimatedSprite2D.play("idle")
 			return
 
-	# Si le boss est mort ou attaque, on ne bouge pas
 	if is_dying or is_attacking:
 		return
 
