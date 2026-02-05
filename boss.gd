@@ -1,17 +1,13 @@
 extends CharacterBody2D
 
-# --- MODIFICATION ICI (DÉBUT) ---
 # On supprime la ligne qui cherchait "/root/Game/Player"
 var player = null
 
 func _ready():
 	# On cherche le joueur dans le groupe "joueur"
-	# Cela marche peu importe où tu es (Test de scène ou Jeu complet)
 	var liste_joueurs = get_tree().get_nodes_in_group("joueur")
 	if liste_joueurs.size() > 0:
 		player = liste_joueurs[0]
-# --- MODIFICATION ICI (FIN) ---
-
 
 var health = 50
 var is_dying = false 
@@ -22,14 +18,12 @@ var attack_range = 300.0
 var damage_amount = 2 
 
 func _physics_process(delta):
-	# 1. CORRECTION : Si le joueur est introuvable, on réessaie de le trouver
+	# Si le joueur est introuvable, on réessaie de le trouver
 	if player == null:
 		var liste_joueurs = get_tree().get_nodes_in_group("joueur")
 		if liste_joueurs.size() > 0:
 			player = liste_joueurs[0]
-			print("Le Boss a trouvé le joueur !") # Pour vérifier
 		else:
-			# Si toujours pas de joueur, on attend (et on joue l'anim Idle)
 			$AnimatedSprite2D.play("idle")
 			return
 
@@ -46,6 +40,7 @@ func _physics_process(delta):
 		velocity = direction * 250.0
 		move_and_slide()
 		update_animation(direction)
+
 func update_animation(move_input):
 	if is_attacking:
 		return
@@ -67,11 +62,12 @@ func start_attack():
 	
 	$AnimatedSprite2D.play("attack")
 	
-	# Optionnel : Petit délai pour le réalisme
 	await get_tree().create_timer(0.2).timeout
 	
 	# On vérifie encore que le joueur est là avant de taper
 	if player and player.has_method("take_damage"):
+		# Note : Assure-toi que ton Joueur accepte bien 2 arguments aussi !
+		# Sinon, change pour : player.take_damage(damage_amount)
 		player.take_damage(damage_amount, global_position) 
 	
 	await $AnimatedSprite2D.animation_finished
@@ -80,10 +76,25 @@ func start_attack():
 	
 	is_attacking = false
 
-func take_damage():
-	health -= 1
+# --- C'EST ICI QUE J'AI FAIT LA MODIFICATION POUR L'ÉPÉE ---
+func take_damage(amount = 1):
+	# On utilise le montant envoyé par l'épée (ex: 2)
+	health -= amount
+	
+	print("Boss touché ! Vie restante : ", health)
+	
+	# Petit effet visuel (Flash Blanc) pour confirmer l'impact
+	modulate = Color(10, 10, 10)
+	var tween = create_tween()
+	tween.tween_property(self, "modulate", Color(1, 1, 1), 0.1)
+
 	if health <= 0 and not is_dying: 
 		die()
+
+# J'ajoute aussi cette fonction vide au cas où l'épée essaie de le pousser
+# (Le boss est trop lourd pour reculer, donc on ne fait rien dedans)
+func prendre_recul(source, force):
+	pass
 
 func die():
 	is_dying = true 
