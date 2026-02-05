@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://bc4xqd665byod"]
 
-[ext_resource type="Texture2D" path="res://maps/Ice/GrassSnowy.png" id="1_0m8by"]
 [ext_resource type="Script" uid="uid://cjltq68wulcco" path="res://salle_ice.gd" id="1_4fsy0"]
 [ext_resource type="Texture2D" uid="uid://b0mgq53tjkomb" path="res://decor/doorpng.png" id="2_cnktq"]
 [ext_resource type="PackedScene" uid="uid://dh65gqncrg3a0" path="res://SlimeFeu.tscn" id="3_ewlgg"]
@@ -22,7 +21,6 @@ mobs_a_faire_spawn = Array[PackedScene]([ExtResource("5_dtjg6"), ExtResource("3_
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1355427971]
 position = Vector2(988, 526)
-texture = ExtResource("1_0m8by")
 
 [node name="Murs" type="StaticBody2D" parent="." unique_id=2007332024]
 
@@ -99,7 +97,5 @@ position = Vector2(987, 1267)
 
 [node name="boss" parent="." unique_id=2024698191 instance=ExtResource("5_mmtu5")]
 position = Vector2(247, 1438)
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1657413500]
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
