@@ -6,14 +6,17 @@
 [ext_resource type="Texture2D" uid="uid://c3glrt8xsekiq" path="res://maps/Cobble/Vanilla/CobbleLeft.png" id="4_7h1xp"]
 [ext_resource type="Texture2D" uid="uid://c0qws8nrtrj3j" path="res://maps/Cobble/Vanilla/CobbleTopLeftCorner.png" id="5_q6oq8"]
 [ext_resource type="Texture2D" uid="uid://drkyfv71lrak6" path="res://maps/Cobble/Vanilla/CobbleBottom.png" id="6_jq2vi"]
+[ext_resource type="Texture2D" uid="uid://bmswsub3th78s" path="res://maps/Cobble/Mix/coble-tlb.png" id="7_q6oq8"]
 [ext_resource type="Texture2D" uid="uid://b1tpergyg3wbj" path="res://maps/Cobble/Vanilla/CobbleFondHaut.png" id="7_wp3aj"]
 [ext_resource type="Texture2D" uid="uid://bq4fwuhf05y4f" path="res://maps/Cobble/Vanilla/CobbleBottomLeftCorner.png" id="8_ib8wb"]
+[ext_resource type="Texture2D" uid="uid://dw688qawbicsn" path="res://maps/Cobble/Mix/coble-tb.png" id="8_jq2vi"]
 [ext_resource type="Texture2D" uid="uid://ytwyy7kpproe" path="res://maps/Cobble/Vanilla/CobbleTopRightCorner.png" id="9_00ky8"]
+[ext_resource type="Texture2D" uid="uid://maq2ulgxnbvo" path="res://maps/Cobble/Mix/coble-b.png" id="9_wp3aj"]
 [ext_resource type="Texture2D" uid="uid://c2chayuh5fni0" path="res://maps/Cobble/Vanilla/CobbleHorizontal.png" id="10_cfgec"]
 [ext_resource type="Texture2D" uid="uid://k5j74qsq6nwp" path="res://maps/Cobble/Vanilla/CobbleBottomRightCorner.png" id="11_7ijk5"]
-[ext_resource type="Texture2D" uid="uid://dwah8o2hu80kb" path="res://maps/Cobble/Vanilla/CobbleCross.png" id="12_pwxt5"]
 [ext_resource type="PackedScene" uid="uid://c1sx7bic4uhdj" path="res://player.tscn" id="13_cwf1d"]
-[ext_resource type="Texture2D" uid="uid://kafbd0fce3nc" path="res://maps/Cobble/Vanilla/CobbleCorridorVertical.png" id="13_lr0sv"]
+[ext_resource type="Texture2D" uid="uid://c70f54n5rww6c" path="res://maps/Cobble/Mix/coble-tr.png" id="16_ib8wb"]
+[ext_resource type="Texture2D" uid="uid://bw4loooi0ptkr" path="res://maps/Cobble/Mix/MagicCircleRed.png" id="17_00ky8"]
 
 [node name="Node2D" type="Node2D" unique_id=18991158]
 position = Vector2(693, 488)
@@ -52,15 +55,15 @@ texture = ExtResource("6_jq2vi")
 
 [node name="Sprite2D16" type="Sprite2D" parent="." unique_id=1152195126]
 position = Vector2(200, -2013)
-texture = ExtResource("4_7h1xp")
+texture = ExtResource("7_q6oq8")
 
 [node name="Sprite2D18" type="Sprite2D" parent="." unique_id=1784921648]
 position = Vector2(200, -3037)
-texture = ExtResource("2_cwf1d")
+texture = ExtResource("8_jq2vi")
 
 [node name="Sprite2D17" type="Sprite2D" parent="." unique_id=1009038855]
 position = Vector2(200, -4061)
-texture = ExtResource("7_wp3aj")
+texture = ExtResource("9_wp3aj")
 
 [node name="Sprite2D12" type="Sprite2D" parent="." unique_id=1580436055]
 position = Vector2(4296, 2082)
@@ -112,10 +115,7 @@ texture = ExtResource("10_cfgec")
 
 [node name="Sprite2D30" type="Sprite2D" parent="." unique_id=2040837262]
 position = Vector2(200, 35)
-texture = ExtResource("12_pwxt5")
-
-[node name="Player" parent="Sprite2D30" unique_id=1916796525 instance=ExtResource("13_cwf1d")]
-position = Vector2(70, 21)
+texture = ExtResource("7_q6oq8")
 
 [node name="Sprite2D31" type="Sprite2D" parent="." unique_id=1162776197]
 position = Vector2(2249, -989)
@@ -123,12 +123,20 @@ texture = ExtResource("7_wp3aj")
 
 [node name="Sprite2D32" type="Sprite2D" parent="." unique_id=1329852924]
 position = Vector2(200, 2083)
-texture = ExtResource("11_7ijk5")
+texture = ExtResource("16_ib8wb")
 
 [node name="Sprite2D33" type="Sprite2D" parent="." unique_id=1026330116]
 position = Vector2(200, 1059)
-texture = ExtResource("13_lr0sv")
+texture = ExtResource("8_jq2vi")
 
 [node name="Sprite2D9" type="Sprite2D" parent="." unique_id=161688091]
 position = Vector2(200, -989)
-texture = ExtResource("13_lr0sv")
+texture = ExtResource("8_jq2vi")
+
+[node name="Player" parent="." unique_id=1916796525 instance=ExtResource("13_cwf1d")]
+position = Vector2(270, 56)
+
+[node name="MagicCircleRed" type="Sprite2D" parent="." unique_id=414979421]
+position = Vector2(668.0001, 2081)
+scale = Vector2(0.39843735, 1)
+texture = ExtResource("17_00ky8")

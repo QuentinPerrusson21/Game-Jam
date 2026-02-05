@@ -6,15 +6,22 @@
 [ext_resource type="Texture2D" uid="uid://c3glrt8xsekiq" path="res://maps/Cobble/Vanilla/CobbleLeft.png" id="5_copnx"]
 [ext_resource type="Texture2D" uid="uid://c0qws8nrtrj3j" path="res://maps/Cobble/Vanilla/CobbleTopLeftCorner.png" id="6_h8p7j"]
 [ext_resource type="Texture2D" uid="uid://drkyfv71lrak6" path="res://maps/Cobble/Vanilla/CobbleBottom.png" id="7_2e1nn"]
-[ext_resource type="Texture2D" uid="uid://bwvt6b7s2epr7" path="res://maps/Cobble/Vanilla/CobbleFondDroite.png" id="8_ondwt"]
+[ext_resource type="Texture2D" uid="uid://bk6ruiljhgrw8" path="res://maps/Cobble/Mix/coble-lr.png" id="7_ondwt"]
+[ext_resource type="Texture2D" uid="uid://c7arvypj6rkjx" path="res://maps/Cobble/Mix/coble-l.png" id="9_fpvl5"]
 [ext_resource type="Texture2D" uid="uid://b1tpergyg3wbj" path="res://maps/Cobble/Vanilla/CobbleFondHaut.png" id="9_jj478"]
+[ext_resource type="Texture2D" uid="uid://dgdjhgb7ohome" path="res://maps/Cobble/Mix/coble-tlr.png" id="10_cs32q"]
 [ext_resource type="Texture2D" uid="uid://bq4fwuhf05y4f" path="res://maps/Cobble/Vanilla/CobbleBottomLeftCorner.png" id="10_fpvl5"]
-[ext_resource type="Texture2D" uid="uid://ytwyy7kpproe" path="res://maps/Cobble/Vanilla/CobbleTopRightCorner.png" id="11_cs32q"]
+[ext_resource type="Texture2D" uid="uid://d1dsxv8iacu23" path="res://maps/Cobble/Mix/coble-lb.png" id="11_xwjrt"]
+[ext_resource type="Texture2D" uid="uid://ckhek06palm60" path="res://maps/Cobble/Mix/coble-trb.png" id="12_qacv2"]
 [ext_resource type="Texture2D" uid="uid://c2chayuh5fni0" path="res://maps/Cobble/Vanilla/CobbleHorizontal.png" id="12_xwjrt"]
+[ext_resource type="Texture2D" uid="uid://c70f54n5rww6c" path="res://maps/Cobble/Mix/coble-tr.png" id="13_iixlc"]
 [ext_resource type="Texture2D" uid="uid://k5j74qsq6nwp" path="res://maps/Cobble/Vanilla/CobbleBottomRightCorner.png" id="13_qacv2"]
 [ext_resource type="Texture2D" uid="uid://dwah8o2hu80kb" path="res://maps/Cobble/Vanilla/CobbleCross.png" id="14_iixlc"]
+[ext_resource type="Texture2D" uid="uid://dw688qawbicsn" path="res://maps/Cobble/Mix/coble-tb.png" id="14_w8mj8"]
 [ext_resource type="Texture2D" uid="uid://kafbd0fce3nc" path="res://maps/Cobble/Vanilla/CobbleCorridorVertical.png" id="15_w8mj8"]
 [ext_resource type="PackedScene" uid="uid://c1sx7bic4uhdj" path="res://player.tscn" id="16_fmmf0"]
+[ext_resource type="Texture2D" uid="uid://crsign37gv8ns" path="res://maps/Cobble/Mix/coble-tl.png" id="17_fmmf0"]
+[ext_resource type="Texture2D" uid="uid://cq8fwksdavm1g" path="res://maps/Cobble/Mix/coble-lrb.png" id="18_645x2"]
 
 [node name="Node2D" type="Node2D" unique_id=201848263]
 position = Vector2(1397, 686)
@@ -60,8 +67,8 @@ position = Vector2(678, -4589)
 texture = ExtResource("3_onky3")
 
 [node name="Sprite2D19" type="Sprite2D" parent="." unique_id=1869321970]
-position = Vector2(-346, -3565)
-texture = ExtResource("8_ondwt")
+position = Vector2(-347, -3564)
+texture = ExtResource("7_ondwt")
 
 [node name="Sprite2D17" type="Sprite2D" parent="." unique_id=908739194]
 position = Vector2(678, -5613)
@@ -73,27 +80,27 @@ texture = ExtResource("9_jj478")
 
 [node name="Sprite2D12" type="Sprite2D" parent="." unique_id=1116907167]
 position = Vector2(1702, 3602)
-texture = ExtResource("3_onky3")
+texture = ExtResource("9_fpvl5")
 
 [node name="Sprite2D13" type="Sprite2D" parent="." unique_id=1844528451]
 position = Vector2(678, 3602)
-texture = ExtResource("10_fpvl5")
+texture = ExtResource("10_cs32q")
 
 [node name="Sprite2D21" type="Sprite2D" parent="." unique_id=274025083]
 position = Vector2(678, 2578)
-texture = ExtResource("11_cs32q")
+texture = ExtResource("11_xwjrt")
 
 [node name="Sprite2D22" type="Sprite2D" parent="." unique_id=1038205653]
 position = Vector2(-346, 2579)
-texture = ExtResource("10_fpvl5")
+texture = ExtResource("12_qacv2")
 
 [node name="Sprite2D24" type="Sprite2D" parent="." unique_id=1749199542]
 position = Vector2(-346, 3603)
-texture = ExtResource("10_fpvl5")
+texture = ExtResource("13_iixlc")
 
 [node name="Sprite2D23" type="Sprite2D" parent="." unique_id=1112471137]
 position = Vector2(-346, 1555)
-texture = ExtResource("7_2e1nn")
+texture = ExtResource("14_w8mj8")
 
 [node name="Sprite2D7" type="Sprite2D" parent="." unique_id=262192500]
 position = Vector2(1702, -1517)
@@ -109,7 +116,7 @@ texture = ExtResource("5_copnx")
 
 [node name="Sprite2D34" type="Sprite2D" parent="." unique_id=369626645]
 position = Vector2(-345, -493)
-texture = ExtResource("13_qacv2")
+texture = ExtResource("17_fmmf0")
 
 [node name="Sprite2D28" type="Sprite2D" parent="." unique_id=1354450879]
 position = Vector2(-1370, -1517)
@@ -117,7 +124,7 @@ texture = ExtResource("6_h8p7j")
 
 [node name="Sprite2D29" type="Sprite2D" parent="." unique_id=2037214875]
 position = Vector2(-346, -1517)
-texture = ExtResource("12_xwjrt")
+texture = ExtResource("18_645x2")
 
 [node name="Sprite2D30" type="Sprite2D" parent="." unique_id=371848994]
 position = Vector2(678, -1517)
@@ -125,7 +132,7 @@ texture = ExtResource("14_iixlc")
 
 [node name="Sprite2D31" type="Sprite2D" parent="." unique_id=841138535]
 position = Vector2(-346, 531)
-texture = ExtResource("9_jj478")
+texture = ExtResource("7_ondwt")
 
 [node name="Sprite2D32" type="Sprite2D" parent="." unique_id=257259962]
 position = Vector2(678, 531)
