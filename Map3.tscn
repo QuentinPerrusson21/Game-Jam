@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://ckd2wuo5vfoxi" path="res://maps/Cobble/Vanilla/CobbleCorridorHorizontal.png" id="2_cwf1d"]
 [ext_resource type="Texture2D" uid="uid://ccfvlw50e8n74" path="res://maps/Cobble/Vanilla/CobbleFondGauche.png" id="3_biwlw"]
 [ext_resource type="Texture2D" uid="uid://c3glrt8xsekiq" path="res://maps/Cobble/Vanilla/CobbleLeft.png" id="4_7h1xp"]
+[ext_resource type="Texture2D" uid="uid://cfvjbcix4oa1v" path="res://Death screen/Mort chevalier.jpg" id="5_jq2vi"]
 [ext_resource type="Texture2D" uid="uid://c0qws8nrtrj3j" path="res://maps/Cobble/Vanilla/CobbleTopLeftCorner.png" id="5_q6oq8"]
 [ext_resource type="Texture2D" uid="uid://drkyfv71lrak6" path="res://maps/Cobble/Vanilla/CobbleBottom.png" id="6_jq2vi"]
 [ext_resource type="Texture2D" uid="uid://bmswsub3th78s" path="res://maps/Cobble/Mix/coble-tlb.png" id="7_q6oq8"]
@@ -47,7 +48,7 @@ texture = ExtResource("4_7h1xp")
 
 [node name="Sprite2D14" type="Sprite2D" parent="." unique_id=47947100]
 position = Vector2(-1848, 35)
-texture = ExtResource("5_q6oq8")
+texture = ExtResource("5_jq2vi")
 
 [node name="Sprite2D15" type="Sprite2D" parent="." unique_id=645942283]
 position = Vector2(1224, 2083)
@@ -134,7 +135,7 @@ position = Vector2(200, -989)
 texture = ExtResource("8_jq2vi")
 
 [node name="Player" parent="." unique_id=1916796525 instance=ExtResource("13_cwf1d")]
-position = Vector2(35, 211)
+position = Vector2(244, 83)
 
 [node name="MagicCircleRed" type="Sprite2D" parent="." unique_id=414979421]
 position = Vector2(668.0001, 2081)
