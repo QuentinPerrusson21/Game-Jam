@@ -4,7 +4,6 @@
 [ext_resource type="Script" uid="uid://cjltq68wulcco" path="res://salle_ice.gd" id="1_4fsy0"]
 [ext_resource type="Texture2D" uid="uid://b0mgq53tjkomb" path="res://decor/doorpng.png" id="2_cnktq"]
 [ext_resource type="PackedScene" uid="uid://dh65gqncrg3a0" path="res://SlimeFeu.tscn" id="3_ewlgg"]
-[ext_resource type="PackedScene" uid="uid://c1sx7bic4uhdj" path="res://player.tscn" id="4_ca3gy"]
 [ext_resource type="PackedScene" uid="uid://bav0ai3ehbby2" path="res://goblin.tscn" id="4_voie1"]
 [ext_resource type="PackedScene" uid="uid://y38gte5o0xf8" path="res://mob.tscn" id="5_dtjg6"]
 [ext_resource type="PackedScene" uid="uid://nsaon7wlrejg" path="res://boss.tscn" id="5_mmtu5"]
@@ -61,9 +60,6 @@ texture_filter = 1
 position = Vector2(995, 43)
 scale = Vector2(3, 3)
 texture = ExtResource("2_cnktq")
-
-[node name="Player" parent="." unique_id=1916796525 groups=["joueur"] instance=ExtResource("4_ca3gy")]
-position = Vector2(985, 1165)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=984410180]
 position = Vector2(910, 365)

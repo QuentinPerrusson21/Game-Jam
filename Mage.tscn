@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" uid="uid://yh2ao5or56lq" path="res://player.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://bcp5shnbq0ryb" path="res://characters/Classe/Mage/Mage-mort.png" id="2_unyy7"]
-[ext_resource type="PackedScene" uid="uid://du5i8r7jdycua" path="res://gun.tscn" id="3_i3pqv"]
 [ext_resource type="Texture2D" uid="uid://dyn1qbcmrxub8" path="res://characters/Classe/Mage/Mage1.png" id="3_pay2o"]
 [ext_resource type="Texture2D" uid="uid://dppiidctlfdph" path="res://characters/Classe/Mage/Mage2.png" id="4_iyoo4"]
-[ext_resource type="PackedScene" uid="uid://dwdqv6knf7ihp" path="res://bow.tscn" id="7_1jxqw"]
-[ext_resource type="PackedScene" uid="uid://c4rcmhv7crd6c" path="res://shuriken.tscn" id="8_dw050"]
+[ext_resource type="PackedScene" uid="uid://bcipe4tonin1s" path="res://BatonDeGlace.tscn" id="6_hrlh7"]
+[ext_resource type="PackedScene" uid="uid://ck4v5rx5n0poo" path="res://BatonDePlus.tscn" id="7_unyy7"]
+[ext_resource type="PackedScene" uid="uid://csxodi4k1jusp" path="res://BatonDeFeu.tscn" id="8_pay2o"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7i3ca"]
 atlas = ExtResource("2_unyy7")
@@ -55,7 +55,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sweqy"]
-size = Vector2(36, 87)
+size = Vector2(36, 73)
 
 [node name="Player" type="CharacterBody2D" unique_id=1916796525]
 platform_floor_layers = 4294967292
@@ -65,12 +65,12 @@ script = ExtResource("1_onrkg")
 unique_name_in_owner = true
 texture_filter = 1
 position = Vector2(0, -31)
-scale = Vector2(1.5, 1.5)
+scale = Vector2(2.2, 2.2)
 sprite_frames = SubResource("SpriteFrames_ivps1")
 animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1772799208]
-position = Vector2(-3, -27.5)
+position = Vector2(-3, -25.5)
 shape = SubResource("RectangleShape2D_sweqy")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1722338469]
@@ -81,17 +81,13 @@ shape = SubResource("RectangleShape2D_sweqy")
 z_index = 5
 position = Vector2(-4, -28)
 
-[node name="Gun" parent="PorteArmes" unique_id=857317819 instance=ExtResource("3_i3pqv")]
+[node name="Gun2" parent="PorteArmes" unique_id=267145433 instance=ExtResource("8_pay2o")]
 visible = false
-position = Vector2(-4, 4)
-cooldown = 4.0
+position = Vector2(-20, 12)
 
-[node name="Bow" parent="PorteArmes" unique_id=770400459 instance=ExtResource("7_1jxqw")]
+[node name="Gun" parent="PorteArmes" unique_id=857317819 instance=ExtResource("6_hrlh7")]
 visible = false
-position = Vector2(-4, 4)
-cooldown = 1.0
+position = Vector2(-19, 13)
 
-[node name="Shuriken" parent="PorteArmes" unique_id=1601841850 instance=ExtResource("8_dw050")]
-visible = false
-position = Vector2(-4, 4)
-cooldown = 0.1
+[node name="Gun3" parent="PorteArmes" unique_id=545706438 instance=ExtResource("7_unyy7")]
+position = Vector2(-16, 12)

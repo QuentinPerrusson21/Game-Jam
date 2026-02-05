@@ -22,10 +22,18 @@ var attack_range = 300.0
 var damage_amount = 2 
 
 func _physics_process(delta):
-	# SÉCURITÉ : Si le joueur n'est pas trouvé (ou mort), on arrête tout pour ne pas crasher
+	# 1. CORRECTION : Si le joueur est introuvable, on réessaie de le trouver
 	if player == null:
-		return
+		var liste_joueurs = get_tree().get_nodes_in_group("joueur")
+		if liste_joueurs.size() > 0:
+			player = liste_joueurs[0]
+			print("Le Boss a trouvé le joueur !") # Pour vérifier
+		else:
+			# Si toujours pas de joueur, on attend (et on joue l'anim Idle)
+			$AnimatedSprite2D.play("idle")
+			return
 
+	# Si le boss est mort ou attaque, on ne bouge pas
 	if is_dying or is_attacking:
 		return
 
@@ -38,7 +46,7 @@ func _physics_process(delta):
 		velocity = direction * 250.0
 		move_and_slide()
 		update_animation(direction)
-
+		
 func update_animation(move_input):
 	if is_attacking:
 		return
