@@ -46,7 +46,6 @@ func _physics_process(delta):
 		velocity = direction * 250.0
 		move_and_slide()
 		update_animation(direction)
-		
 func update_animation(move_input):
 	if is_attacking:
 		return

@@ -39,7 +39,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ixvp6")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack",
 "speed": 5.0
 }, {
@@ -72,7 +72,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_macxp"]
-size = Vector2(41, 22)
+size = Vector2(89, 35)
 
 [node name="chauveSouris" type="CharacterBody2D" unique_id=666401213]
 collision_layer = 2
@@ -82,8 +82,8 @@ script = ExtResource("1_eyhpr")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=274740850]
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_p8f7c")
-animation = &"run"
+animation = &"attack"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1850888654]
-position = Vector2(0.5, 1)
+position = Vector2(1.5, 0.5)
 shape = SubResource("RectangleShape2D_macxp")

@@ -3,10 +3,10 @@
 [ext_resource type="Script" uid="uid://ds47brcop64wi" path="res://arme_distance.gd" id="1_pr6yj"]
 [ext_resource type="Texture2D" uid="uid://dwtuujhmwmol5" path="res://pistol/weapon/crossbow1.png" id="2_dk5gl"]
 [ext_resource type="PackedScene" uid="uid://b5ixw66oaedki" path="res://bullet.tscn" id="2_k8v55"]
-[ext_resource type="Texture2D" uid="uid://dqnlv3w3oqm1r" path="res://characters/Classe/Barbare/Bras-gauche.png" id="2_pr6yj"]
 [ext_resource type="Texture2D" uid="uid://5fmj4rbssukc" path="res://pistol/weapon/crosbow2.png" id="3_7vd5q"]
 [ext_resource type="Texture2D" uid="uid://c3kg07llwmx3r" path="res://pistol/weapon/crossbow3.png" id="4_pr6yj"]
 [ext_resource type="Texture2D" uid="uid://bnocq2ybuc078" path="res://pistol/weapon/crossbow4.png" id="5_k8v55"]
+[ext_resource type="Texture2D" uid="uid://dy8uxkal12ymm" path="res://characters/Classe/Archer/bras.png" id="7_k8v55"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dk5gl"]
 radius = 411.12164
@@ -62,6 +62,12 @@ shape = SubResource("CircleShape2D_dk5gl")
 
 [node name="WeaponPivot" type="Marker2D" parent="." unique_id=705985608]
 
+[node name="Bras" type="Sprite2D" parent="WeaponPivot" unique_id=405139144]
+position = Vector2(-6, 12.000002)
+rotation = -1.5707964
+scale = Vector2(3, 3)
+texture = ExtResource("7_k8v55")
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="WeaponPivot" unique_id=609336571]
 position = Vector2(41, -9)
 sprite_frames = SubResource("SpriteFrames_uerdb")
@@ -73,11 +79,6 @@ frame_progress = 0.90080816
 unique_name_in_owner = true
 position = Vector2(18, -2)
 scale = Vector2(1.5, 1.5)
-
-[node name="Bras" type="Sprite2D" parent="WeaponPivot" unique_id=405139144]
-rotation = -0.90656686
-scale = Vector2(2, 2)
-texture = ExtResource("2_pr6yj")
 
 [node name="Timer" type="Timer" parent="." unique_id=365153755]
 wait_time = 0.3

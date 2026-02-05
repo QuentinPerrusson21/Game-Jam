@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://ds47brcop64wi" path="res://arme_distance.gd" id="1_jnlsw"]
 [ext_resource type="PackedScene" uid="uid://b0x7p0ry3j4ro" path="res://shuriken_lance.tscn" id="2_fsugl"]
 [ext_resource type="Texture2D" uid="uid://dip6xcu44riiq" path="res://pistol/weapon/Shuriken/shuriken.png" id="2_jnlsw"]
-[ext_resource type="Texture2D" uid="uid://dqnlv3w3oqm1r" path="res://characters/Classe/Barbare/Bras-gauche.png" id="3_fsugl"]
+[ext_resource type="Texture2D" uid="uid://dy8uxkal12ymm" path="res://characters/Classe/Archer/bras.png" id="3_jnlsw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bd2gl"]
 radius = 544.07446
@@ -20,17 +20,18 @@ shape = SubResource("CircleShape2D_bd2gl")
 
 [node name="WeaponPivot" type="Marker2D" parent="." unique_id=735633268]
 
+[node name="Bras" type="Sprite2D" parent="WeaponPivot" unique_id=2049801947]
+position = Vector2(-7, 15)
+rotation = -1.5707964
+scale = Vector2(3, 3)
+texture = ExtResource("3_jnlsw")
+
 [node name="Sprite2D" type="Sprite2D" parent="WeaponPivot" unique_id=1332194543]
 position = Vector2(20, -4)
 texture = ExtResource("2_jnlsw")
 
 [node name="PointDeTir" type="Marker2D" parent="WeaponPivot/Sprite2D" unique_id=990808337]
 unique_name_in_owner = true
-
-[node name="Bras" type="Sprite2D" parent="WeaponPivot" unique_id=2049801947]
-rotation = -0.90582585
-scale = Vector2(2, 2)
-texture = ExtResource("3_fsugl")
 
 [node name="Timer" type="Timer" parent="." unique_id=2085033733]
 autostart = true
