@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dcw8xpb0djaum"]
+
+[ext_resource type="Texture2D" uid="uid://bb133s17wpfq2" path="res://maps/Spawn/Hub_Gauche.jpg" id="1_hhvnk"]
+[ext_resource type="Texture2D" uid="uid://c1lkky2ricxd" path="res://maps/Spawn/Hub_Droite.jpg" id="2_cmxq1"]
+[ext_resource type="PackedScene" uid="uid://c1sx7bic4uhdj" path="res://player.tscn" id="3_qy6qq"]
+
+[node name="Node2D" type="Node2D" unique_id=1228411534]
+position = Vector2(772, 496)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1488588063]
+position = Vector2(-258, 16)
+texture = ExtResource("1_hhvnk")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=2000402940]
+position = Vector2(766, 16)
+texture = ExtResource("2_cmxq1")
+
+[node name="Player" parent="." unique_id=1916796525 instance=ExtResource("3_qy6qq")]
+position = Vector2(266, 166)

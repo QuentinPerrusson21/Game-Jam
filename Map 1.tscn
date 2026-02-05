@@ -25,6 +25,10 @@
 position = Vector2(-35, -493)
 texture = ExtResource("3_lfpw6")
 
+[node name="Sprite2D36" type="Sprite2D" parent="." unique_id=1154014410]
+position = Vector2(-35, -493)
+texture = ExtResource("3_lfpw6")
+
 [node name="Sprite2D2" type="Sprite2D" parent="." unique_id=2018091783]
 position = Vector2(989, 531)
 texture = ExtResource("1_ho3xe")
@@ -529,7 +533,7 @@ polygon = PackedVector2Array(896, 1530, 896, 1472, 576, 1472, 576, 1280, 512, 12
 
 [node name="CollisionPolygon2D17" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=926720804]
 position = Vector2(0, -2048)
-polygon = PackedVector2Array(896, 1530, 896, 1472, 576, 1472, 576, 1280, 512, 1280, 517, 1643, 899, 1625)
+polygon = PackedVector2Array(896, 1530, 896, 1472, 576, 1472, 576, 1280, 512, 1280, 517, 1643, 896, 1537)
 
 [node name="CollisionPolygon2D8" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=2051347324]
 position = Vector2(0, -1023)
@@ -670,6 +674,11 @@ polygon = PackedVector2Array(5303.999, -1663.0002, 5034.796, -1662.3206, 4908, -
 position = Vector2(10195, -3006)
 rotation = 3.1415927
 polygon = PackedVector2Array(6281.999, -1659.0004, 6012.796, -1658.3207, 5886, -1658.0004, 5886, -1595.0004, 5984.147, -1595.0004, 6282.999, -1595.0004)
+
+[node name="CollisionPolygon2D122" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=326945822]
+position = Vector2(10195, -3006)
+rotation = 3.1415927
+polygon = PackedVector2Array(7362.999, -2495.0007, 7093.796, -2494.321, 6967, -2494.0007, 6967, -2431.0005, 7065.147, -2431.0005, 7363.999, -2431.0005)
 
 [node name="CollisionPolygon2D20" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=163396988]
 position = Vector2(241, -1643)
