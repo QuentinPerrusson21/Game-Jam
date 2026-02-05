@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://dlrggren8cyb3"]
 
-[ext_resource type="Texture2D" uid="uid://bei2rdsfah42k" path="res://maps/Cobble/Vanilla/CobbleFondBas.png" id="1_ifuwy"]
 [ext_resource type="Texture2D" uid="uid://dqi8fxx7b3lwd" path="res://maps/Cobble/Vanilla/CobbleRight.png" id="2_dossa"]
 [ext_resource type="Texture2D" uid="uid://ckd2wuo5vfoxi" path="res://maps/Cobble/Vanilla/CobbleCorridorHorizontal.png" id="3_onky3"]
 [ext_resource type="Texture2D" uid="uid://ccfvlw50e8n74" path="res://maps/Cobble/Vanilla/CobbleFondGauche.png" id="4_yep4m"]
@@ -18,130 +17,127 @@
 [ext_resource type="PackedScene" uid="uid://c1sx7bic4uhdj" path="res://player.tscn" id="16_fmmf0"]
 
 [node name="Node2D" type="Node2D" unique_id=201848263]
-
-[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=508053522]
-position = Vector2(8154, -498)
-texture = ExtResource("1_ifuwy")
+position = Vector2(1397, 686)
 
 [node name="Sprite2D3" type="Sprite2D" parent="." unique_id=519677543]
-position = Vector2(8154, -1522)
+position = Vector2(2723, -1522)
 texture = ExtResource("2_dossa")
 
 [node name="Sprite2D4" type="Sprite2D" parent="." unique_id=1813713093]
-position = Vector2(-35, -493)
+position = Vector2(-2394, -493)
 texture = ExtResource("3_onky3")
 
 [node name="Sprite2D5" type="Sprite2D" parent="." unique_id=2109593943]
-position = Vector2(-1059, -493)
+position = Vector2(-3418, -493)
 texture = ExtResource("3_onky3")
 
 [node name="Sprite2D10" type="Sprite2D" parent="." unique_id=347956848]
-position = Vector2(-2083, -493)
+position = Vector2(-4442, -493)
 texture = ExtResource("4_yep4m")
 
 [node name="Sprite2D6" type="Sprite2D" parent="." unique_id=1694116959]
-position = Vector2(8154, -2546)
+position = Vector2(2723, -2546)
 texture = ExtResource("5_copnx")
 
 [node name="Sprite2D11" type="Sprite2D" parent="." unique_id=426581147]
-position = Vector2(8154, -3570)
+position = Vector2(2723, -3570)
 texture = ExtResource("5_copnx")
 
 [node name="Sprite2D14" type="Sprite2D" parent="." unique_id=2070045641]
-position = Vector2(8154, -4594)
+position = Vector2(2723, -4594)
 texture = ExtResource("6_h8p7j")
 
 [node name="Sprite2D15" type="Sprite2D" parent="." unique_id=356229443]
-position = Vector2(2013, -3565)
+position = Vector2(-1370, -3565)
 texture = ExtResource("7_2e1nn")
 
 [node name="Sprite2D16" type="Sprite2D" parent="." unique_id=1734985842]
-position = Vector2(3037, -3565)
+position = Vector2(678, -3565)
 texture = ExtResource("5_copnx")
 
 [node name="Sprite2D18" type="Sprite2D" parent="." unique_id=1496376287]
-position = Vector2(4061, -3565)
+position = Vector2(678, -4589)
 texture = ExtResource("3_onky3")
 
 [node name="Sprite2D19" type="Sprite2D" parent="." unique_id=1869321970]
-position = Vector2(5085, -3565)
+position = Vector2(-346, -3565)
 texture = ExtResource("8_ondwt")
 
 [node name="Sprite2D17" type="Sprite2D" parent="." unique_id=908739194]
-position = Vector2(3037, -4589)
+position = Vector2(678, -5613)
 texture = ExtResource("9_jj478")
 
 [node name="Sprite2D20" type="Sprite2D" parent="." unique_id=155950072]
-position = Vector2(2013, -4589)
+position = Vector2(-1370, -4589)
 texture = ExtResource("9_jj478")
 
 [node name="Sprite2D12" type="Sprite2D" parent="." unique_id=1116907167]
-position = Vector2(-35, -2541)
+position = Vector2(1702, 3602)
 texture = ExtResource("3_onky3")
 
 [node name="Sprite2D13" type="Sprite2D" parent="." unique_id=1844528451]
-position = Vector2(-1059, -2541)
+position = Vector2(678, 3602)
 texture = ExtResource("10_fpvl5")
 
 [node name="Sprite2D21" type="Sprite2D" parent="." unique_id=274025083]
-position = Vector2(-1059, -3565)
+position = Vector2(678, 2578)
 texture = ExtResource("11_cs32q")
 
 [node name="Sprite2D22" type="Sprite2D" parent="." unique_id=1038205653]
-position = Vector2(-2083, -3564)
+position = Vector2(-346, 2579)
+texture = ExtResource("10_fpvl5")
+
+[node name="Sprite2D24" type="Sprite2D" parent="." unique_id=1749199542]
+position = Vector2(-346, 3603)
 texture = ExtResource("10_fpvl5")
 
 [node name="Sprite2D23" type="Sprite2D" parent="." unique_id=1112471137]
-position = Vector2(-2083, -4588)
-texture = ExtResource("9_jj478")
+position = Vector2(-346, 1555)
+texture = ExtResource("7_2e1nn")
 
 [node name="Sprite2D7" type="Sprite2D" parent="." unique_id=262192500]
-position = Vector2(7133, -1517)
+position = Vector2(1702, -1517)
 texture = ExtResource("12_xwjrt")
 
-[node name="Sprite2D8" type="Sprite2D" parent="." unique_id=115551765]
-position = Vector2(7873, 512)
-texture = ExtResource("13_qacv2")
-
 [node name="Sprite2D26" type="Sprite2D" parent="." unique_id=1329790291]
-position = Vector2(4061, 531)
+position = Vector2(-1370, 531)
 texture = ExtResource("10_fpvl5")
 
 [node name="Sprite2D27" type="Sprite2D" parent="." unique_id=672694704]
-position = Vector2(4061, -493)
+position = Vector2(-1370, -493)
 texture = ExtResource("5_copnx")
 
 [node name="Sprite2D34" type="Sprite2D" parent="." unique_id=369626645]
-position = Vector2(5086, -493)
+position = Vector2(-345, -493)
 texture = ExtResource("13_qacv2")
 
 [node name="Sprite2D28" type="Sprite2D" parent="." unique_id=1354450879]
-position = Vector2(4061, -1517)
+position = Vector2(-1370, -1517)
 texture = ExtResource("6_h8p7j")
 
 [node name="Sprite2D29" type="Sprite2D" parent="." unique_id=2037214875]
-position = Vector2(5085, -1517)
+position = Vector2(-346, -1517)
 texture = ExtResource("12_xwjrt")
 
 [node name="Sprite2D30" type="Sprite2D" parent="." unique_id=371848994]
-position = Vector2(6109, -1517)
+position = Vector2(678, -1517)
 texture = ExtResource("14_iixlc")
 
 [node name="Sprite2D31" type="Sprite2D" parent="." unique_id=841138535]
-position = Vector2(5085, 531)
-texture = ExtResource("12_xwjrt")
+position = Vector2(-346, 531)
+texture = ExtResource("9_jj478")
 
 [node name="Sprite2D32" type="Sprite2D" parent="." unique_id=257259962]
-position = Vector2(6109, 531)
+position = Vector2(678, 531)
 texture = ExtResource("13_qacv2")
 
 [node name="Sprite2D33" type="Sprite2D" parent="." unique_id=893329628]
-position = Vector2(6109, -493)
+position = Vector2(678, -493)
 texture = ExtResource("15_w8mj8")
 
 [node name="Sprite2D9" type="Sprite2D" parent="." unique_id=1848291884]
-position = Vector2(6109, -2541)
+position = Vector2(678, -2541)
 texture = ExtResource("15_w8mj8")
 
 [node name="Player" parent="." unique_id=1916796525 instance=ExtResource("16_fmmf0")]
-position = Vector2(5084, -399)
+position = Vector2(-347, -399)
