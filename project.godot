@@ -87,6 +87,10 @@ config/icon="res://icon.png"
 
 buses/default_bus_layout="uid://c4kwooangx2tg"
 
+[autoload]
+
+GameData="*uid://cj1pu62uss7jb"
+
 [display]
 
 window/size/viewport_width=1920
