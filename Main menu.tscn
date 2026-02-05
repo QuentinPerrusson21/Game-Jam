@@ -189,6 +189,7 @@ script = ExtResource("11_i3f74")
 audio_bus_name = "MUSIC"
 
 [connection signal="pressed" from="Main button/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Main button/Achievements" to="." method="_on_achievements_pressed"]
 [connection signal="pressed" from="Main button/Option" to="." method="_on_option_pressed"]
 [connection signal="pressed" from="Options/Fermer" to="." method="_on_fermer_option_pressed"]
 [connection signal="value_changed" from="Options/audio control" to="Options/audio control" method="_on_value_changed"]
