@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://ccyi7jsxx7ts6"]
 
-[ext_resource type="Texture2D" uid="uid://d0akogkghi4xu" path="res://maps/Ice/GrassSnowy.png" id="1_gpiub"]
 [ext_resource type="Texture2D" uid="uid://bigencvd6wxnm" path="res://HUD/barre_de_vie_vide.png" id="2_amv7k"]
 [ext_resource type="Texture2D" uid="uid://dty61vevhygvh" path="res://HUD/barre_de_vie_pleine.png" id="3_1fv7p"]
 [ext_resource type="Texture2D" uid="uid://ki3vpf1mrc6b" path="res://HUD/barre_rouge_du_boss.png" id="4_4u2vk"]
@@ -36,7 +35,6 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_64ctp")
 
 [node name="GrassSnowy" type="Sprite2D" parent="." unique_id=1735170473]
 position = Vector2(966, 541)
-texture = ExtResource("1_gpiub")
 
 [node name="Panel2" type="Panel" parent="." unique_id=2044104135]
 layout_mode = 0

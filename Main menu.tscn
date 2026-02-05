@@ -85,6 +85,7 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_i3f74")
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=405036976]
 stream = ExtResource("4_kki6w")
 autoplay = true
+parameters/looping = false
 
 [node name="Main button" type="VBoxContainer" parent="." unique_id=201437668]
 layout_mode = 1
