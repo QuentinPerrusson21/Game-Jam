@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://ck4v5rx5n0poo"]
+
+[ext_resource type="Script" uid="uid://ds47brcop64wi" path="res://arme_distance.gd" id="1_pr6yj"]
+[ext_resource type="PackedScene" uid="uid://b60qfmhq4nmog" path="res://BouleDePlus.tscn" id="2_rik87"]
+[ext_resource type="Texture2D" uid="uid://cth6l2eor14mg" path="res://pistol/weapon/WhiteStick/baton-blanc-1.png" id="3_rik87"]
+[ext_resource type="Texture2D" uid="uid://ckgjyk2vfut0j" path="res://characters/Classe/Mage/Bras_mage.png" id="4_vne71"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dk5gl"]
+radius = 411.12164
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lhoa6"]
+atlas = ExtResource("3_rik87")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uerdb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lhoa6")
+}],
+"loop": false,
+"name": &"shoot",
+"speed": 5.0
+}]
+
+[node name="Gun" type="Area2D" unique_id=857317819]
+position = Vector2(461, 417)
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_pr6yj")
+projectile_scene = ExtResource("2_rik87")
+cooldown = 0.2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1740472943]
+position = Vector2(-1, -1)
+rotation = 0.20832102
+shape = SubResource("CircleShape2D_dk5gl")
+
+[node name="WeaponPivot" type="Marker2D" parent="." unique_id=705985608]
+rotation = 0.26513055
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="WeaponPivot" unique_id=609336571]
+position = Vector2(14, -11)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_uerdb")
+animation = &"shoot"
+frame_progress = 0.90080816
+
+[node name="PointDeTir" type="Marker2D" parent="WeaponPivot/AnimatedSprite2D" unique_id=463114730]
+unique_name_in_owner = true
+position = Vector2(18, -2)
+scale = Vector2(1.5, 1.5)
+
+[node name="Bras" type="Sprite2D" parent="WeaponPivot" unique_id=405139144]
+position = Vector2(9, 13)
+rotation = 0.31066862
+scale = Vector2(2, 2)
+texture = ExtResource("4_vne71")
+
+[node name="Timer" type="Timer" parent="." unique_id=365153755]
+wait_time = 0.3
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

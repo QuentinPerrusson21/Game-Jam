@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://qv32qnvtiyga" path="res://pistol/weapon/Fleche.png" id="2_v8qja"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2b2rl"]
-radius = 14.035668
+radius = 7.0
 
 [node name="bullet" type="Area2D" unique_id=73034642]
 top_level = true

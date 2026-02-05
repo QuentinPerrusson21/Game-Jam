@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://ceolup1awooql"]
+
+[ext_resource type="Script" uid="uid://yh2ao5or56lq" path="res://player.gd" id="1_onrkg"]
+[ext_resource type="Texture2D" uid="uid://bcp5shnbq0ryb" path="res://characters/Classe/Mage/Mage-mort.png" id="2_unyy7"]
+[ext_resource type="Texture2D" uid="uid://dyn1qbcmrxub8" path="res://characters/Classe/Mage/Mage1.png" id="3_pay2o"]
+[ext_resource type="Texture2D" uid="uid://dppiidctlfdph" path="res://characters/Classe/Mage/Mage2.png" id="4_iyoo4"]
+[ext_resource type="PackedScene" uid="uid://bcipe4tonin1s" path="res://BatonDeGlace.tscn" id="6_hrlh7"]
+[ext_resource type="PackedScene" uid="uid://ck4v5rx5n0poo" path="res://BatonDePlus.tscn" id="7_unyy7"]
+[ext_resource type="PackedScene" uid="uid://csxodi4k1jusp" path="res://BatonDeFeu.tscn" id="8_pay2o"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7i3ca"]
+atlas = ExtResource("2_unyy7")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j6mq2"]
+atlas = ExtResource("3_pay2o")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1mu64"]
+atlas = ExtResource("3_pay2o")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i0tpb"]
+atlas = ExtResource("4_iyoo4")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ivps1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7i3ca")
+}],
+"loop": false,
+"name": &"hurt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j6mq2")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1mu64")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i0tpb")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sweqy"]
+size = Vector2(36, 73)
+
+[node name="Player" type="CharacterBody2D" unique_id=1916796525]
+platform_floor_layers = 4294967292
+script = ExtResource("1_onrkg")
+
+[node name="Chevalier" type="AnimatedSprite2D" parent="." unique_id=2099475554]
+unique_name_in_owner = true
+texture_filter = 1
+position = Vector2(0, -31)
+scale = Vector2(2.2, 2.2)
+sprite_frames = SubResource("SpriteFrames_ivps1")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1772799208]
+position = Vector2(-3, -25.5)
+shape = SubResource("RectangleShape2D_sweqy")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1722338469]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1402681455]
+
+[node name="PorteArmes" type="Node2D" parent="." unique_id=1373361418]
+z_index = 5
+position = Vector2(-4, -28)
+
+[node name="Gun2" parent="PorteArmes" unique_id=267145433 instance=ExtResource("8_pay2o")]
+visible = false
+position = Vector2(-20, 12)
+
+[node name="Gun" parent="PorteArmes" unique_id=857317819 instance=ExtResource("6_hrlh7")]
+visible = false
+position = Vector2(-19, 13)
+
+[node name="Gun3" parent="PorteArmes" unique_id=545706438 instance=ExtResource("7_unyy7")]
+position = Vector2(-16, 12)

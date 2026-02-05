@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bq12y781twsat"]
+
+[ext_resource type="Script" uid="uid://md8447wu2ppj" path="res://fleche_arc.gd" id="1_audif"]
+[ext_resource type="Texture2D" uid="uid://d1er2utwbnge4" path="res://pistol/weapon/Bow/flesh_pixel.png" id="2_h5qo5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h5qo5"]
+radius = 6.0
+
+[node name="FlecheArc" type="Area2D" unique_id=422945920]
+collision_mask = 3
+script = ExtResource("1_audif")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1043400079]
+texture = ExtResource("2_h5qo5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=260252129]
+position = Vector2(16, 0)
+shape = SubResource("CircleShape2D_h5qo5")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

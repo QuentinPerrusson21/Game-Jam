@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://b0x7p0ry3j4ro"]
+
+[ext_resource type="Texture2D" uid="uid://dip6xcu44riiq" path="res://pistol/weapon/Shuriken/shuriken.png" id="1_4nhoa"]
+[ext_resource type="Script" uid="uid://pc71udd13126" path="res://shuriken_lance.gd" id="1_pdm6s"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pdm6s"]
+radius = 15.0
+
+[node name="ShurikenLance" type="Area2D" unique_id=1435910389]
+collision_mask = 3
+script = ExtResource("1_pdm6s")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1335332145]
+texture = ExtResource("1_4nhoa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=905349842]
+shape = SubResource("CircleShape2D_pdm6s")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,74 +1,116 @@
 extends CharacterBody2D
 
-# 1. On définit la vie du joueur
+# --- VARIABLES DU JOUEUR ---
 var health = 5
 var is_dead = false 
 
-# --- NOUVEAU : Variables pour le recul ---
+# Variables pour le recul
 var knockback_vector = Vector2.ZERO
-var knockback_friction = 2000.0 # La vitesse à laquelle on freine après le choc
+var knockback_friction = 2000.0
+
+# --- VARIABLES POUR LES ARMES (NOUVEAU) ---
+@onready var porte_armes = $PorteArmes # Assure-toi d'avoir créé le noeud "PorteArmes" sur ton Player
+var index_arme_actuelle = 0
+
+func _ready():
+	add_to_group("joueur")
+	
+	# Au démarrage, on initialise les armes (cache celles en trop)
+	initialiser_armes()
+
+# C'EST ICI QU'ON ECOUTE LA TOUCHE TAB
+func _input(event):
+	if event.is_action_pressed("changer_arme"):
+		changer_arme_suivante()
 
 func _physics_process(delta):
-	if is_dead:
-		return
+	if is_dead: return
 
-	# --- GESTION DU RECUL ---
-	# Si on a été poussé, on réduit la force petit à petit (frottement)
+	# Gestion du recul
 	if knockback_vector != Vector2.ZERO:
 		knockback_vector = knockback_vector.move_toward(Vector2.ZERO, knockback_friction * delta)
 
-	# --- GESTION DU MOUVEMENT ---
+	# Mouvement
 	var direction = Input.get_vector("move_left","move_right", "move_up","move_down")
-	
-	# On additionne le mouvement du joueur (clavier) + la force du coup reçu
 	velocity = (direction * 600) + knockback_vector
-	
 	move_and_slide()
 	
-	# Gestion du Flip (Miroir)
+	# Animation & Flip
 	if direction.x > 0:
 		%Chevalier.flip_h = false 
 	elif direction.x < 0:
 		%Chevalier.flip_h = true
 
-	# Gestion des Animations (Marche / Idle)
 	if velocity.length() > 0.0:
 		%Chevalier.play("run")
 	else: 
 		%Chevalier.play("idle")
 
-# 3. Fonction modifiée pour accepter la "source_position" (d'où vient le coup)
-func take_damage(amount = 1, source_position = Vector2.ZERO): 
-	if is_dead:
+# --- GESTION DES ARMES (NOUVEAU) ---
+
+func initialiser_armes():
+	# Si pas d'armes, on ne fait rien
+	if not porte_armes or porte_armes.get_child_count() == 0:
 		return
+		
+	var armes = porte_armes.get_children()
+	for i in range(armes.size()):
+		# On active seulement la première arme (index 0)
+		if i == 0:
+			activer_arme(armes[i])
+		else:
+			desactiver_arme(armes[i])
+
+func changer_arme_suivante():
+	var armes = porte_armes.get_children()
+	if armes.size() == 0: return
+	
+	# 1. On éteint l'arme actuelle
+	desactiver_arme(armes[index_arme_actuelle])
+	
+	# 2. On passe à la suivante
+	index_arme_actuelle += 1
+	if index_arme_actuelle >= armes.size():
+		index_arme_actuelle = 0 # Retour au début si on dépasse
+	
+	# 3. On allume la nouvelle
+	activer_arme(armes[index_arme_actuelle])
+
+func activer_arme(arme):
+	arme.visible = true
+	# IMPORTANT : On réveille le script de l'arme
+	arme.process_mode = Node.PROCESS_MODE_INHERIT
+
+func desactiver_arme(arme):
+	arme.visible = false
+	# IMPORTANT : On "congèle" l'arme pour qu'elle ne tire pas en cachette
+	arme.process_mode = Node.PROCESS_MODE_DISABLED
+
+# --- GESTION DES DEGATS ---
+
+func take_damage(amount = 1, source_position = Vector2.ZERO): 
+	if is_dead: return
 		
 	health -= amount 
 	
-	# --- CALCUL DU RECUL ---
 	if source_position != Vector2.ZERO:
-		# On calcule la direction opposée à l'attaquant
 		var direction_recul = (global_position - source_position).normalized()
-		# On applique une impulsion brutale (ici 1000 de force)
 		knockback_vector = direction_recul * 800.0
 		
-		# Petit bonus : un flash rouge pour bien sentir le coup
 		var tween = get_tree().create_tween()
 		tween.tween_property(self, "modulate", Color.RED, 0.1)
 		tween.tween_property(self, "modulate", Color.WHITE, 0.1)
-	# -----------------------
 	
 	if health <= 0:
 		die()
 
-# 4. La logique de mort
 func die():
 	is_dead = true
 	velocity = Vector2.ZERO
 	$CollisionShape2D.set_deferred("disabled", true)
 	
-	var arme = get_node_or_null("Gun") 
-	if arme != null:
-		arme.queue_free() 
+	# On supprime le porte-armes à la mort
+	if porte_armes: porte_armes.queue_free() 
 	
 	%Chevalier.play("hurt")
 	

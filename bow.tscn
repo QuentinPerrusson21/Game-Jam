@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://dwdqv6knf7ihp"]
+
+[ext_resource type="Texture2D" uid="uid://dqnlv3w3oqm1r" path="res://characters/Classe/Barbare/Bras-gauche.png" id="1_2l2of"]
+[ext_resource type="Texture2D" uid="uid://do3gwsliw6j60" path="res://pistol/weapon/Bow/Arc_pas_bande.png" id="1_a60kk"]
+[ext_resource type="Script" uid="uid://ds47brcop64wi" path="res://arme_distance.gd" id="1_p5kp7"]
+[ext_resource type="PackedScene" uid="uid://bq12y781twsat" path="res://flecheArc.tscn" id="2_dvurc"]
+[ext_resource type="Texture2D" uid="uid://cgn5hy5jknni4" path="res://pistol/weapon/Bow/arc_semi_bande.png" id="2_p5kp7"]
+[ext_resource type="Texture2D" uid="uid://7n2cbudj07lc" path="res://pistol/weapon/Bow/ground_shadow.png" id="3_dvurc"]
+[ext_resource type="Texture2D" uid="uid://dx2kav8sdnja2" path="res://pistol/weapon/Bow/arc_debut_tire.png" id="4_qlpkw"]
+[ext_resource type="Texture2D" uid="uid://datiha25xnw8f" path="res://pistol/weapon/Bow/arc_tire.png" id="5_3o7jq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p5kp7"]
+radius = 168.0119
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_srotc"]
+atlas = ExtResource("1_a60kk")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_swcsf"]
+atlas = ExtResource("2_p5kp7")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e1n8v"]
+atlas = ExtResource("3_dvurc")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tcx5s"]
+atlas = ExtResource("4_qlpkw")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ft4oj"]
+atlas = ExtResource("5_3o7jq")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8slvx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_srotc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_swcsf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e1n8v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tcx5s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ft4oj")
+}],
+"loop": true,
+"name": &"shoot",
+"speed": 5.0
+}]
+
+[node name="Bow" type="Area2D" unique_id=770400459]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_p5kp7")
+projectile_scene = ExtResource("2_dvurc")
+cooldown = 0.2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1244272560]
+shape = SubResource("CircleShape2D_p5kp7")
+
+[node name="WeaponPivot" type="Marker2D" parent="." unique_id=937171787]
+rotation = -0.0020047575
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="WeaponPivot" unique_id=1090990544]
+position = Vector2(21.005974, -2.9578946)
+sprite_frames = SubResource("SpriteFrames_8slvx")
+animation = &"shoot"
+frame_progress = 0.059527893
+
+[node name="PointDeTir" type="Marker2D" parent="WeaponPivot/AnimatedSprite2D" unique_id=1462662044]
+unique_name_in_owner = true
+
+[node name="Bras" type="Sprite2D" parent="WeaponPivot" unique_id=1779537366]
+position = Vector2(2.3841858e-07, -2.3841858e-07)
+rotation = -0.90582585
+scale = Vector2(2, 2)
+texture = ExtResource("1_2l2of")
+
+[node name="Timer" type="Timer" parent="." unique_id=215509227]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

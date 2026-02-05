@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://i4cjdwy1kcoj"
-path="res://.godot/imported/icon.png-487276ed1e3a0c39cad0279d744ee560.ctex"
+uid="uid://ckgjyk2vfut0j"
+path="res://.godot/imported/Bras_mage.png-ca8f39ecc4d821370b1d472935c068cf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://icon.png"
-dest_files=["res://.godot/imported/icon.png-487276ed1e3a0c39cad0279d744ee560.ctex"]
+source_file="res://characters/Classe/Mage/Bras_mage.png"
+dest_files=["res://.godot/imported/Bras_mage.png-ca8f39ecc4d821370b1d472935c068cf.ctex"]
 
 [params]
 
