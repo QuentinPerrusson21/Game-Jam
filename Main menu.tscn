@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://887u4pfa43ih" path="res://main_menu.gd" id="1_m82ya"]
 [ext_resource type="Texture2D" uid="uid://brkq8y66k4s24" path="res://Background/main-title.png" id="2_juxkc"]
+[ext_resource type="Texture2D" uid="uid://cgur6ueabddwd" path="res://Logo/forged_in_the_fridge.png" id="3_i3f74"]
 [ext_resource type="AudioStream" uid="uid://ceruc1b7eut0n" path="res://Music/Spawn.ogg" id="4_kki6w"]
-[ext_resource type="Texture2D" uid="uid://byx8qd4k8o7i4" path="res://Logo/images__1_-removebg-preview.png" id="4_m82ya"]
 [ext_resource type="Texture2D" uid="uid://d0xb1nhm2wr0x" path="res://Logo/Sans titre - 2.png" id="5_dg1fb"]
 [ext_resource type="Texture2D" uid="uid://c8lwxej06ic0w" path="res://Logo/Sans titre - 3.png" id="6_kki6w"]
 [ext_resource type="Texture2D" uid="uid://bsrcbwtkd6875" path="res://Logo/Sans titre - 4.png" id="7_pbygh"]
@@ -18,7 +18,7 @@ texture = ExtResource("2_juxkc")
 [sub_resource type="Theme" id="Theme_wdf14"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i3f74"]
-texture = ExtResource("4_m82ya")
+texture = ExtResource("3_i3f74")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kki6w"]
 
@@ -30,15 +30,15 @@ texture = ExtResource("4_m82ya")
 color = Color(0.66264987, 0.7075475, 0.74017596, 1)
 grow_begin = 0.0
 grow_end = 0.0
-thickness = 15
+thickness = 40
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_f7ddt"]
 color = Color(0.8666667, 0.03529412, 0.19215687, 1)
-thickness = 15
+thickness = 40
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_i3f74"]
 color = Color(0.8666667, 0.03529412, 0.19215687, 1)
-thickness = 15
+thickness = 40
 
 [node name="MainMenu" type="Control" unique_id=1891413396]
 layout_mode = 3
@@ -65,10 +65,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -275.0
-offset_top = 2.0
-offset_right = 281.5
-offset_bottom = 289.0
+offset_left = -273.0
+offset_top = 51.0
+offset_right = 283.5
+offset_bottom = 338.0
 grow_horizontal = 2
 theme = SubResource("Theme_wdf14")
 theme_override_styles/panel = SubResource("StyleBoxTexture_i3f74")
