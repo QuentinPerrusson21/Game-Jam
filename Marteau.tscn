@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://bi1rr3i1ofb0m"]
 
+[ext_resource type="Script" uid="uid://daolyw3wuh2jv" path="res://arme_melee.gd" id="1_6oava"]
 [ext_resource type="Texture2D" uid="uid://c2ulwpg15jw78" path="res://pistol/weapon/Hammer/marteau.png" id="1_etqgq"]
 [ext_resource type="Texture2D" uid="uid://dqnlv3w3oqm1r" path="res://characters/Classe/Barbare/Bras-gauche.png" id="2_u56ax"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b0qhw"]
-size = Vector2(22, 20)
+size = Vector2(43, 31)
 
 [sub_resource type="Animation" id="Animation_ayxj0"]
 length = 0.3
@@ -67,17 +68,22 @@ _data = {
 &"attack": SubResource("Animation_pe0wb")
 }
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_6oava"]
+radius = 154.20766
+
 [node name="Epee" type="Node2D" unique_id=1824039246]
+script = ExtResource("1_6oava")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2066138143]
-position = Vector2(33, -53)
-scale = Vector2(2, 2)
+position = Vector2(21, -39)
+scale = Vector2(2.3, 2.3)
 texture = ExtResource("1_etqgq")
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=1338395834]
+collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=240485013]
-position = Vector2(1, -30)
+position = Vector2(21.5, -40.5)
 shape = SubResource("RectangleShape2D_b0qhw")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1626204198]
@@ -87,3 +93,12 @@ libraries/ = SubResource("AnimationLibrary_s1boe")
 rotation = -0.8360127
 scale = Vector2(2.5, 2.5)
 texture = ExtResource("2_u56ax")
+
+[node name="DetectionZone" type="Area2D" parent="." unique_id=233373673]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionZone" unique_id=2047224672]
+shape = SubResource("CircleShape2D_6oava")
+
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="body_entered" from="DetectionZone" to="." method="_on_detection_zone_body_entered"]
+[connection signal="body_exited" from="DetectionZone" to="." method="_on_detection_zone_body_exited"]

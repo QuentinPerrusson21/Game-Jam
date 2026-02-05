@@ -5,6 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://c2uoktd1oakbq" path="res://characters/Classe/Barbare/droite_1.png" id="2_sweqy"]
 [ext_resource type="Texture2D" uid="uid://bwrg341ybsw8a" path="res://characters/Classe/Barbare/Barbare-droite-1.png" id="3_1jxqw"]
 [ext_resource type="Texture2D" uid="uid://dknqlk3whhnof" path="res://characters/Classe/Barbare/droite_2.png" id="4_1jxqw"]
+[ext_resource type="PackedScene" uid="uid://b7gpctxuiu3wq" path="res://Epee.tscn" id="6_hc5i0"]
+[ext_resource type="PackedScene" uid="uid://bi1rr3i1ofb0m" path="res://Marteau.tscn" id="7_sauud"]
+[ext_resource type="PackedScene" uid="uid://8tebmq7wesjk" path="res://Hache.tscn" id="8_lm25t"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1jxqw"]
 atlas = ExtResource("2_2hs0m")
@@ -87,3 +90,12 @@ shape = SubResource("RectangleShape2D_sweqy")
 [node name="PorteArmes" type="Node2D" parent="." unique_id=1373361418]
 z_index = 5
 position = Vector2(-4, -28)
+
+[node name="Epee" parent="PorteArmes" unique_id=1824039246 instance=ExtResource("6_hc5i0")]
+position = Vector2(-8, 10)
+
+[node name="Epee2" parent="PorteArmes" unique_id=1850821583 instance=ExtResource("7_sauud")]
+position = Vector2(-10, 11)
+
+[node name="Epee3" parent="PorteArmes" unique_id=1055152245 instance=ExtResource("8_lm25t")]
+position = Vector2(-10, 11)

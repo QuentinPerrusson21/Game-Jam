@@ -1,32 +1,38 @@
 extends CharacterBody2D
 
-# --- MODIFICATION ICI (DÉBUT) ---
-# On supprime la ligne qui cherchait "/root/Game/Player"
 var player = null
-
-func _ready():
-	# On cherche le joueur dans le groupe "joueur"
-	# Cela marche peu importe où tu es (Test de scène ou Jeu complet)
-	var liste_joueurs = get_tree().get_nodes_in_group("joueur")
-	if liste_joueurs.size() > 0:
-		player = liste_joueurs[0]
-# --- MODIFICATION ICI (FIN) ---
-
-
-var health = 2
+var health = 3 # J'ai mis 3, c'est mieux que 2 pour tester les armes faibles
 var is_dying = false 
 var is_attacking = false  
 var attack_range = 100.0 
 
-# La force de frappe du boss
 var damage_amount = 2 
 
+# --- NOUVEAU : Variables pour le recul (Knockback) ---
+var recul_vector = Vector2.ZERO
+var recul_friction = 15.0 # La vitesse à laquelle ils freinent après un coup
+
 func _physics_process(delta):
-	# SÉCURITÉ : Si le joueur n'est pas trouvé (ou mort), on arrête tout pour ne pas crasher
+	# --- CORRECTION : Si le joueur n'est pas là, on le cherche encore ---
 	if player == null:
+		var liste_joueurs = get_tree().get_nodes_in_group("joueur")
+		if liste_joueurs.size() > 0:
+			player = liste_joueurs[0]
+		else:
+			return # Toujours pas de joueur, on attend
+
+	if is_dying: # On retire "is_attacking" ici pour permettre le recul même pendant l'attaque
 		return
 
-	if is_dying or is_attacking:
+	# --- NOUVEAU : Gestion Physique du Recul ---
+	if recul_vector.length() > 0:
+		# On réduit le recul petit à petit (friction)
+		recul_vector = recul_vector.lerp(Vector2.ZERO, recul_friction * delta)
+		velocity = recul_vector
+		move_and_slide()
+		return # IMPORTANT : Si on recule, on ne court pas vers le joueur !
+
+	if is_attacking:
 		return
 
 	var dist_to_player = global_position.distance_to(player.global_position)
@@ -60,23 +66,38 @@ func start_attack():
 	
 	$AnimatedSprite2D.play("attack")
 	
-	# Optionnel : Petit délai pour le réalisme
 	await get_tree().create_timer(0.2).timeout
 	
-	# On vérifie encore que le joueur est là avant de taper
+	# Correction ici aussi : ajout d'une vérification de distance pour ne pas taper de loin
 	if player and player.has_method("take_damage"):
-		player.take_damage(damage_amount, global_position) 
+		# On vérifie si le joueur est toujours proche avant d'infliger les dégâts
+		if global_position.distance_to(player.global_position) <= attack_range + 20:
+			player.take_damage(damage_amount) 
 	
 	await $AnimatedSprite2D.animation_finished
-	
 	await get_tree().create_timer(0.5).timeout
-	
 	is_attacking = false
 
-func take_damage():
-	health -= 1
+# --- CORRECTION MAJEURE ICI ---
+# On accepte un argument "amount" (montant), avec 1 par défaut
+func take_damage(amount = 1):
+	health -= amount # On utilise le montant reçu
+	
+	# Petit effet visuel quand on est touché
+	modulate = Color(10, 10, 10) # Flash blanc
+	var tween = create_tween()
+	tween.tween_property(self, "modulate", Color(1, 1, 1), 0.1)
+	
 	if health <= 0 and not is_dying: 
 		die()
+
+# --- NOUVEAU : Fonction appelée par l'épée/marteau ---
+func prendre_recul(source_position, force):
+	# On calcule la direction opposée au coup
+	var direction = (global_position - source_position).normalized()
+	recul_vector = direction * force
+	# On arrête l'attaque en cours si on se prend un coup violent
+	is_attacking = false
 
 func die():
 	is_dying = true 
@@ -86,10 +107,5 @@ func die():
 	$AnimatedSprite2D.play("hurt") 
 	
 	await $AnimatedSprite2D.animation_finished
-	await get_tree().create_timer(1.0).timeout
-	
-	var tween = get_tree().create_tween()
-	tween.tween_property(self, "modulate:a", 0.0, 1.5)
-	await tween.finished
-	
+	await get_tree().create_timer(0.5).timeout # Raccourci un peu
 	queue_free()

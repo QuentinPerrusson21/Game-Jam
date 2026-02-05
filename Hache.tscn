@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://8tebmq7wesjk"]
 
+[ext_resource type="Script" uid="uid://daolyw3wuh2jv" path="res://arme_melee.gd" id="1_4lfuu"]
 [ext_resource type="Texture2D" uid="uid://1f6v1hmff0yd" path="res://pistol/weapon/Axe/axe.png" id="1_360bm"]
 [ext_resource type="Texture2D" uid="uid://dqnlv3w3oqm1r" path="res://characters/Classe/Barbare/Bras-gauche.png" id="2_dedhn"]
 
@@ -67,7 +68,11 @@ _data = {
 &"attack": SubResource("Animation_pe0wb")
 }
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_4lfuu"]
+radius = 119.15116
+
 [node name="Epee" type="Node2D" unique_id=1824039246]
+script = ExtResource("1_4lfuu")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2066138143]
 position = Vector2(27.000004, -35.000004)
@@ -76,6 +81,7 @@ scale = Vector2(1.5, 1.5)
 texture = ExtResource("1_360bm")
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=1338395834]
+collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=240485013]
 position = Vector2(24.5, -43)
@@ -88,3 +94,12 @@ libraries/ = SubResource("AnimationLibrary_s1boe")
 rotation = -0.8360127
 scale = Vector2(2.5, 2.5)
 texture = ExtResource("2_dedhn")
+
+[node name="DetectionZone" type="Area2D" parent="." unique_id=2027175404]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionZone" unique_id=913585267]
+shape = SubResource("CircleShape2D_4lfuu")
+
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="body_entered" from="DetectionZone" to="." method="_on_detection_zone_body_entered"]
+[connection signal="body_exited" from="DetectionZone" to="." method="_on_detection_zone_body_exited"]
