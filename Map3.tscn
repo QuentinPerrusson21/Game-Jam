@@ -134,7 +134,7 @@ position = Vector2(200, -989)
 texture = ExtResource("8_jq2vi")
 
 [node name="Player" parent="." unique_id=1916796525 instance=ExtResource("13_cwf1d")]
-position = Vector2(270, 56)
+position = Vector2(35, 211)
 
 [node name="MagicCircleRed" type="Sprite2D" parent="." unique_id=414979421]
 position = Vector2(668.0001, 2081)
