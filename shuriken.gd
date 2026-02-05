@@ -6,12 +6,8 @@ func _physics_process(delta):
 		var targetenemy = enemies_in_range.front()
 		look_at(targetenemy.global_position)
 		
-		# --- GESTION DE L'INVERSION (FLIP) ---
-		# On regarde l'angle actuel de l'arme
 		var angle = rotation_degrees
 		
-		# "normalize" l'angle pour qu'il soit toujours entre -180 et 180
-		# (utile si l'arme fait plusieurs tours sur elle-même)
 		angle = wrapf(angle, -180, 180)
 		
 		# Si l'angle est entre 90° et -90° (Côté DROIT) -> Normal

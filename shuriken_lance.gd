@@ -15,12 +15,8 @@ func _physics_process(delta):
 
 
 func _on_body_entered(body: Node2D) -> void:
-	# --- AJOUT DE LA SÉCURITÉ ICI ---
-	# Si l'objet touché fait partie du groupe "joueur", on arrête tout.
-	# (Le "return" sert à dire "Stop, ne lis pas la suite")
 	if body.is_in_group("joueur"):
 		return
-	# --------------------------------
 
 	queue_free()
 	if body.has_method("take_damage"):

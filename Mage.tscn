@@ -1,39 +1,34 @@
 [gd_scene format=3 uid="uid://ceolup1awooql"]
 
 [ext_resource type="Script" uid="uid://yh2ao5or56lq" path="res://player.gd" id="1_onrkg"]
-[ext_resource type="Texture2D" uid="uid://vkepsdmd680l" path="res://characters/Classe/Barbare/chevalier-mort.png" id="2_2hs0m"]
-[ext_resource type="Texture2D" uid="uid://c2uoktd1oakbq" path="res://characters/Classe/Barbare/droite_1.png" id="2_sweqy"]
-[ext_resource type="Texture2D" uid="uid://bwrg341ybsw8a" path="res://characters/Classe/Barbare/Barbare-droite-1.png" id="3_1jxqw"]
+[ext_resource type="Texture2D" uid="uid://bcp5shnbq0ryb" path="res://characters/Classe/Mage/Mage-mort.png" id="2_unyy7"]
 [ext_resource type="PackedScene" uid="uid://du5i8r7jdycua" path="res://gun.tscn" id="3_i3pqv"]
-[ext_resource type="Texture2D" uid="uid://dknqlk3whhnof" path="res://characters/Classe/Barbare/droite_2.png" id="4_1jxqw"]
+[ext_resource type="Texture2D" uid="uid://dyn1qbcmrxub8" path="res://characters/Classe/Mage/Mage1.png" id="3_pay2o"]
+[ext_resource type="Texture2D" uid="uid://dppiidctlfdph" path="res://characters/Classe/Mage/Mage2.png" id="4_iyoo4"]
 [ext_resource type="PackedScene" uid="uid://dwdqv6knf7ihp" path="res://bow.tscn" id="7_1jxqw"]
 [ext_resource type="PackedScene" uid="uid://c4rcmhv7crd6c" path="res://shuriken.tscn" id="8_dw050"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_1jxqw"]
-atlas = ExtResource("2_2hs0m")
+[sub_resource type="AtlasTexture" id="AtlasTexture_7i3ca"]
+atlas = ExtResource("2_unyy7")
 region = Rect2(0, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_dw050"]
-atlas = ExtResource("3_1jxqw")
+[sub_resource type="AtlasTexture" id="AtlasTexture_j6mq2"]
+atlas = ExtResource("3_pay2o")
 region = Rect2(0, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_b26j0"]
-atlas = ExtResource("2_sweqy")
+[sub_resource type="AtlasTexture" id="AtlasTexture_1mu64"]
+atlas = ExtResource("3_pay2o")
 region = Rect2(0, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2hs0m"]
-atlas = ExtResource("3_1jxqw")
-region = Rect2(0, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_n7ghd"]
-atlas = ExtResource("4_1jxqw")
+[sub_resource type="AtlasTexture" id="AtlasTexture_i0tpb"]
+atlas = ExtResource("4_iyoo4")
 region = Rect2(0, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ivps1"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_1jxqw")
+"texture": SubResource("AtlasTexture_7i3ca")
 }],
 "loop": false,
 "name": &"hurt",
@@ -41,10 +36,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_dw050")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_b26j0")
+"texture": SubResource("AtlasTexture_j6mq2")
 }],
 "loop": true,
 "name": &"idle",
@@ -52,10 +44,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_2hs0m")
+"texture": SubResource("AtlasTexture_1mu64")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_n7ghd")
+"texture": SubResource("AtlasTexture_i0tpb")
 }],
 "loop": true,
 "name": &"run",
@@ -75,9 +67,7 @@ texture_filter = 1
 position = Vector2(0, -31)
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_ivps1")
-animation = &"run"
-frame = 1
-frame_progress = 0.19236168
+animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1772799208]
 position = Vector2(-3, -27.5)
@@ -92,6 +82,7 @@ z_index = 5
 position = Vector2(-4, -28)
 
 [node name="Gun" parent="PorteArmes" unique_id=857317819 instance=ExtResource("3_i3pqv")]
+visible = false
 position = Vector2(-4, 4)
 cooldown = 4.0
 
