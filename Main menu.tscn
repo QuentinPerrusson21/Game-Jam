@@ -11,6 +11,12 @@
 [ext_resource type="FontFile" uid="uid://b53iapi5wykx8" path="res://Font/PixelifySans-VariableFont_wght.ttf" id="9_pbygh"]
 [ext_resource type="Texture2D" uid="uid://ydtsv7xxbjuv" path="res://Logo/Close button.png" id="10_wdf14"]
 [ext_resource type="Script" uid="uid://23nbq0bppsw5" path="res://audio_control.gd" id="11_i3f74"]
+[ext_resource type="Texture2D" uid="uid://bl8wjmeyn84fu" path="res://Options/HDwuPm1A-removebg-preview.png" id="12_3t817"]
+[ext_resource type="Texture2D" uid="uid://cpym0pe7ne745" path="res://Options/Iey3PoCd-removebg-preview.png" id="13_4emyp"]
+[ext_resource type="Texture2D" uid="uid://cr1oahkdgrv2c" path="res://Options/KBZIHKgL-removebg-preview.png" id="14_tohpp"]
+[ext_resource type="Texture2D" uid="uid://bo5qmwmwong12" path="res://Options/oyVHVvsT-removebg-preview.png" id="15_44obn"]
+[ext_resource type="Texture2D" uid="uid://cj2obdjf4dtew" path="res://Options/PTdENA3z-removebg-preview.png" id="16_y26m3"]
+[ext_resource type="Texture2D" uid="uid://5ubbjawq17uw" path="res://Options/icon_cible.png" id="17_4emyp"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kki6w"]
 texture = ExtResource("2_juxkc")
@@ -140,10 +146,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -182.0
-offset_top = 91.0
-offset_right = 208.0
-offset_bottom = 228.0
+offset_left = -184.0
+offset_top = 36.0
+offset_right = 206.0
+offset_bottom = 173.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("9_pbygh")
 theme_override_font_sizes/font_size = 100
@@ -153,14 +159,98 @@ text = "OPTIONS"
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_left = -548.0
-offset_top = 277.0
-offset_right = -548.0
-offset_bottom = 365.0
+offset_left = -551.0
+offset_top = 245.0
+offset_right = -551.0
+offset_bottom = 333.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("9_pbygh")
+theme_override_font_sizes/font_size = 50
+text = "Music"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="Options" unique_id=171790969]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = -549.0
+offset_top = 429.0
+offset_right = -549.0
+offset_bottom = 517.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("9_pbygh")
+theme_override_font_sizes/font_size = 50
+text = "SFX"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="Options" unique_id=182691946]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 213.0
+offset_top = 57.0
+offset_right = -1301.0
+offset_bottom = 145.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("9_pbygh")
 theme_override_font_sizes/font_size = 72
-text = "VOLUME"
+text = "AUDIO"
+horizontal_alignment = 1
+
+[node name="Label5" type="Label" parent="Options" unique_id=541661917]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 1272.0
+offset_top = 53.0
+offset_right = -116.0
+offset_bottom = 141.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("9_pbygh")
+theme_override_font_sizes/font_size = 72
+text = "CONTROLS"
+horizontal_alignment = 1
+
+[node name="Label6" type="Label" parent="Options" unique_id=1856193250]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 1255.0
+offset_top = 372.0
+offset_right = -133.0
+offset_bottom = 417.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("9_pbygh")
+theme_override_font_sizes/font_size = 36
+text = "Move"
+horizontal_alignment = 1
+
+[node name="Label8" type="Label" parent="Options" unique_id=100122508]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 1255.0
+offset_top = 193.0
+offset_right = -133.0
+offset_bottom = 238.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("9_pbygh")
+theme_override_font_sizes/font_size = 36
+text = "Automatic shoot"
+horizontal_alignment = 1
+
+[node name="Label7" type="Label" parent="Options" unique_id=1088112457]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 1268.0
+offset_top = 635.0
+offset_right = -120.0
+offset_bottom = 680.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("9_pbygh")
+theme_override_font_sizes/font_size = 36
+text = "switch weapon"
 horizontal_alignment = 1
 
 [node name="Fermer" type="Button" parent="Options" unique_id=1409438555]
@@ -178,9 +268,9 @@ icon_alignment = 1
 [node name="audio control" type="HSlider" parent="Options" unique_id=946499345]
 layout_mode = 0
 offset_left = 46.0
-offset_top = 376.0
-offset_right = 593.0
-offset_bottom = 453.0
+offset_top = 320.0
+offset_right = 529.0
+offset_bottom = 397.0
 theme_override_styles/slider = SubResource("StyleBoxLine_wdf14")
 theme_override_styles/grabber_area = SubResource("StyleBoxLine_f7ddt")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_i3f74")
@@ -192,10 +282,10 @@ audio_bus_name = "MUSIC"
 
 [node name="audio control2" type="HSlider" parent="Options" unique_id=625715434]
 layout_mode = 0
-offset_left = 49.0
-offset_top = 508.0
-offset_right = 593.0
-offset_bottom = 636.0
+offset_left = 47.0
+offset_top = 495.0
+offset_right = 536.0
+offset_bottom = 623.0
 theme_override_styles/slider = SubResource("StyleBoxLine_wdf14")
 theme_override_styles/grabber_area = SubResource("StyleBoxLine_f7ddt")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_i3f74")
@@ -203,7 +293,37 @@ max_value = 1.0
 step = 0.05
 value = 0.8
 script = ExtResource("11_i3f74")
-audio_bus_name = "MUSIC"
+audio_bus_name = "SFX"
+
+[node name="HDwuPm1aRemovebgPreview" type="Sprite2D" parent="." unique_id=307374631]
+position = Vector2(1627, 727)
+scale = Vector2(0.291, 0.321)
+texture = ExtResource("12_3t817")
+
+[node name="Iey3PoCdRemovebgPreview" type="Sprite2D" parent="." unique_id=68991248]
+position = Vector2(1414, 728.99994)
+scale = Vector2(0.2735002, 0.2825001)
+texture = ExtResource("13_4emyp")
+
+[node name="KbzihKgLRemovebgPreview" type="Sprite2D" parent="." unique_id=816242294]
+position = Vector2(1529, 888)
+scale = Vector2(0.291, 0.321)
+texture = ExtResource("14_tohpp")
+
+[node name="OyVhVvsTRemovebgPreview" type="Sprite2D" parent="." unique_id=764525108]
+position = Vector2(1516, 622)
+scale = Vector2(0.2515002, 0.27849996)
+texture = ExtResource("15_44obn")
+
+[node name="PTdEna3zRemovebgPreview" type="Sprite2D" parent="." unique_id=212237914]
+position = Vector2(1519, 725.125)
+scale = Vector2(0.291, 0.36049992)
+texture = ExtResource("16_y26m3")
+
+[node name="IconCible" type="Sprite2D" parent="." unique_id=392165014]
+position = Vector2(1515.0001, 456)
+scale = Vector2(3.40625, 3.140625)
+texture = ExtResource("17_4emyp")
 
 [connection signal="pressed" from="Main button/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Main button/Achievements" to="." method="_on_achievements_pressed"]
