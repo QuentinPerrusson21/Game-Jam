@@ -1,12 +1,10 @@
 extends Node2D
 
-# --- CONFIGURATION ---
 @export_group("Paramètres de Salle")
 @export var portes_a_fermer : Array[Node2D] 
 @export var liste_mobs_possibles : Array[PackedScene] 
 @export var nombre_mobs : int = 3
 @export var est_salle_boss : bool = false
-
 var salle_activee = false
 var salle_terminee = false
 
@@ -16,7 +14,6 @@ func _ready():
 		$DetectionZone.body_entered.connect(_on_player_entered)
 
 func _on_player_entered(body):
-	# On vérifie que c'est bien le joueur et que la salle n'est pas déjà faite
 	if body.is_in_group("joueur") and not salle_activee and not salle_terminee:
 		demarrer_salle()
 
@@ -62,14 +59,11 @@ func spawner_mobs():
 		nouveau_mob.tree_exited.connect(_on_mob_died)
 
 func _on_mob_died():
-	# On vérifie si le noeud est toujours dans l'arbre avant de faire un await
 	if not is_inside_tree():
 		return
 		
-	# On attend la fin de la frame pour que le compte des enfants soit juste
 	await get_tree().process_frame
 	
-	# Vérification de sécurité pour éviter l'erreur "base object of type null"
 	if has_node("MobsContainer"):
 		var reste = $MobsContainer.get_child_count()
 		if reste == 0 and salle_activee:

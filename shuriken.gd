@@ -10,14 +10,11 @@ func _physics_process(delta):
 		
 		angle = wrapf(angle, -180, 180)
 		
-		# Si l'angle est entre 90° et -90° (Côté DROIT) -> Normal
 		if angle > -90 and angle < 90:
 			scale.y = 1
-		# Sinon (Côté GAUCHE) -> On inverse pour que l'arme reste à l'endroit
 		else:
 			scale.y = -1
 			
-		# --- GESTION DE LA PROFONDEUR ---
 		if targetenemy.global_position.y < global_position.y:
 			z_index = -1 
 		else:

@@ -1,40 +1,25 @@
 extends Node2D
 
-# 1. PARAMÈTRES (À régler dans l'inspecteur à droite)
 @export var mobs_a_faire_spawn : Array[PackedScene]
 @export var nombre_ennemis : int = 3
-
-# 2. LIENS VERS LES PORTES
-# Le script va chercher les CollisionShape pour pouvoir les activer/désactiver
 @onready var mur_haut = $Portes/PorteHaut/CollisionShape2D
 @onready var mur_bas = $Portes/PorteBas/CollisionShape2D
-
 var combat_actif = false
 var salle_terminee = false
 var mobs_tues = 0
 
 func _ready():
-	# 1. On charge la scène que le joueur a choisie dans le menu
 	var scene_a_charger = load(GameData.personnage_choisi_path)
 	
-	# 2. On crée une instance (une copie réelle) du perso
 	var nouveau_joueur = scene_a_charger.instantiate()
 	
-	# 3. On le place au bon endroit (sur le Marker2D)
-	# (Assure-toi d'avoir créé le noeud "SpawnPlayer")
 	nouveau_joueur.position = $SpawnPlayer.position
 	
-	# 4. On l'ajoute à la scène
 	add_child(nouveau_joueur)
 	
-	# --- IMPORTANT : Mise à jour pour les mobs ---
-	# Comme le joueur vient d'arriver, il faut s'assurer 
-	# que les mobs savent qui chasser s'ils sont déjà là.
-	# (Normalement ton groupe "joueur" gère ça, mais c'est bon à savoir)
-	# Sécurité : On s'assure que les murs sont désactivés (Portes Ouvertes) au début
+	
 	ouvrir_portes()
 
-# Cette fonction se lance quand le joueur entre dans la ZoneDetection
 func _on_zone_detection_body_entered(body):
 	if body.name == "Player" and not combat_actif and not salle_terminee:
 		commencer_combat()
@@ -43,9 +28,6 @@ func commencer_combat():
 	print("Combat commencé ! Je ferme les portes.")
 	combat_actif = true
 	
-	# --- C'EST ICI QUE LA MAGIE OPÈRE ---
-	# On dit à Godot : "Rends ces murs solides !"
-	# "false" veut dire "Pas désactivé" (donc Actif)
 	mur_haut.set_deferred("disabled", false)
 	mur_bas.set_deferred("disabled", false)
 	# ------------------------------------
@@ -84,15 +66,12 @@ func victoire():
 	ouvrir_portes()
 
 func ouvrir_portes():
-	# On dit à Godot : "Rends ces murs fantomatiques (Désactivés) !"
 	if mur_haut: mur_haut.set_deferred("disabled", true)
 	if mur_bas: mur_bas.set_deferred("disabled", true)
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	# 1. On vérifie que c'est bien le Joueur qui est entré (et pas un autre truc)
 	if body.name == "Player":
 		
-		# 2. On vérifie que le combat n'est pas déjà en cours ou fini
 		if not combat_actif and not salle_terminee:
 			commencer_combat()

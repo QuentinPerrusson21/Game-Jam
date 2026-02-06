@@ -1,12 +1,8 @@
 extends Area2D
 
-# --- CONFIGURATION DANS L'INSPECTEUR ---
 @export var projectile_scene : PackedScene 
 @export var cooldown : float = 1.0 
-
-# --- NOUVEAU : La case pour glisser ton "Sac à Bruitages" (.tres) ---
 @export var son_de_tir : AudioStream 
-
 @onready var point_de_tir = find_child("PointDeTir") 
 
 func _ready():
@@ -19,7 +15,6 @@ func _physics_process(delta):
 		var targetenemy = enemies_in_range.front()
 		look_at(targetenemy.global_position)
 		
-		# GESTION DU FLIP
 		var angle = wrapf(rotation_degrees, -180, 180)
 		if angle > -90 and angle < 90:
 			scale.y = 1
@@ -33,25 +28,17 @@ func _physics_process(delta):
 
 func shoot():
 	if projectile_scene == null:
-		print("ERREUR : Aucune balle assignée !")
 		return
 
 	# Animation visuelle
 	if has_node("WeaponPivot/AnimatedSprite2D"):
 		$WeaponPivot/AnimatedSprite2D.play("shoot")
 
-	# --- GESTION DU SON (NOUVEAU) ---
-	# 1. On vérifie qu'on a bien mis un son dans l'inspecteur
 	if son_de_tir != null:
-		# 2. On vérifie que le lecteur audio existe
 		if has_node("SfxTir"):
-			# 3. On charge la "cassette" (le fichier .tres spécifique à cette arme)
 			$SfxTir.stream = son_de_tir
-			# 4. On joue avec une petite variation de pitch automatique (si le .tres est bien fait)
 			$SfxTir.play()
-	# --------------------------------
-
-	# Création de la balle
+			
 	var new_bullet = projectile_scene.instantiate()
 	
 	if point_de_tir:
