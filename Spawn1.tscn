@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://wylobiknvvkc"]
+
+[ext_resource type="Texture2D" uid="uid://dq4xn6pekdlih" path="res://maps/BottomLL_upscayl_3x_upscayl-standard-4x.png" id="1_p0j2a"]
+
+[node name="Node2D" type="Node2D" unique_id=971572953]
+position = Vector2(934, 540)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2106052402]
+
+[node name="BottomLlUpscayl3xUpscaylStandard4x" type="Sprite2D" parent="." unique_id=1877706017]
+position = Vector2(-2188, -1684)
+texture = ExtResource("1_p0j2a")
+
+[node name="BottomLlUpscayl3xUpscaylStandard4x7" type="Sprite2D" parent="." unique_id=315389215]
+position = Vector2(5119, 1407)
+texture = ExtResource("1_p0j2a")
+
+[node name="BottomLlUpscayl3xUpscaylStandard4x8" type="Sprite2D" parent="." unique_id=1448298658]
+position = Vector2(8266, 1351)
+texture = ExtResource("1_p0j2a")
+
+[node name="BottomLlUpscayl3xUpscaylStandard4x5" type="Sprite2D" parent="." unique_id=55633356]
+position = Vector2(-2975, 2054)
+texture = ExtResource("1_p0j2a")
+
+[node name="BottomLlUpscayl3xUpscaylStandard4x6" type="Sprite2D" parent="." unique_id=1921875062]
+position = Vector2(1943, 1380)
+texture = ExtResource("1_p0j2a")
+
+[node name="BottomLlUpscayl3xUpscaylStandard4x2" type="Sprite2D" parent="." unique_id=452540034]
+position = Vector2(613, -2131)
+texture = ExtResource("1_p0j2a")
+
+[node name="BottomLlUpscayl3xUpscaylStandard4x3" type="Sprite2D" parent="." unique_id=806471087]
+position = Vector2(3798, -2196)
+texture = ExtResource("1_p0j2a")
+
+[node name="BottomLlUpscayl3xUpscaylStandard4x4" type="Sprite2D" parent="." unique_id=251564859]
+position = Vector2(6777, -2168)
+texture = ExtResource("1_p0j2a")

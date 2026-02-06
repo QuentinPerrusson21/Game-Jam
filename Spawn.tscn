@@ -1,12 +1,10 @@
-[gd_scene format=3 uid="uid://dcw8xpb0djaum"]
+[gd_scene format=3 uid="uid://bem75s5dk6rte"]
 
 [ext_resource type="PackedScene" uid="uid://c1sx7bic4uhdj" path="res://player.tscn" id="3_xchh0"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_dc37j"]
-load_path = "res://.godot/imported/Hub_Gauche.jpg-77d37e788396339b3b50954aca012b88.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_nfadl"]
-load_path = "res://.godot/imported/Hub_Droite.jpg-49acae29473a11a95a50b3852cc9ceae.ctex"
 
 [node name="Node2D" type="Node2D" unique_id=1228411534]
 position = Vector2(772, 496)
