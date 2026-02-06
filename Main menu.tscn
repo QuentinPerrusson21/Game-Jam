@@ -4,15 +4,21 @@
 [ext_resource type="Texture2D" uid="uid://brkq8y66k4s24" path="res://Background/main-title.png" id="2_juxkc"]
 [ext_resource type="Texture2D" uid="uid://cgur6ueabddwd" path="res://Logo/forged_in_the_fridge.png" id="3_i3f74"]
 [ext_resource type="AudioStream" uid="uid://ceruc1b7eut0n" path="res://Music/Spawn.ogg" id="4_kki6w"]
-[ext_resource type="Texture2D" uid="uid://d0xb1nhm2wr0x" path="res://Logo/Sans titre - 2.png" id="5_dg1fb"]
-[ext_resource type="Texture2D" uid="uid://c8lwxej06ic0w" path="res://Logo/Sans titre - 3.png" id="6_kki6w"]
-[ext_resource type="Texture2D" uid="uid://bsrcbwtkd6875" path="res://Logo/Sans titre - 4.png" id="7_pbygh"]
-[ext_resource type="Texture2D" uid="uid://camwe1r8f6b6v" path="res://Logo/Sans titre - 5.png" id="8_wdf14"]
+[ext_resource type="Texture2D" uid="uid://knbhsl435qer" path="res://Baniere/start game quadri_rouge.png" id="5_mfg0i"]
+[ext_resource type="Texture2D" uid="uid://d0iq3wpf3tnm7" path="res://Baniere/start game quadri_gris.png" id="6_t0wlv"]
+[ext_resource type="Texture2D" uid="uid://bmun46dl4q0ml" path="res://Baniere/start game quadri_vert.png" id="7_g6xri"]
+[ext_resource type="Texture2D" uid="uid://dsacov8tgvgco" path="res://Baniere/achievement quadri_gris.png" id="8_5w856"]
 [ext_resource type="FontFile" uid="uid://b53iapi5wykx8" path="res://Font/PixelifySans-VariableFont_wght.ttf" id="9_pbygh"]
+[ext_resource type="Texture2D" uid="uid://u787tep7atua" path="res://Baniere/options quadri_rouge.png" id="9_umhhb"]
+[ext_resource type="Texture2D" uid="uid://dvlgh1r0hj2bq" path="res://Baniere/options quadri_gris.png" id="10_kgfa3"]
 [ext_resource type="Texture2D" uid="uid://ydtsv7xxbjuv" path="res://Logo/Close button.png" id="10_wdf14"]
 [ext_resource type="Script" uid="uid://23nbq0bppsw5" path="res://audio_control.gd" id="11_i3f74"]
+[ext_resource type="Texture2D" uid="uid://c87m54qb1cnct" path="res://Baniere/options quadri_vert.png" id="11_vxkjx"]
 [ext_resource type="Texture2D" uid="uid://bl8wjmeyn84fu" path="res://Options/HDwuPm1A-removebg-preview.png" id="12_3t817"]
+[ext_resource type="Texture2D" uid="uid://2mx4ykg5auo5" path="res://Baniere/quit game quadri_rouge.png" id="12_kclb6"]
 [ext_resource type="Texture2D" uid="uid://cpym0pe7ne745" path="res://Options/Iey3PoCd-removebg-preview.png" id="13_4emyp"]
+[ext_resource type="Texture2D" uid="uid://d1jontcrtdham" path="res://Baniere/quit game quadri_gris.png" id="13_ljd08"]
+[ext_resource type="Texture2D" uid="uid://bplosv02nt5bf" path="res://Baniere/quit game quadri_vert.png" id="14_oj0t6"]
 [ext_resource type="Texture2D" uid="uid://cr1oahkdgrv2c" path="res://Options/KBZIHKgL-removebg-preview.png" id="14_tohpp"]
 [ext_resource type="Texture2D" uid="uid://bo5qmwmwong12" path="res://Options/oyVHVvsT-removebg-preview.png" id="15_44obn"]
 [ext_resource type="Texture2D" uid="uid://cj2obdjf4dtew" path="res://Options/PTdENA3z-removebg-preview.png" id="16_y26m3"]
@@ -26,14 +32,10 @@ texture = ExtResource("2_juxkc")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i3f74"]
 texture = ExtResource("3_i3f74")
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kki6w"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pbygh"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wdf14"]
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4emyp"]
 bg_color = Color(0.07450981, 0.07450981, 0.07450981, 0.85882354)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kki6w"]
 
 [sub_resource type="DPITexture" id="DPITexture_4emyp"]
 _source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><circle cx=\"8\" cy=\"8\" r=\"7\" fill=\"#fefefe\"/></svg>
@@ -99,41 +101,37 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -320.0
-offset_top = -148.0
-offset_right = 36.0
-offset_bottom = 224.0
+offset_left = -295.71002
+offset_top = -138.0
+offset_right = 46.289978
+offset_bottom = 228.23633
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.735, 1.735)
 
-[node name="Start" type="Button" parent="Main button" unique_id=1750237672]
+[node name="TextureButton" type="TextureButton" parent="Main button" unique_id=380104917]
 layout_mode = 2
-theme_override_constants/align_to_largest_stylebox = 0
-theme_override_styles/normal = SubResource("StyleBoxEmpty_kki6w")
-icon = ExtResource("5_dg1fb")
-icon_alignment = 1
+texture_normal = ExtResource("5_mfg0i")
+texture_pressed = ExtResource("6_t0wlv")
+texture_hover = ExtResource("7_g6xri")
 
-[node name="Achievements" type="Button" parent="Main button" unique_id=41443077]
+[node name="TextureButton2" type="TextureButton" parent="Main button" unique_id=1007976702]
 layout_mode = 2
-theme_override_constants/align_to_largest_stylebox = 0
-theme_override_styles/normal = SubResource("StyleBoxEmpty_pbygh")
-icon = ExtResource("7_pbygh")
-icon_alignment = 1
+texture_normal = ExtResource("8_5w856")
+texture_pressed = ExtResource("8_5w856")
+texture_hover = ExtResource("8_5w856")
 
-[node name="Option" type="Button" parent="Main button" unique_id=771369009]
+[node name="TextureButton3" type="TextureButton" parent="Main button" unique_id=1483349006]
 layout_mode = 2
-theme_override_constants/align_to_largest_stylebox = 0
-theme_override_styles/normal = SubResource("StyleBoxEmpty_kki6w")
-icon = ExtResource("6_kki6w")
-icon_alignment = 1
+texture_normal = ExtResource("9_umhhb")
+texture_pressed = ExtResource("10_kgfa3")
+texture_hover = ExtResource("11_vxkjx")
 
-[node name="quit" type="Button" parent="Main button" unique_id=1152074430]
+[node name="TextureButton4" type="TextureButton" parent="Main button" unique_id=614284511]
 layout_mode = 2
-theme_override_constants/align_to_largest_stylebox = 0
-theme_override_styles/normal = SubResource("StyleBoxEmpty_wdf14")
-icon = ExtResource("8_wdf14")
-icon_alignment = 1
+texture_normal = ExtResource("12_kclb6")
+texture_pressed = ExtResource("13_ljd08")
+texture_hover = ExtResource("14_oj0t6")
 
 [node name="Options" type="Panel" parent="." unique_id=1328738600]
 layout_mode = 1
@@ -142,10 +140,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -867.0
-offset_top = -393.0
-offset_right = 853.0
-offset_bottom = 434.0
+offset_left = -876.0
+offset_top = -421.0
+offset_right = 844.0
+offset_bottom = 423.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_4emyp")
@@ -335,9 +333,6 @@ value = 0.8
 script = ExtResource("11_i3f74")
 audio_bus_name = "SFX"
 
-[connection signal="pressed" from="Main button/Start" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="Main button/Achievements" to="." method="_on_achievements_pressed"]
-[connection signal="pressed" from="Main button/Option" to="." method="_on_option_pressed"]
 [connection signal="pressed" from="Options/Fermer" to="." method="_on_fermer_option_pressed"]
 [connection signal="value_changed" from="Options/audio control" to="Options/audio control" method="_on_value_changed"]
 [connection signal="value_changed" from="Options/audio control2" to="Options/audio control2" method="_on_value_changed"]
