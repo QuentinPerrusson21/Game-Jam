@@ -2868,7 +2868,7 @@ scale = Vector2(1.6015633, 1.6328132)
 texture = ExtResource("43_pmch7")
 
 [node name="Caisse2" type="Sprite2D" parent="Caisse151" unique_id=543587517]
-position = Vector2(28.721863, 0)
+position = Vector2(-7.0243835, -0.15310998)
 scale = Vector2(0.99999994, 0.99999994)
 texture = ExtResource("43_pmch7")
 
