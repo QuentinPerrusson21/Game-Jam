@@ -85,10 +85,13 @@ position = Vector2(-4, -28)
 [node name="Gun2" parent="PorteArmes" unique_id=267145433 instance=ExtResource("8_pay2o")]
 visible = false
 position = Vector2(-20, 12)
+cooldown = 0.7
 
 [node name="Gun" parent="PorteArmes" unique_id=857317819 instance=ExtResource("6_hrlh7")]
 visible = false
 position = Vector2(-19, 13)
+cooldown = 1.0
 
 [node name="Gun3" parent="PorteArmes" unique_id=545706438 instance=ExtResource("7_unyy7")]
 position = Vector2(-16, 12)
+cooldown = 0.5
