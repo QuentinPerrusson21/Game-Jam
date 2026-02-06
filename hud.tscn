@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://ccyi7jsxx7ts6"]
 
+[ext_resource type="Script" uid="uid://cxark801m2ot" path="res://hud.gd" id="1_gpiub"]
 [ext_resource type="Texture2D" uid="uid://bigencvd6wxnm" path="res://HUD/barre_de_vie_vide.png" id="2_amv7k"]
 [ext_resource type="Texture2D" uid="uid://dty61vevhygvh" path="res://HUD/barre_de_vie_pleine.png" id="3_1fv7p"]
 [ext_resource type="Texture2D" uid="uid://ki3vpf1mrc6b" path="res://HUD/barre_rouge_du_boss.png" id="4_4u2vk"]
@@ -10,52 +11,37 @@
 [ext_resource type="Texture2D" uid="uid://ua3x6kgyrgjb" path="res://HUD/Layer_1_sprite_07.png" id="9_pw7dr"]
 [ext_resource type="Texture2D" uid="uid://cutojfh1doub5" path="res://HUD/Layer_1_sprite_08.png" id="10_ap7yk"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_64ctp"]
-bg_color = Color(0, 0, 0, 1)
-
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5kc73"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bp16l"]
 
-[node name="Control" type="Control" unique_id=234109627]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Control" type="CanvasLayer" unique_id=1354423698]
+script = ExtResource("1_gpiub")
 metadata/_edit_horizontal_guides_ = [59.0, 115.0, 881.0, 880.0, 901.0]
 metadata/_edit_vertical_guides_ = [20.0, 149.0, 191.0]
-
-[node name="Panel" type="Panel" parent="." unique_id=939890297]
-layout_mode = 0
-offset_right = 1920.0
-offset_bottom = 1080.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_64ctp")
 
 [node name="GrassSnowy" type="Sprite2D" parent="." unique_id=1735170473]
 position = Vector2(966, 541)
 
 [node name="Panel2" type="Panel" parent="." unique_id=2044104135]
-layout_mode = 0
 offset_left = 8.0
 offset_top = 34.0
 offset_right = 712.0
 offset_bottom = 146.0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_5kc73")
 
-[node name="BarreDeVieVide" type="Sprite2D" parent="Panel2" unique_id=393413961]
-position = Vector2(231.99998, 59)
-scale = Vector2(0.99218744, 1)
-texture = ExtResource("2_amv7k")
-
-[node name="BarreDeViePleine" type="Sprite2D" parent="Panel2" unique_id=456739201]
-position = Vector2(228.5, 58)
-scale = Vector2(0.9873047, 1)
-texture = ExtResource("3_1fv7p")
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Panel2" unique_id=1559246312]
+layout_mode = 0
+offset_left = -272.0
+offset_top = 4.0
+offset_right = 752.0
+offset_bottom = 132.0
+max_value = 6.0
+value = 5.0
+texture_under = ExtResource("2_amv7k")
+texture_progress = ExtResource("3_1fv7p")
 
 [node name="Panel3" type="Panel" parent="." unique_id=1994200368]
-layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -67,42 +53,48 @@ grow_horizontal = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_bp16l")
 
 [node name="BarreRougeDuBoss" type="Sprite2D" parent="Panel3" unique_id=249310634]
+visible = false
 position = Vector2(564.936, 82)
 scale = Vector2(1.470828, 1.878)
 texture = ExtResource("4_4u2vk")
 
 [node name="BarreVerteDuBoss" type="Sprite2D" parent="Panel3/BarreRougeDuBoss" unique_id=1995530266]
+visible = false
 position = Vector2(-13.531982, 0)
 scale = Vector2(0.9561661, 0.8984374)
 texture = ExtResource("5_4q17s")
 
 [node name="BarreDuBoss" type="Sprite2D" parent="Panel3/BarreRougeDuBoss" unique_id=765520309]
+visible = false
 position = Vector2(-12.575684, 0.8984375)
 scale = Vector2(0.9561659, 0.8984374)
 texture = ExtResource("6_2d608")
 
 [node name="Layer1Sprite05" type="Sprite2D" parent="." unique_id=1028310241]
+visible = false
 position = Vector2(148.4, 817.39996)
 scale = Vector2(4.2, 4.2)
 texture = ExtResource("7_w71nf")
 
 [node name="Layer1Sprite06" type="Sprite2D" parent="." unique_id=1221932121]
+visible = false
 position = Vector2(149.4, 980.39996)
 scale = Vector2(4.2, 4.2)
 texture = ExtResource("8_615i1")
 
 [node name="Layer1Sprite07" type="Sprite2D" parent="." unique_id=1571231020]
+visible = false
 position = Vector2(319.4, 817.4)
 scale = Vector2(4.2, 4.2)
 texture = ExtResource("9_pw7dr")
 
 [node name="Layer1Sprite08" type="Sprite2D" parent="." unique_id=805080548]
+visible = false
 position = Vector2(319.4, 980.39996)
 scale = Vector2(4.2, 4.2)
 texture = ExtResource("10_ap7yk")
 
 [node name="Label" type="Label" parent="." unique_id=1006861845]
-layout_mode = 0
 offset_left = 1572.0
 offset_top = 69.0
 offset_right = 1796.0
