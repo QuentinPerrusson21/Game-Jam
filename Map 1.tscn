@@ -33,6 +33,9 @@
 [ext_resource type="Texture2D" uid="uid://bw4loooi0ptkr" path="res://maps/Cobble/Mix/MagicCircleRed.png" id="29_osk5h"]
 [ext_resource type="Texture2D" uid="uid://c2ulwpg15jw78" path="res://pistol/weapon/Hammer/marteau.png" id="30_6whnl"]
 [ext_resource type="PackedScene" uid="uid://bav0ai3ehbby2" path="res://goblin.tscn" id="30_u444a"]
+[ext_resource type="PackedScene" uid="uid://nsaon7wlrejg" path="res://boss.tscn" id="31_aa6oi"]
+[ext_resource type="AudioStream" uid="uid://4jarc8ce7fkm" path="res://Music/Bossfight.ogg" id="32_ujfou"]
+[ext_resource type="AudioStream" uid="uid://bmsmepyk4ppdq" path="res://Music/Gameplay.ogg" id="35_ejm65"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6whnl"]
 size = Vector2(860, 20)
@@ -42,6 +45,9 @@ size = Vector2(106.5, 852.25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ejm65"]
 size = Vector2(903, 134.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aa6oi"]
+size = Vector2(1544.5, 134.25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jery8"]
 size = Vector2(130, 127)
@@ -1388,6 +1394,34 @@ position = Vector2(234, -338)
 [node name="Marker2D2" type="Marker2D" parent="RoomManager5/SpawnPoints" unique_id=648200486]
 position = Vector2(-101, -137)
 
+[node name="RoomManager6" type="Node2D" parent="." unique_id=1807303216 node_paths=PackedStringArray("portes_a_fermer")]
+position = Vector2(5477, -5964)
+script = ExtResource("28_2p0g6")
+portes_a_fermer = [NodePath("../Portes/Porte8"), NodePath("../Portes/Porte9")]
+liste_mobs_possibles = Array[PackedScene]([ExtResource("31_aa6oi")])
+nombre_mobs = 1
+est_salle_boss = true
+
+[node name="DetectionZone" type="Area2D" parent="RoomManager6" unique_id=1319586382]
+position = Vector2(333, 557)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomManager6/DetectionZone" unique_id=1920032496]
+position = Vector2(-175, -35)
+shape = SubResource("RectangleShape2D_aa6oi")
+
+[node name="MobsContainer" type="Node2D" parent="RoomManager6" unique_id=1492988563]
+position = Vector2(-2, 53)
+
+[node name="SpawnPoints" type="Node2D" parent="RoomManager6" unique_id=427918409]
+position = Vector2(271, 394)
+
+[node name="Marker2D" type="Marker2D" parent="RoomManager6/SpawnPoints" unique_id=1024669351]
+position = Vector2(-137, -168)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="RoomManager6" unique_id=1238196853]
+position = Vector2(135, 164)
+stream = ExtResource("32_ujfou")
+
 [node name="Portes" type="Node2D" parent="." unique_id=2061184402]
 position = Vector2(1365, -827)
 
@@ -1507,3 +1541,28 @@ shape = SubResource("RectangleShape2D_jery8")
 position = Vector2(-1363, -193)
 sprite_frames = SubResource("SpriteFrames_ejm65")
 animation = &"close"
+
+[node name="MusiqueDonjon" type="AudioStreamPlayer2D" parent="." unique_id=669486613]
+position = Vector2(1674, -527)
+stream = ExtResource("35_ejm65")
+autoplay = true
+
+[node name="MusiqueDonjon2" type="AudioStreamPlayer2D" parent="." unique_id=1840922493]
+position = Vector2(-17, -1466)
+stream = ExtResource("35_ejm65")
+autoplay = true
+
+[node name="MusiqueDonjon3" type="AudioStreamPlayer2D" parent="." unique_id=78960749]
+position = Vector2(1965, -2484)
+stream = ExtResource("35_ejm65")
+autoplay = true
+
+[node name="MusiqueDonjon4" type="AudioStreamPlayer2D" parent="." unique_id=748603080]
+position = Vector2(-27, -3524)
+stream = ExtResource("35_ejm65")
+autoplay = true
+
+[node name="MusiqueDonjon5" type="AudioStreamPlayer2D" parent="." unique_id=1440422343]
+position = Vector2(3675, -4212)
+stream = ExtResource("35_ejm65")
+autoplay = true
