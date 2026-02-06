@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cyocat3lb24fl"]
 
 [ext_resource type="Texture2D" uid="uid://cfvjbcix4oa1v" path="res://Death screen/Mort chevalier.jpg" id="1_1h54d"]
+[ext_resource type="Script" uid="uid://4cgo4ig5a54n" path="res://death_screen_knight.gd" id="1_ltd7g"]
 [ext_resource type="FontFile" uid="uid://b53iapi5wykx8" path="res://Font/PixelifySans-VariableFont_wght.ttf" id="2_c1grw"]
 [ext_resource type="Texture2D" uid="uid://2mx4ykg5auo5" path="res://Baniere/quit game quadri_rouge.png" id="2_xei5m"]
 [ext_resource type="Texture2D" uid="uid://d1jontcrtdham" path="res://Baniere/quit game quadri_gris.png" id="3_ltd7g"]
@@ -19,6 +20,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_ltd7g")
 
 [node name="Panel" type="Panel" parent="." unique_id=880641404]
 layout_mode = 0
@@ -90,3 +92,6 @@ theme_override_fonts/font = ExtResource("2_c1grw")
 theme_override_font_sizes/font_size = 100
 text = "1:28:124"
 horizontal_alignment = 1
+
+[connection signal="pressed" from="Panel/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="Panel/TextureButton2" to="." method="_on_texture_button_2_pressed"]

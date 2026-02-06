@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://bseq5vdjuqom8"]
 
+[ext_resource type="Script" uid="uid://bml2lqi8ka3vd" path="res://map_1.gd" id="1_ujfou"]
 [ext_resource type="Texture2D" uid="uid://dmua25br67es8" path="res://maps/Cobble/Icy/ice-lr.png" id="2_cfsje"]
 [ext_resource type="Texture2D" uid="uid://cqnxkk62i2gmp" path="res://maps/Cobble/Mix/coble-t.png" id="3_iiiln"]
 [ext_resource type="Texture2D" uid="uid://ckd2wuo5vfoxi" path="res://maps/Cobble/Vanilla/CobbleCorridorHorizontal.png" id="3_lfpw6"]
@@ -15,7 +16,6 @@
 [ext_resource type="Texture2D" uid="uid://dq8knws7q5luf" path="res://maps/Cobble/Lava/fire-b.png" id="12_osk5h"]
 [ext_resource type="Texture2D" uid="uid://crq7tabgivss" path="res://maps/Cobble/Icy/ice-tr.png" id="13_6whnl"]
 [ext_resource type="Texture2D" uid="uid://iranrfddwtgp" path="res://maps/Cobble/Icy/ice-lb.png" id="14_jery8"]
-[ext_resource type="PackedScene" uid="uid://c1sx7bic4uhdj" path="res://player.tscn" id="15_n3fjg"]
 [ext_resource type="Texture2D" uid="uid://dyes2yyl7wkh8" path="res://maps/Cobble/Icy/ice-b.png" id="15_u444a"]
 [ext_resource type="Texture2D" uid="uid://f2pn4koi10r3" path="res://maps/Cobble/Lava/fire-tr.png" id="16_aa6oi"]
 [ext_resource type="Texture2D" uid="uid://bxl3phxtop1nk" path="res://maps/Cobble/Vanilla/map-texture-mediumstone.png" id="16_h1jrt"]
@@ -31,11 +31,11 @@
 [ext_resource type="Script" uid="uid://ct8terumcnrca" path="res://porte.gd" id="29_6whnl"]
 [ext_resource type="PackedScene" uid="uid://y38gte5o0xf8" path="res://mob.tscn" id="29_jery8"]
 [ext_resource type="Texture2D" uid="uid://bw4loooi0ptkr" path="res://maps/Cobble/Mix/MagicCircleRed.png" id="29_osk5h"]
-[ext_resource type="Texture2D" uid="uid://c2ulwpg15jw78" path="res://pistol/weapon/Hammer/marteau.png" id="30_6whnl"]
 [ext_resource type="PackedScene" uid="uid://bav0ai3ehbby2" path="res://goblin.tscn" id="30_u444a"]
 [ext_resource type="PackedScene" uid="uid://nsaon7wlrejg" path="res://boss.tscn" id="31_aa6oi"]
 [ext_resource type="AudioStream" uid="uid://4jarc8ce7fkm" path="res://Music/Bossfight.ogg" id="32_ujfou"]
 [ext_resource type="AudioStream" uid="uid://bmsmepyk4ppdq" path="res://Music/Gameplay.ogg" id="35_ejm65"]
+[ext_resource type="Texture2D" uid="uid://chiw83r33ktt8" path="res://pistol/weapon/WhiteStick/pngvide.png" id="35_ujfou"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6whnl"]
 size = Vector2(860, 20)
@@ -56,9 +56,9 @@ size = Vector2(130, 127)
 atlas = ExtResource("29_osk5h")
 region = Rect2(0, 0, 128, 128)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_aa6oi"]
-atlas = ExtResource("30_6whnl")
-region = Rect2(0, 0, 64, 74)
+[sub_resource type="AtlasTexture" id="AtlasTexture_krir8"]
+atlas = ExtResource("35_ujfou")
+region = Rect2(0, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ejm65"]
 animations = [{
@@ -72,7 +72,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_aa6oi")
+"texture": SubResource("AtlasTexture_krir8")
 }],
 "loop": true,
 "name": &"open",
@@ -80,6 +80,7 @@ animations = [{
 }]
 
 [node name="Node2D" type="Node2D" unique_id=1884716433]
+script = ExtResource("1_ujfou")
 metadata/_edit_vertical_guides_ = [-2150.0, -2016.0]
 
 [node name="Sprite2D4" type="Sprite2D" parent="." unique_id=1304732485]
@@ -577,9 +578,6 @@ texture = ExtResource("16_h1jrt")
 [node name="MapTextureMediumstone29" type="Sprite2D" parent="." unique_id=2084576089]
 position = Vector2(2013, 531)
 texture = ExtResource("16_h1jrt")
-
-[node name="Player" parent="." unique_id=1916796525 instance=ExtResource("15_n3fjg")]
-position = Vector2(980, 536)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1985892782]
 position = Vector2(-35, -493)
@@ -1566,3 +1564,6 @@ autoplay = true
 position = Vector2(3675, -4212)
 stream = ExtResource("35_ejm65")
 autoplay = true
+
+[node name="SpawnPoint" type="Marker2D" parent="." unique_id=597739230]
+position = Vector2(1007, 626)

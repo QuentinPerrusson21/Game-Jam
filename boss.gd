@@ -103,6 +103,11 @@ func die():
 	velocity = Vector2.ZERO 
 	$CollisionShape2D.set_deferred("disabled", true)
 	
+	# --- NOUVEAU : ARRÊT DU CHRONO ---
+	# On arrête le temps dès que le Boss tombe à 0 PV
+	GameData.chrono_actif = false
+	print("Bravo ! Boss vaincu en : " + GameData.formater_temps())
+	
 	$AnimatedSprite2D.play("hurt") 
 	
 	await $AnimatedSprite2D.animation_finished
@@ -112,4 +117,5 @@ func die():
 	tween.tween_property(self, "modulate:a", 0.0, 1.5)
 	await tween.finished
 	
+
 	queue_free()
