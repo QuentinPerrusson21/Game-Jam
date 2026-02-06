@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://du5i8r7jdycua" path="res://gun.tscn" id="3_i3pqv"]
 [ext_resource type="Texture2D" uid="uid://c4x31bhdst7bt" path="res://characters/Classe/Archer/archer-7.png" id="4_b26j0"]
 [ext_resource type="Texture2D" uid="uid://dsg7mw8bwqcc6" path="res://characters/Classe/Archer/archer1.png" id="5_n7ghd"]
+[ext_resource type="Texture2D" uid="uid://bn7gln6ilm0e3" path="res://maps/Assets/Shadow_Character.png" id="6_b26j0"]
 [ext_resource type="PackedScene" uid="uid://dwdqv6knf7ihp" path="res://bow.tscn" id="7_1jxqw"]
 [ext_resource type="PackedScene" uid="uid://c4rcmhv7crd6c" path="res://shuriken.tscn" id="8_dw050"]
 
@@ -83,6 +84,12 @@ position = Vector2(-3, -27.5)
 shape = SubResource("RectangleShape2D_sweqy")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1722338469]
+
+[node name="Shadow" type="Sprite2D" parent="." unique_id=1403491104]
+modulate = Color(1, 1, 1, 0.5137255)
+position = Vector2(9.536743e-07, 0.5)
+scale = Vector2(0.4375, 0.703125)
+texture = ExtResource("6_b26j0")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1402681455]
 

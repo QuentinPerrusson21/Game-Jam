@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://y38gte5o0xf8"]
 
 [ext_resource type="Script" uid="uid://d07l5xwryn2cx" path="res://mob.gd" id="1_nokgg"]
+[ext_resource type="Texture2D" uid="uid://bn7gln6ilm0e3" path="res://maps/Assets/Shadow_Character.png" id="2_b3mxk"]
 [ext_resource type="Texture2D" uid="uid://dp4lx31agfs5u" path="res://characters/MonstresOffi/slime-bleu-front-view.png" id="2_nokgg"]
 [ext_resource type="Texture2D" uid="uid://cqss61cll3gdr" path="res://characters/MonstresOffi/slime-bleu-death.png" id="2_p11y5"]
 [ext_resource type="Texture2D" uid="uid://d207gu3j02xft" path="res://characters/MonstresOffi/slime-bleu-side-view-right.png" id="3_s5nov"]
@@ -78,6 +79,11 @@ radius = 22.022715
 collision_layer = 2
 collision_mask = 3
 script = ExtResource("1_nokgg")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2044744826]
+position = Vector2(1, 15)
+scale = Vector2(0.5234375, 0.5)
+texture = ExtResource("2_b3mxk")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=121734713]
 texture_filter = 1

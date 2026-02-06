@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://1mkqp1q08ibo" path="res://Bulle/bulle1.png" id="16_l78cu"]
 [ext_resource type="Texture2D" uid="uid://ratsphvb18u6" path="res://Bulle/bulle2.png" id="17_e6eef"]
 [ext_resource type="FontFile" uid="uid://b53iapi5wykx8" path="res://Font/PixelifySans-VariableFont_wght.ttf" id="18_4vrjs"]
+[ext_resource type="Texture2D" uid="uid://bn7gln6ilm0e3" path="res://maps/Assets/Shadow_Character.png" id="23_fgeoi"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_t6ouf"]
 radius = 46.010868
@@ -182,7 +183,7 @@ scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_qdjuy")
 animation = &"Idle"
 autoplay = "Idle"
-frame_progress = 0.4312439
+frame_progress = 0.36648408
 
 [node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="." unique_id=2019588852]
 position = Vector2(2242, -849)
@@ -391,5 +392,30 @@ horizontal_alignment = 1
 [node name="SpawnHub" type="Marker2D" parent="." unique_id=984645019]
 unique_name_in_owner = true
 position = Vector2(2317, -203)
+
+[node name="ShadowCharacter" type="Sprite2D" parent="." unique_id=1285735250]
+position = Vector2(2229, -9.000002)
+scale = Vector2(0.46484172, 0.6953125)
+texture = ExtResource("23_fgeoi")
+
+[node name="ShadowCharacter2" type="Sprite2D" parent="." unique_id=1684951254]
+position = Vector2(1980.9999, -425.00003)
+scale = Vector2(0.46484172, 0.44140622)
+texture = ExtResource("23_fgeoi")
+
+[node name="ShadowCharacter3" type="Sprite2D" parent="." unique_id=1816084751]
+position = Vector2(2235, -784)
+scale = Vector2(0.46484172, 0.44140622)
+texture = ExtResource("23_fgeoi")
+
+[node name="ShadowCharacter4" type="Sprite2D" parent="." unique_id=1699635513]
+position = Vector2(2447, -600)
+scale = Vector2(0.46484172, 0.44140622)
+texture = ExtResource("23_fgeoi")
+
+[node name="ShadowCharacter5" type="Sprite2D" parent="." unique_id=1524646478]
+position = Vector2(2942, -413)
+scale = Vector2(0.46484172, 0.44140622)
+texture = ExtResource("23_fgeoi")
 
 [connection signal="body_entered" from="BottomLlUpscayl3xUpscaylStandard4x14/Area2D" to="." method="_on_area_2d_body_entered"]
