@@ -43,12 +43,12 @@ texture_hover = ExtResource("4_vmuro")
 [node name="TextureButton2" type="TextureButton" parent="Panel" unique_id=1540796084]
 layout_mode = 1
 anchors_preset = -1
-anchor_right = 0.11400001
-anchor_bottom = 0.30100003
+anchor_right = 1.0
+anchor_bottom = 1.0
 offset_left = 220.0
 offset_top = 867.99994
-offset_right = 343.12
-offset_bottom = 628.9199
+offset_right = -1358.0
+offset_bottom = -126.00006
 scale = Vector2(1.705, 1.705)
 texture_normal = ExtResource("5_3vni6")
 texture_pressed = ExtResource("6_ca866")
