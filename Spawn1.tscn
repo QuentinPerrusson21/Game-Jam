@@ -1,13 +1,16 @@
-[gd_scene format=3 uid="uid://wylobiknvvkc"]
+[gd_scene format=3 uid="uid://c6r1yi84nikp4"]
 
+[ext_resource type="Script" uid="uid://h6ipnorbepc2" path="res://spawn_1.gd" id="1_4iw63"]
+[ext_resource type="Texture2D" uid="uid://b4dh5s1d10cuj" path="res://maps/Spawn/Hub_Gauchev2.png" id="1_t6ouf"]
+[ext_resource type="Texture2D" uid="uid://c2wjwu3y2psg2" path="res://maps/Spawn/Hub_Droitev2.png" id="2_4iw63"]
 [ext_resource type="Texture2D" uid="uid://blq0q8nc4amsq" path="res://PNJ/forgeron.png" id="5_nls5t"]
 [ext_resource type="Texture2D" uid="uid://bb133s17wpfq2" path="res://maps/Spawn/Hub_Gauche.jpg" id="6_0fwgc"]
 [ext_resource type="Texture2D" uid="uid://bg6e4yh3jjns3" path="res://PNJ/forgeron-anim.png" id="6_31un7"]
 [ext_resource type="Texture2D" uid="uid://c1lkky2ricxd" path="res://maps/Spawn/Hub_Droite.jpg" id="7_cqykf"]
+[ext_resource type="Script" uid="uid://crpidklfg3ok" path="res://area_2d.gd" id="7_fgeoi"]
 [ext_resource type="Texture2D" uid="uid://uuqdphhdlgjg" path="res://PNJ/mafieux.png" id="7_gc3y6"]
 [ext_resource type="Texture2D" uid="uid://bxl3phxtop1nk" path="res://maps/Cobble/Vanilla/map-texture-mediumstone.png" id="8_cqykf"]
 [ext_resource type="Texture2D" uid="uid://bcyyha2kgmrhh" path="res://PNJ/mafieux-anim.png" id="8_nmin4"]
-[ext_resource type="PackedScene" uid="uid://c1sx7bic4uhdj" path="res://player.tscn" id="9_0fwgc"]
 [ext_resource type="Texture2D" uid="uid://c5q2100ax5x5o" path="res://PNJ/vandjik-fornt-view-v2.png" id="9_l78cu"]
 [ext_resource type="Texture2D" uid="uid://xymrd7xuwpnv" path="res://PNJ/vandjik-fornt-view-v2-anim.png" id="10_e6eef"]
 [ext_resource type="Texture2D" uid="uid://bo71ybtkq5lc" path="res://PNJ/villageois-anim.png" id="11_4vrjs"]
@@ -19,6 +22,9 @@
 [ext_resource type="Texture2D" uid="uid://1mkqp1q08ibo" path="res://Bulle/bulle1.png" id="16_l78cu"]
 [ext_resource type="Texture2D" uid="uid://ratsphvb18u6" path="res://Bulle/bulle2.png" id="17_e6eef"]
 [ext_resource type="FontFile" uid="uid://b53iapi5wykx8" path="res://Font/PixelifySans-VariableFont_wght.ttf" id="18_4vrjs"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_t6ouf"]
+radius = 46.010868
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xupc4"]
 animations = [{
@@ -94,16 +100,17 @@ animations = [{
 
 [node name="Node2D" type="Node2D" unique_id=971572953]
 position = Vector2(-1277, 1049)
+script = ExtResource("1_4iw63")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2106052402]
 
 [node name="BottomLlUpscayl3xUpscaylStandard4x2" type="Sprite2D" parent="." unique_id=452540034]
 position = Vector2(1797, -484)
-texture = ExtResource("6_0fwgc")
+texture = ExtResource("1_t6ouf")
 
 [node name="BottomLlUpscayl3xUpscaylStandard4x3" type="Sprite2D" parent="." unique_id=806471087]
 position = Vector2(2821, -484)
-texture = ExtResource("7_cqykf")
+texture = ExtResource("2_4iw63")
 
 [node name="BottomLlUpscayl3xUpscaylStandard4x9" type="Sprite2D" parent="." unique_id=1760697917]
 position = Vector2(1797, -1508)
@@ -120,6 +127,14 @@ texture = ExtResource("8_cqykf")
 [node name="BottomLlUpscayl3xUpscaylStandard4x14" type="Sprite2D" parent="." unique_id=205687176]
 position = Vector2(2821, -1508)
 texture = ExtResource("8_cqykf")
+
+[node name="Area2D" type="Area2D" parent="BottomLlUpscayl3xUpscaylStandard4x14" unique_id=400500172]
+position = Vector2(-517, 676)
+script = ExtResource("7_fgeoi")
+
+[node name="ZoneEntreeDonjon" type="CollisionShape2D" parent="BottomLlUpscayl3xUpscaylStandard4x14/Area2D" unique_id=1950399450]
+position = Vector2(9, -42)
+shape = SubResource("CircleShape2D_t6ouf")
 
 [node name="BottomLlUpscayl3xUpscaylStandard4x11" type="Sprite2D" parent="." unique_id=1218448426]
 position = Vector2(3845, -484)
@@ -203,9 +218,6 @@ position = Vector2(2446, -658)
 scale = Vector2(3, 3)
 stream = ExtResource("15_e6eef")
 autoplay = true
-
-[node name="Player" parent="." unique_id=1916796525 instance=ExtResource("9_0fwgc")]
-position = Vector2(2323, -46)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1915218399]
 visible = false
@@ -372,3 +384,9 @@ theme_override_font_sizes/font_size = 16
 theme_override_styles/focus = SubResource("StyleBoxLine_t6ouf")
 text = "LARRY S'EST ENCORE CACHE"
 horizontal_alignment = 1
+
+[node name="SpawnHub" type="Marker2D" parent="." unique_id=984645019]
+unique_name_in_owner = true
+position = Vector2(2317, -203)
+
+[connection signal="body_entered" from="BottomLlUpscayl3xUpscaylStandard4x14/Area2D" to="." method="_on_area_2d_body_entered"]
