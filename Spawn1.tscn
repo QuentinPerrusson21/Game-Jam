@@ -1,13 +1,13 @@
-[gd_scene format=3 uid="uid://c6r1yi84nikp4"]
+[gd_scene format=3 uid="uid://wylobiknvvkc"]
 
-[ext_resource type="Script" uid="uid://h6ipnorbepc2" path="res://spawn_1.gd" id="1_4iw63"]
+[ext_resource type="Script" path="res://spawn_1.gd" id="1_4iw63"]
 [ext_resource type="Texture2D" uid="uid://b4dh5s1d10cuj" path="res://maps/Spawn/Hub_Gauchev2.png" id="1_t6ouf"]
 [ext_resource type="Texture2D" uid="uid://c2wjwu3y2psg2" path="res://maps/Spawn/Hub_Droitev2.png" id="2_4iw63"]
 [ext_resource type="Texture2D" uid="uid://blq0q8nc4amsq" path="res://PNJ/forgeron.png" id="5_nls5t"]
 [ext_resource type="Texture2D" uid="uid://bb133s17wpfq2" path="res://maps/Spawn/Hub_Gauche.jpg" id="6_0fwgc"]
 [ext_resource type="Texture2D" uid="uid://bg6e4yh3jjns3" path="res://PNJ/forgeron-anim.png" id="6_31un7"]
 [ext_resource type="Texture2D" uid="uid://c1lkky2ricxd" path="res://maps/Spawn/Hub_Droite.jpg" id="7_cqykf"]
-[ext_resource type="Script" uid="uid://crpidklfg3ok" path="res://area_2d.gd" id="7_fgeoi"]
+[ext_resource type="Script" path="res://area_2d.gd" id="7_fgeoi"]
 [ext_resource type="Texture2D" uid="uid://uuqdphhdlgjg" path="res://PNJ/mafieux.png" id="7_gc3y6"]
 [ext_resource type="Texture2D" uid="uid://bxl3phxtop1nk" path="res://maps/Cobble/Vanilla/map-texture-mediumstone.png" id="8_cqykf"]
 [ext_resource type="Texture2D" uid="uid://bcyyha2kgmrhh" path="res://PNJ/mafieux-anim.png" id="8_nmin4"]
@@ -98,7 +98,7 @@ animations = [{
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_t6ouf"]
 
-[node name="Node2D" type="Node2D" unique_id=971572953]
+[node name="Node2D2" type="Node2D" unique_id=971572953]
 position = Vector2(-1277, 1049)
 script = ExtResource("1_4iw63")
 
@@ -209,8 +209,8 @@ autoplay = "Idle"
 frame_progress = 0.43231463
 
 [node name="Sprite2D2" type="Sprite2D" parent="." unique_id=2069440199]
-position = Vector2(2518.5, -191.87502)
-scale = Vector2(0.042750858, 0.05226306)
+position = Vector2(2522, -121.99998)
+scale = Vector2(0.07527821, 0.0886317)
 texture = ExtResource("15_31un7")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1682097989]
@@ -289,28 +289,28 @@ polygon = PackedVector2Array(2211, -223, 2212, -262, 2178, -257, 2156, -286, 212
 polygon = PackedVector2Array(46, -286, 65.66669, -248.66666, 63.666687, -115.66666, 367.33337, -111.33333, 368, -70.33331, 252, -66, 254.33337, -3.6666565, 318.6667, -5.333313, 320.6667, -59.333313, 339.6667, -56, 341.33337, -16, 365, -15.333313, 365.6667, 9.3333435, 114, 8, 79.66669, 31.666687, -25.333313, 31, -115.33333, 24.666687, -130.33333, 8.3333435, -283.66666, 11, -281.33334, -75.33333, -315.33334, -74.66666, -315, -113.33333, -277.66666, -114, -286.33334, -150, -267.33334, -188.66666, -227.33333, -205.33333, -201, -177.66666, -198.66666, -169.66666, -230.33333, -192, -261.66666, -170.66666, -260.33334, -116.33333, -153.66666, -114, -105.66666, -113.33333, -93.66666, -122, -69.33333, -120.33333, -65.33333, -115, -8.6666565, -114.66666, -5, -178, -12, -203, 9.666687, -240.66666, 11.3333435, -285, -18.666656, -293.66666, -404.33334, -179.66666, -350.33334, 115.33334, 442, 87, 389.33337, -244)
 
 [node name="Sprite2D4" type="Sprite2D" parent="." unique_id=1820759255]
-position = Vector2(2041.5, -174.62503)
-scale = Vector2(1.464844, 1.7402351)
+position = Vector2(2041.5, -180.00005)
+scale = Vector2(1.464844, 1.6562506)
 texture = ExtResource("16_l78cu")
 flip_h = true
 
 [node name="Sprite2D6" type="Sprite2D" parent="." unique_id=259683617]
-position = Vector2(1823.0001, -562)
-scale = Vector2(1.2578131, 1.027344)
+position = Vector2(1824, -561.00006)
+scale = Vector2(1.2578131, 1.294922)
 texture = ExtResource("16_l78cu")
 flip_h = true
 
 [node name="Sprite2D3" type="Sprite2D" parent="." unique_id=1185214302]
-position = Vector2(2600, -540)
-scale = Vector2(1.2602413, 1.4023438)
+position = Vector2(2600, -545.875)
+scale = Vector2(1.2602413, 1.3105468)
 texture = ExtResource("17_e6eef")
 offset = Vector2(-0.16, 0)
 flip_h = true
 flip_v = true
 
 [node name="Sprite2D7" type="Sprite2D" parent="." unique_id=2031235265]
-position = Vector2(2068, -925.00006)
-scale = Vector2(1.3391705, 1.0781245)
+position = Vector2(2068, -918.5)
+scale = Vector2(1.3391705, 1.1796877)
 texture = ExtResource("17_e6eef")
 offset = Vector2(-0.16, 0)
 
@@ -325,8 +325,9 @@ flip_h = true
 offset_left = 1942.0
 offset_top = -213.0
 offset_right = 2156.0
-offset_bottom = -126.0
+offset_bottom = -143.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = -10
 theme_override_fonts/font = ExtResource("18_4vrjs")
 theme_override_font_sizes/font_size = 16
 theme_override_styles/focus = SubResource("StyleBoxLine_t6ouf")
@@ -336,11 +337,12 @@ CHERCHE LA GROTTE !!!"
 horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="." unique_id=1637943167]
-offset_left = 1961.0
-offset_top = -950.0
-offset_right = 2175.0
-offset_bottom = -907.0
+offset_left = 1959.0
+offset_top = -945.0
+offset_right = 2173.0
+offset_bottom = -879.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = -10
 theme_override_fonts/font = ExtResource("18_4vrjs")
 theme_override_font_sizes/font_size = 16
 theme_override_styles/focus = SubResource("StyleBoxLine_t6ouf")
@@ -361,11 +363,12 @@ text = "J'AI ENCORE MAL AU DOS"
 horizontal_alignment = 1
 
 [node name="Label4" type="Label" parent="." unique_id=397410963]
-offset_left = 2495.0
-offset_top = -550.0
-offset_right = 2709.0
-offset_bottom = -507.0
+offset_left = 2493.0
+offset_top = -558.0
+offset_right = 2707.0
+offset_bottom = -515.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = -10
 theme_override_fonts/font = ExtResource("18_4vrjs")
 theme_override_font_sizes/font_size = 16
 theme_override_styles/focus = SubResource("StyleBoxLine_t6ouf")
