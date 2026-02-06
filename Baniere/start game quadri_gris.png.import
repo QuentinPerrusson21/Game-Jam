@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bb133s17wpfq2"
-path="res://.godot/imported/Hub_Gauche.jpg-77d37e788396339b3b50954aca012b88.ctex"
+uid="uid://d0iq3wpf3tnm7"
+path="res://.godot/imported/start game quadri_gris.png-f140877e793dfba09232d59c6412cca6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://maps/Spawn/Hub_Gauche.jpg"
-dest_files=["res://.godot/imported/Hub_Gauche.jpg-77d37e788396339b3b50954aca012b88.ctex"]
+source_file="res://Baniere/start game quadri_gris.png"
+dest_files=["res://.godot/imported/start game quadri_gris.png-f140877e793dfba09232d59c6412cca6.ctex"]
 
 [params]
 

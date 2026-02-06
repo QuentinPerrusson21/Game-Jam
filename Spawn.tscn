@@ -1,19 +1,23 @@
 [gd_scene format=3 uid="uid://dcw8xpb0djaum"]
 
-[ext_resource type="Texture2D" uid="uid://bb133s17wpfq2" path="res://maps/Spawn/Hub_Gauche.jpg" id="1_oas7p"]
-[ext_resource type="Texture2D" uid="uid://c1lkky2ricxd" path="res://maps/Spawn/Hub_Droite.jpg" id="2_wpsf4"]
 [ext_resource type="PackedScene" uid="uid://c1sx7bic4uhdj" path="res://player.tscn" id="3_xchh0"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_dc37j"]
+load_path = "res://.godot/imported/Hub_Gauche.jpg-77d37e788396339b3b50954aca012b88.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_nfadl"]
+load_path = "res://.godot/imported/Hub_Droite.jpg-49acae29473a11a95a50b3852cc9ceae.ctex"
 
 [node name="Node2D" type="Node2D" unique_id=1228411534]
 position = Vector2(772, 496)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1488588063]
-position = Vector2(-258, 16)
-texture = ExtResource("1_oas7p")
+position = Vector2(-239, 44)
+texture = SubResource("CompressedTexture2D_dc37j")
 
 [node name="Sprite2D2" type="Sprite2D" parent="." unique_id=2000402940]
-position = Vector2(766, 16)
-texture = ExtResource("2_wpsf4")
+position = Vector2(785, 44)
+texture = SubResource("CompressedTexture2D_nfadl")
 
 [node name="Player" parent="." unique_id=1916796525 instance=ExtResource("3_xchh0")]
-position = Vector2(270, 172)
+position = Vector2(186, 45)

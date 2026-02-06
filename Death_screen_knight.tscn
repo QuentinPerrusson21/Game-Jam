@@ -2,6 +2,12 @@
 
 [ext_resource type="Texture2D" uid="uid://cfvjbcix4oa1v" path="res://Death screen/Mort chevalier.jpg" id="1_1h54d"]
 [ext_resource type="FontFile" uid="uid://b53iapi5wykx8" path="res://Font/PixelifySans-VariableFont_wght.ttf" id="2_c1grw"]
+[ext_resource type="Texture2D" uid="uid://2mx4ykg5auo5" path="res://Baniere/quit game quadri_rouge.png" id="2_xei5m"]
+[ext_resource type="Texture2D" uid="uid://d1jontcrtdham" path="res://Baniere/quit game quadri_gris.png" id="3_ltd7g"]
+[ext_resource type="Texture2D" uid="uid://bplosv02nt5bf" path="res://Baniere/quit game quadri_vert.png" id="4_vmuro"]
+[ext_resource type="Texture2D" uid="uid://b4ww7om6wjelv" path="res://Baniere/retry quadri_rouge.png" id="5_3vni6"]
+[ext_resource type="Texture2D" uid="uid://6dnjgbk4a288" path="res://Baniere/retry quadri_gris.png" id="6_ca866"]
+[ext_resource type="Texture2D" uid="uid://bui36la0c4t4o" path="res://Baniere/retry quadri_vert.png" id="7_kmvrp"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3o3q4"]
 texture = ExtResource("1_1h54d")
@@ -20,6 +26,34 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_3o3q4")
 
+[node name="TextureButton" type="TextureButton" parent="Panel" unique_id=1010063896]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.11400001
+anchor_bottom = 0.30100003
+offset_left = 1128.0
+offset_top = 867.99994
+offset_right = 1251.12
+offset_bottom = 628.9199
+scale = Vector2(1.705, 1.705)
+texture_normal = ExtResource("2_xei5m")
+texture_pressed = ExtResource("3_ltd7g")
+texture_hover = ExtResource("4_vmuro")
+
+[node name="TextureButton2" type="TextureButton" parent="Panel" unique_id=1540796084]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.11400001
+anchor_bottom = 0.30100003
+offset_left = 220.0
+offset_top = 867.99994
+offset_right = 343.12
+offset_bottom = 628.9199
+scale = Vector2(1.705, 1.705)
+texture_normal = ExtResource("5_3vni6")
+texture_pressed = ExtResource("6_ca866")
+texture_hover = ExtResource("7_kmvrp")
+
 [node name="Label" type="Label" parent="Panel" unique_id=285450676]
 layout_mode = 1
 anchors_preset = 5
@@ -37,3 +71,22 @@ theme_override_constants/shadow_offset_y = 6
 theme_override_fonts/font = ExtResource("2_c1grw")
 theme_override_font_sizes/font_size = 170
 text = "GAME OVER"
+
+[node name="Label2" type="Label" parent="Panel" unique_id=618199461]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -428.0
+offset_top = 273.0
+offset_right = 434.0
+offset_bottom = 393.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.597819, 0.9470157, 0.31782916, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.7137255)
+theme_override_constants/shadow_offset_x = 6
+theme_override_constants/shadow_offset_y = 6
+theme_override_fonts/font = ExtResource("2_c1grw")
+theme_override_font_sizes/font_size = 100
+text = "1:28:124"
+horizontal_alignment = 1

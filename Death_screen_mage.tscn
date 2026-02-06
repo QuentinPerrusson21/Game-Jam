@@ -1,0 +1,92 @@
+[gd_scene format=3 uid="uid://dcwti7ahdywrm"]
+
+[ext_resource type="Texture2D" uid="uid://cc8llyed8apwp" path="res://Death screen/Mort mage.png" id="1_23alf"]
+[ext_resource type="Texture2D" uid="uid://2mx4ykg5auo5" path="res://Baniere/quit game quadri_rouge.png" id="2_tjn2b"]
+[ext_resource type="Texture2D" uid="uid://d1jontcrtdham" path="res://Baniere/quit game quadri_gris.png" id="3_d1k2l"]
+[ext_resource type="Texture2D" uid="uid://bplosv02nt5bf" path="res://Baniere/quit game quadri_vert.png" id="4_aggjl"]
+[ext_resource type="Texture2D" uid="uid://b4ww7om6wjelv" path="res://Baniere/retry quadri_rouge.png" id="5_aggjl"]
+[ext_resource type="FontFile" uid="uid://b53iapi5wykx8" path="res://Font/PixelifySans-VariableFont_wght.ttf" id="5_ww8tj"]
+[ext_resource type="Texture2D" uid="uid://6dnjgbk4a288" path="res://Baniere/retry quadri_gris.png" id="6_ww8tj"]
+[ext_resource type="Texture2D" uid="uid://bui36la0c4t4o" path="res://Baniere/retry quadri_vert.png" id="7_wvvh1"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tjn2b"]
+texture = ExtResource("1_23alf")
+
+[node name="Control" type="Control" unique_id=1860210753]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="." unique_id=1367151538]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_tjn2b")
+
+[node name="TextureButton" type="TextureButton" parent="Panel" unique_id=363409905]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.11400001
+anchor_bottom = 0.30100003
+offset_left = 1128.0
+offset_top = 867.99994
+offset_right = 1251.12
+offset_bottom = 628.9199
+scale = Vector2(1.705, 1.705)
+texture_normal = ExtResource("2_tjn2b")
+texture_pressed = ExtResource("3_d1k2l")
+texture_hover = ExtResource("4_aggjl")
+
+[node name="TextureButton2" type="TextureButton" parent="Panel" unique_id=1696076146]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.11400001
+anchor_bottom = 0.30100003
+offset_left = 220.0
+offset_top = 867.99994
+offset_right = 343.12
+offset_bottom = 628.9199
+scale = Vector2(1.705, 1.705)
+texture_normal = ExtResource("5_aggjl")
+texture_pressed = ExtResource("6_ww8tj")
+texture_hover = ExtResource("7_wvvh1")
+
+[node name="Label" type="Label" parent="Panel" unique_id=1994627220]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -428.0
+offset_top = 80.0
+offset_right = 434.0
+offset_bottom = 334.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.7137255)
+theme_override_constants/shadow_offset_x = 6
+theme_override_constants/shadow_offset_y = 6
+theme_override_fonts/font = ExtResource("5_ww8tj")
+theme_override_font_sizes/font_size = 170
+text = "GAME OVER"
+
+[node name="Label2" type="Label" parent="Panel" unique_id=1512956529]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -428.0
+offset_top = 273.0
+offset_right = 434.0
+offset_bottom = 393.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.597819, 0.9470157, 0.31782916, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.7137255)
+theme_override_constants/shadow_offset_x = 6
+theme_override_constants/shadow_offset_y = 6
+theme_override_fonts/font = ExtResource("5_ww8tj")
+theme_override_font_sizes/font_size = 100
+text = "1:28:124"
+horizontal_alignment = 1

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c1lkky2ricxd"
-path="res://.godot/imported/Hub_Droite.jpg-49acae29473a11a95a50b3852cc9ceae.ctex"
+uid="uid://dsvmwimajqoen"
+path="res://.godot/imported/BottomLL.png-994f3293d88de053d5a297858c43dde6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://maps/Spawn/Hub_Droite.jpg"
-dest_files=["res://.godot/imported/Hub_Droite.jpg-49acae29473a11a95a50b3852cc9ceae.ctex"]
+source_file="res://maps/Spawn/BottomLL.png"
+dest_files=["res://.godot/imported/BottomLL.png-994f3293d88de053d5a297858c43dde6.ctex"]
 
 [params]
 
