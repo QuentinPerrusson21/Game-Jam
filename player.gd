@@ -1,8 +1,6 @@
 extends CharacterBody2D
 
-# --- NOUVEAU : Variable pour choisir la scène de mort ---
 @export var scene_de_mort : String = "res://Death_screen_knight.tscn"
-
 @export var son_pas : AudioStream
 @export var son_douleur : AudioStream
 var health = 5
@@ -100,21 +98,15 @@ func die():
 	is_dead = true
 	velocity = Vector2.ZERO
 	
-	# Désactive la collision pour éviter les bugs avec les ennemis restants
 	$CollisionShape2D.set_deferred("disabled", true)
 	
-	# Supprime l'arme pour que le visuel soit propre
 	if porte_armes: 
 		porte_armes.queue_free() 
 	
-	# Joue l'animation de blessure/mort
 	%Chevalier.play("hurt")
 	
-	# Attend que l'animation se termine
 	await %Chevalier.animation_finished
 	
-	# Petit temps d'arrêt (1 seconde) pour l'effet dramatique
 	await get_tree().create_timer(1.0).timeout
 	
-	# --- MODIFICATION : On utilise la variable exportée ---
 	get_tree().change_scene_to_file(scene_de_mort)

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ccyi7jsxx7ts6"]
 
-[ext_resource type="Script" uid="uid://cxark801m2ot" path="res://hud.gd" id="1_gpiub"]
+[ext_resource type="Script" path="res://hud.gd" id="1_gpiub"]
 [ext_resource type="Texture2D" uid="uid://bigencvd6wxnm" path="res://HUD/barre_de_vie_vide.png" id="2_amv7k"]
 [ext_resource type="Texture2D" uid="uid://dty61vevhygvh" path="res://HUD/barre_de_vie_pleine.png" id="3_1fv7p"]
 [ext_resource type="Texture2D" uid="uid://ki3vpf1mrc6b" path="res://HUD/barre_rouge_du_boss.png" id="4_4u2vk"]

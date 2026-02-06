@@ -113,12 +113,15 @@ position = Vector2(-4, -28)
 
 [node name="Epee" parent="PorteArmes" unique_id=1824039246 instance=ExtResource("6_hc5i0")]
 position = Vector2(-4, 10)
+force_recul = 200.0
 
 [node name="Epee2" parent="PorteArmes" unique_id=932524154 instance=ExtResource("7_11vhg")]
 position = Vector2(-4, 9)
+force_recul = 100.0
 
 [node name="Epee3" parent="PorteArmes" unique_id=1817212049 instance=ExtResource("8_hc5i0")]
 position = Vector2(-3, 8)
+degats = 1
 
 [node name="SfxDouleur" type="AudioStreamPlayer2D" parent="." unique_id=674177426]
 
