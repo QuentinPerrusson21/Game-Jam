@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://bml2lqi8ka3vd" path="res://map_1.gd" id="1_ujfou"]
 [ext_resource type="Texture2D" uid="uid://dmua25br67es8" path="res://maps/Cobble/Icy/ice-lr.png" id="2_cfsje"]
-[ext_resource type="Texture2D" uid="uid://cqnxkk62i2gmp" path="res://maps/Cobble/Mix/coble-t.png" id="3_iiiln"]
 [ext_resource type="Texture2D" uid="uid://ckd2wuo5vfoxi" path="res://maps/Cobble/Vanilla/CobbleCorridorHorizontal.png" id="3_lfpw6"]
 [ext_resource type="Texture2D" uid="uid://bmswsub3th78s" path="res://maps/Cobble/Mix/coble-tlb.png" id="4_tqoey"]
+[ext_resource type="Texture2D" uid="uid://c6n5apxlgv6qk" path="res://maps/Cobble/Vanilla/coble-t.png" id="4_ujfou"]
 [ext_resource type="Texture2D" uid="uid://c43liqauk4to3" path="res://maps/Cobble/Icy/ice-r.png" id="5_e1pu6"]
 [ext_resource type="Texture2D" uid="uid://ckhek06palm60" path="res://maps/Cobble/Mix/coble-trb.png" id="6_gbe5j"]
 [ext_resource type="Texture2D" uid="uid://dgyq45rwcolbi" path="res://maps/Cobble/Mix/coble-rb.png" id="7_tqoey"]
@@ -93,7 +93,7 @@ texture = ExtResource("2_cfsje")
 
 [node name="Sprite2D2" type="Sprite2D" parent="." unique_id=2018091783]
 position = Vector2(989, 531)
-texture = ExtResource("3_iiiln")
+texture = ExtResource("4_ujfou")
 
 [node name="Sprite2D3" type="Sprite2D" parent="." unique_id=576769665]
 position = Vector2(989, -493)
