@@ -24,6 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://cj2obdjf4dtew" path="res://Options/PTdENA3z-removebg-preview.png" id="16_y26m3"]
 [ext_resource type="Texture2D" uid="uid://5ubbjawq17uw" path="res://Options/icon_cible.png" id="17_4emyp"]
 [ext_resource type="Texture2D" uid="uid://2ax5ipw47bbl" path="res://maps/Assets/Manette.png" id="24_t0wlv"]
+[ext_resource type="Texture2D" uid="uid://7o5fc2uwwb0h" path="res://characters/MonstresOffi/Boss/boss-black-knight-attack-axe-2.png" id="25_g6xri"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kki6w"]
 texture = ExtResource("2_juxkc")
@@ -141,10 +142,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -876.0
-offset_top = -421.0
-offset_right = 844.0
-offset_bottom = 423.0
+offset_left = -857.0
+offset_top = -407.0
+offset_right = 863.0
+offset_bottom = 437.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_4emyp")
@@ -188,7 +189,7 @@ offset_bottom = 330.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("9_pbygh")
 theme_override_font_sizes/font_size = 50
-text = "Controller Available "
+text = "Controller Available."
 horizontal_alignment = 1
 
 [node name="Label4" type="Label" parent="Options" unique_id=171790969]
@@ -352,6 +353,10 @@ audio_bus_name = "SFX"
 position = Vector2(886, 483.99997)
 scale = Vector2(1.4000001, 1.4000001)
 texture = ExtResource("24_t0wlv")
+
+[node name="BossBlackKnightAttackAxe2" type="Sprite2D" parent="." unique_id=1458005693]
+position = Vector2(-377, -568)
+texture = ExtResource("25_g6xri")
 
 [connection signal="pressed" from="Main button/TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="Options/Fermer" to="." method="_on_fermer_option_pressed"]
