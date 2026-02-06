@@ -322,12 +322,12 @@ offset = Vector2(-0.16, 0)
 flip_h = true
 
 [node name="Label" type="Label" parent="." unique_id=1023881285]
-offset_left = 1942.0
-offset_top = -213.0
-offset_right = 2156.0
-offset_bottom = -143.0
+offset_left = 1939.0
+offset_top = -221.0
+offset_right = 2153.0
+offset_bottom = -149.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_constants/line_spacing = -10
+theme_override_constants/line_spacing = -7
 theme_override_fonts/font = ExtResource("18_4vrjs")
 theme_override_font_sizes/font_size = 16
 theme_override_styles/focus = SubResource("StyleBoxLine_t6ouf")
