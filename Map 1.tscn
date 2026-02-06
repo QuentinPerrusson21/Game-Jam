@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bseq5vdjuqom8"]
 
-[ext_resource type="Script" path="res://map_1.gd" id="1_ujfou"]
+[ext_resource type="Script" uid="uid://bml2lqi8ka3vd" path="res://map_1.gd" id="1_ujfou"]
 [ext_resource type="Texture2D" uid="uid://dmua25br67es8" path="res://maps/Cobble/Icy/ice-lr.png" id="2_cfsje"]
 [ext_resource type="Texture2D" uid="uid://ckd2wuo5vfoxi" path="res://maps/Cobble/Vanilla/CobbleCorridorHorizontal.png" id="3_lfpw6"]
 [ext_resource type="Texture2D" uid="uid://bmswsub3th78s" path="res://maps/Cobble/Mix/coble-tlb.png" id="4_tqoey"]
@@ -31,17 +31,18 @@
 [ext_resource type="Texture2D" uid="uid://bybjopdcvctov" path="res://maps/Assets/mobilie6.png" id="26_tpfvi"]
 [ext_resource type="Texture2D" uid="uid://b8jfl6qfv5eab" path="res://maps/Cobble/Lava/Map_Feu_Boss_1.jpg" id="26_wowqd"]
 [ext_resource type="Texture2D" uid="uid://b0o1vbbjiv6mb" path="res://maps/Assets/mobilie7.png" id="27_ag4va"]
-[ext_resource type="Script" path="res://room_manager.gd" id="28_2p0g6"]
+[ext_resource type="Script" uid="uid://6ixcduvna7br" path="res://room_manager.gd" id="28_2p0g6"]
 [ext_resource type="Texture2D" uid="uid://bsegbdvn1fujp" path="res://maps/Assets/mobilie8.png" id="28_tmfjk"]
-[ext_resource type="Script" path="res://porte.gd" id="29_6whnl"]
+[ext_resource type="Script" uid="uid://ct8terumcnrca" path="res://porte.gd" id="29_6whnl"]
 [ext_resource type="PackedScene" uid="uid://y38gte5o0xf8" path="res://mob.tscn" id="29_jery8"]
 [ext_resource type="Texture2D" uid="uid://bw4loooi0ptkr" path="res://maps/Cobble/Mix/MagicCircleRed.png" id="29_osk5h"]
 [ext_resource type="Texture2D" uid="uid://b1xfutxj01aax" path="res://maps/Assets/mobilie4.png" id="29_v5l58"]
-[ext_resource type="PackedScene" path="res://goblin.tscn" id="30_u444a"]
-[ext_resource type="PackedScene" path="res://boss.tscn" id="31_aa6oi"]
+[ext_resource type="PackedScene" uid="uid://bav0ai3ehbby2" path="res://goblin.tscn" id="30_u444a"]
+[ext_resource type="PackedScene" uid="uid://nsaon7wlrejg" path="res://boss.tscn" id="31_aa6oi"]
 [ext_resource type="AudioStream" uid="uid://4jarc8ce7fkm" path="res://Music/Bossfight.ogg" id="32_ujfou"]
 [ext_resource type="AudioStream" uid="uid://bmsmepyk4ppdq" path="res://Music/Gameplay.ogg" id="35_ejm65"]
 [ext_resource type="Texture2D" uid="uid://chiw83r33ktt8" path="res://pistol/weapon/WhiteStick/pngvide.png" id="35_ujfou"]
+[ext_resource type="PackedScene" uid="uid://ccyi7jsxx7ts6" path="res://hud.tscn" id="43_pmch7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6whnl"]
 size = Vector2(860, 20)
@@ -3050,3 +3051,5 @@ position = Vector2(1007, 626)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=277277671]
 polygon = PackedVector2Array(637, -210, 639, -148, 698, -149, 697, -210)
+
+[node name="Control" parent="." unique_id=234109627 instance=ExtResource("43_pmch7")]
