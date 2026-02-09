@@ -359,6 +359,7 @@ position = Vector2(-377, -568)
 texture = ExtResource("25_g6xri")
 
 [connection signal="pressed" from="Main button/TextureButton" to="." method="_on_texture_button_pressed"]
-[connection signal="pressed" from="Options/Fermer" to="." method="_on_fermer_option_pressed"]
+[connection signal="pressed" from="Main button/TextureButton3" to="." method="_on_texture_button_3_pressed"]
+[connection signal="pressed" from="Options/Fermer" to="." method="_on_fermer_pressed"]
 [connection signal="value_changed" from="Options/audio control" to="Options/audio control" method="_on_value_changed"]
 [connection signal="value_changed" from="Options/audio control2" to="Options/audio control2" method="_on_value_changed"]

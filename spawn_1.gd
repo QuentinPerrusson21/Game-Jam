@@ -1,26 +1,32 @@
-extends Node2D 
+extends Control
+
+# On récupère les deux menus
+@onready var main_button: VBoxContainer = $"Main button"
+@onready var options: Panel = $Options
 
 func _ready():
-	await get_tree().process_frame
-	
-	if GameData.personnage_choisi_path != "":
-		var perso_ressource = load(GameData.personnage_choisi_path)
-		if perso_ressource:
-			var joueur = perso_ressource.instantiate()
-			
-			# On l'ajoute à la scène
-			add_child(joueur)
-			
-			# On le place au Marker
-			if has_node("%SpawnHub"):
-				joueur.global_position = %SpawnHub.global_position
-			
-			# On s'assure qu'il est bien dans le groupe pour être détecté
-			joueur.add_to_group("joueur")
+	# Au lancement, on cache les options et on montre le menu principal
+	main_button.visible = true
+	options.visible = false
+	# On s'assure que la souris est bien visible
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
-# C'est cette fonction qui est appelée quand tu touches l'Area2D
-func _on_area_2d_body_entered(body: Node2D) -> void:
-	# On vérifie si c'est bien le joueur qui entre
-	if body.is_in_group("joueur"):
-		print("TP vers Map 1 !") # Pour vérifier dans la console
-		get_tree().change_scene_to_file("res://Map 1.tscn")
+# Appelé quand tu cliques sur OPTIONS (TextureButton3)
+func _on_texture_button_3_pressed() -> void:
+	# On cache les boutons principaux et on affiche le panneau d'options
+	main_button.visible = false
+	options.visible = true
+
+# Appelé quand tu cliques sur le bouton FERMER dans les options
+func _on_fermer_pressed() -> void:
+	# On fait l'inverse : on revient au menu principal
+	main_button.visible = true
+	options.visible = false
+
+# --- AUTRES BOUTONS ---
+
+func _on_texture_button_pressed() -> void: # Start Game
+	get_tree().change_scene_to_file("res://Selection personnages.tscn")
+
+func _on_texture_button_4_pressed() -> void: # Quit Game
+	get_tree().quit()

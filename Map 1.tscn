@@ -51,14 +51,14 @@ size = Vector2(860, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u444a"]
 size = Vector2(106.5, 852.25)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tpfvi"]
-size = Vector2(106.5, 852.25)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tmfjk"]
 size = Vector2(515.25, 746)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ag4va"]
 size = Vector2(597, 516)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tpfvi"]
+size = Vector2(106.5, 852.25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ejm65"]
 size = Vector2(903, 134.25)
@@ -8819,41 +8819,6 @@ position = Vector2(234, -338)
 [node name="Marker2D2" type="Marker2D" parent="RoomManager3/SpawnPoints" unique_id=1646452790]
 position = Vector2(-101, -137)
 
-[node name="RoomManager9" type="Node2D" parent="." unique_id=727767667 node_paths=PackedStringArray("portes_a_fermer")]
-position = Vector2(2675, -3903)
-script = ExtResource("28_2p0g6")
-portes_a_fermer = [NodePath("../Portes/Porte13"), NodePath("../Portes/Porte12"), NodePath("../Portes/Porte11"), NodePath("../Portes/Porte9"), NodePath("../Portes/Porte10")]
-liste_mobs_possibles = Array[PackedScene]([ExtResource("36_tpfvi"), ExtResource("30_u444a")])
-nombre_mobs = 4
-
-[node name="DetectionZone" type="Area2D" parent="RoomManager9" unique_id=2017838924]
-position = Vector2(333, 557)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomManager9/DetectionZone" unique_id=971016277]
-position = Vector2(-227, -181)
-shape = SubResource("RectangleShape2D_tpfvi")
-
-[node name="MobsContainer" type="Node2D" parent="RoomManager9" unique_id=1902492487]
-position = Vector2(-2, 53)
-
-[node name="SpawnPoints" type="Node2D" parent="RoomManager9" unique_id=1382797084]
-position = Vector2(271, 394)
-
-[node name="Marker2D" type="Marker2D" parent="RoomManager9/SpawnPoints" unique_id=596610577]
-position = Vector2(338, 205)
-
-[node name="Marker2D3" type="Marker2D" parent="RoomManager9/SpawnPoints" unique_id=1491849485]
-position = Vector2(174, 222)
-
-[node name="Marker2D4" type="Marker2D" parent="RoomManager9/SpawnPoints" unique_id=1096481611]
-position = Vector2(339, -58)
-
-[node name="Marker2D5" type="Marker2D" parent="RoomManager9/SpawnPoints" unique_id=2021823496]
-position = Vector2(234, -338)
-
-[node name="Marker2D2" type="Marker2D" parent="RoomManager9/SpawnPoints" unique_id=1815394436]
-position = Vector2(374, -274)
-
 [node name="RoomManager10" type="Node2D" parent="." unique_id=980140809 node_paths=PackedStringArray("portes_a_fermer")]
 position = Vector2(2675, -3903)
 script = ExtResource("28_2p0g6")
@@ -9335,26 +9300,6 @@ animation = &"close"
 
 [node name="MusiqueDonjon" type="AudioStreamPlayer2D" parent="." unique_id=669486613]
 position = Vector2(1674, -527)
-stream = ExtResource("35_ejm65")
-autoplay = true
-
-[node name="MusiqueDonjon2" type="AudioStreamPlayer2D" parent="." unique_id=1840922493]
-position = Vector2(-17, -1466)
-stream = ExtResource("35_ejm65")
-autoplay = true
-
-[node name="MusiqueDonjon3" type="AudioStreamPlayer2D" parent="." unique_id=78960749]
-position = Vector2(1965, -2484)
-stream = ExtResource("35_ejm65")
-autoplay = true
-
-[node name="MusiqueDonjon4" type="AudioStreamPlayer2D" parent="." unique_id=748603080]
-position = Vector2(-27, -3524)
-stream = ExtResource("35_ejm65")
-autoplay = true
-
-[node name="MusiqueDonjon5" type="AudioStreamPlayer2D" parent="." unique_id=1440422343]
-position = Vector2(3675, -4212)
 stream = ExtResource("35_ejm65")
 autoplay = true
 
