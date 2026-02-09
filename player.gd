@@ -3,7 +3,7 @@ extends CharacterBody2D
 @export var scene_de_mort : String = "res://Death_screen_knight.tscn"
 @export var son_pas : AudioStream
 @export var son_douleur : AudioStream
-var health = 5
+var health = 6
 var is_dead = false 
 var knockback_vector = Vector2.ZERO
 var knockback_friction = 2000.0

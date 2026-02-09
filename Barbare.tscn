@@ -122,6 +122,7 @@ force_recul = 100.0
 [node name="Epee3" parent="PorteArmes" unique_id=1817212049 instance=ExtResource("8_hc5i0")]
 position = Vector2(-3, 8)
 degats = 1
+force_recul = 700.0
 
 [node name="SfxDouleur" type="AudioStreamPlayer2D" parent="." unique_id=674177426]
 
